@@ -4,8 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { GlowingStarsBackground } from "@/components/ui/GlowingStars";
 import { useRef } from "react";
 
-
-
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -19,7 +17,6 @@ export function Hero() {
 
       <motion.div style={{ y, opacity }} className="relative z-10 max-w-5xl mx-auto px-6 text-center">
 
-        {/* Eyebrow */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -28,12 +25,11 @@ export function Hero() {
         >
           <span className="h-px w-10 bg-[#c9a86c]/30" />
           <span className="text-[#c9a86c]/60 text-[11px] tracking-[0.45em] uppercase font-light">
-            Private Life Mentorship · Dubai
+            Dubai's Premier Life Mentor & Executive Coach
           </span>
           <span className="h-px w-10 bg-[#c9a86c]/30" />
         </motion.div>
 
-        {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,23 +37,20 @@ export function Hero() {
           className="text-[64px] md:text-[96px] font-light text-white leading-[1.02] tracking-tight mb-7"
           style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
         >
-          Peace.{" "}
-          <em className="not-italic" style={{ color: "#c9a86c" }}>Purpose.</em>
+          You built the life.
           <br />
-          Presence.
+          <em className="not-italic" style={{ color: "#c9a86c" }}>Now master it.</em>
         </motion.h1>
 
-        {/* Sub */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="text-white/45 text-lg font-light max-w-lg mx-auto leading-relaxed mb-12"
+          className="text-white/45 text-lg font-light max-w-xl mx-auto leading-relaxed mb-12"
         >
-          For executives and entrepreneurs ready to lead from alignment — not adrenaline.
+          Private mentorship for executives and entrepreneurs in Dubai who have achieved remarkable success — and are ready to feel as good on the inside as it looks on the outside.
         </motion.p>
 
-        {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -70,7 +63,7 @@ export function Hero() {
             rel="noopener noreferrer"
             className="px-9 py-4 bg-[#c9a86c] text-[#060606] text-[11px] tracking-[0.2em] uppercase font-medium rounded-full hover:bg-[#d4b880] transition-colors"
           >
-            Book a Discovery Call
+            Book a Free Discovery Call
           </a>
           <a
             href="#method"
@@ -80,7 +73,6 @@ export function Hero() {
           </a>
         </motion.div>
 
-        {/* Press */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -88,7 +80,7 @@ export function Hero() {
           className="mt-24 flex items-center justify-center gap-1 flex-wrap"
         >
           <span className="text-white/18 text-[10px] tracking-[0.35em] uppercase mr-4">As seen in</span>
-          {["UAE Times", "Khaleej Times", "Impactpreneur"].map((p, i) => (
+          {["UAE Times", "Khaleej Times", "Impactpreneur"].map((p) => (
             <span key={p} className="text-white/22 text-[10px] tracking-[0.3em] uppercase px-4 border-r border-white/10 last:border-0">
               {p}
             </span>
@@ -96,7 +88,6 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll line */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

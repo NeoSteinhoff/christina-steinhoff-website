@@ -4,33 +4,33 @@ import { useState } from "react";
 
 const testimonials = [
   {
-    quote: "Christina's mentorship redefined success for me. I no longer chase results — I create from alignment. My business doubled, but more importantly, I came home to myself.",
+    quote: "I came to Christina after burning out for the third time in five years. I'd tried therapy, I'd tried meditation — nothing touched the root. Within four sessions something fundamentally shifted. My revenue has grown 40% since, but honestly, that's the least interesting part of what changed.",
     name: "Ahmed R.",
-    role: "CEO, Dubai",
-    arc: "Burnout → Balance",
+    role: "CEO · Dubai",
+    arc: "Burnout → Clarity",
   },
   {
-    quote: "I was trapped in my own head, second-guessing every decision. After working with Christina, I lead from intuition. The creative clarity I have now is unlike anything I've experienced.",
+    quote: "I was making decisions from fear disguised as logic. Christina helped me see that my 'rational' thinking was actually my nervous system trying to stay safe. Now I lead from genuine conviction. The difference in how my team responds to me has been night and day.",
     name: "Layla M.",
-    role: "Creative Founder",
-    arc: "Overthinking → Clarity",
+    role: "Founder · UAE",
+    arc: "Fear → Conviction",
   },
   {
-    quote: "Fifteen years in finance and I was running on empty. Christina helped me dissolve the self-doubt that had silently limited my career for years. I was promoted within six months.",
+    quote: "Fifteen years in finance and I had every credential except peace of mind. The self-doubt I thought was just 'how I was wired' dissolved completely. I was promoted to Managing Director six months after working with Christina. More importantly, I stopped waking up at 3am.",
     name: "James T.",
-    role: "Finance Executive",
+    role: "Managing Director · London",
     arc: "Self-Doubt → Mastery",
   },
   {
-    quote: "The pressure I was under was unsustainable. Through Christina's method I found a way to perform at the highest level while actually feeling present in my own life.",
+    quote: "As a female entrepreneur in the Gulf, I was performing strength I didn't always feel. Christina helped me stop performing and start embodying. My relationships — business and personal — transformed as a direct result. I finally stopped apologising for taking up space.",
     name: "Sara K.",
-    role: "Wellness Entrepreneur",
-    arc: "Pressure → Presence",
+    role: "Entrepreneur · Abu Dhabi",
+    arc: "Performance → Presence",
   },
   {
-    quote: "I built my company on hustle. Christina helped me see that my greatest asset wasn't my work ethic — it was my aligned state. Everything changed from there.",
+    quote: "I spent a decade confusing hustle with high performance. What Christina gave me was the ability to create results from a completely different internal state — one that doesn't cost me my health or my marriage. My business has never done better and for the first time I'm actually enjoying it.",
     name: "Daniel W.",
-    role: "Tech Founder",
+    role: "Tech Founder · Dubai",
     arc: "Hustle → Harmony",
   },
 ];
@@ -43,7 +43,6 @@ export function Testimonials() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_100%,rgba(201,168,108,0.05),transparent)]" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6">
-        {/* Header */}
         <div className="text-center mb-20">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -52,7 +51,7 @@ export function Testimonials() {
             className="flex items-center justify-center gap-4 mb-6"
           >
             <span className="h-px w-7 bg-[#c9a86c]/30" />
-            <span className="text-[#c9a86c]/60 text-[10px] tracking-[0.45em] uppercase">Transformations</span>
+            <span className="text-[#c9a86c]/60 text-[10px] tracking-[0.45em] uppercase">Client Transformations</span>
             <span className="h-px w-7 bg-[#c9a86c]/30" />
           </motion.div>
           <motion.h2
@@ -62,11 +61,11 @@ export function Testimonials() {
             className="text-4xl md:text-5xl font-light text-white"
             style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
           >
-            Real people. <em className="text-[#c9a86c]">Real results.</em>
+            Not what they achieved.{" "}
+            <em className="text-[#c9a86c]">Who they became.</em>
           </motion.h2>
         </div>
 
-        {/* Quote */}
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
@@ -92,7 +91,6 @@ export function Testimonials() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Dots */}
         <div className="flex items-center justify-center gap-2.5 mb-14">
           {testimonials.map((_, i) => (
             <button
@@ -105,7 +103,6 @@ export function Testimonials() {
           ))}
         </div>
 
-        {/* Mini cards */}
         <div className="grid grid-cols-5 gap-2">
           {testimonials.map((t, i) => (
             <button

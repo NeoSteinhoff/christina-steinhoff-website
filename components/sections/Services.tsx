@@ -3,32 +3,30 @@ import { CALENDLY } from "@/lib/constants";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-
-
 const services = [
   {
     tag: "1:1 Private",
     title: "Personal Life Mentorship",
-    body: "Deeply personal and completely bespoke. We work on the core patterns holding you back — identity, purpose, relationships, and the subconscious contracts you've made with struggle. For those ready to transform from the inside out.",
-    outcomes: ["Core values & vision clarity", "Subconscious reprogramming", "Emotional mastery", "Life redesign"],
+    body: "For the high achiever who has everything on paper — and something essential is still missing. This is Christina's deepest, most transformational offering. Over 3-6 months of private sessions, we dissolve the subconscious patterns blocking your fulfilment, rebuild your relationship with yourself, and create a life that genuinely reflects who you are at your highest. Not who you were trained to be.",
+    outcomes: ["Core identity & purpose clarity", "Subconscious reprogramming", "Emotional intelligence mastery", "Complete life redesign"],
   },
   {
     tag: "Executive",
     title: "High Performance Coaching",
-    body: "Built for leaders operating at the edge of their capacity. We redefine what peak performance looks like when it comes from alignment rather than adrenaline. Sustainable excellence — not burnout.",
-    outcomes: ["Burnout dissolution", "Decision clarity", "Leadership presence", "Sustainable peak state"],
+    body: "Built for leaders who are performing at the top of their field but running on fumes. Most high performers are operating at 60% of their real capacity because stress, unresolved pressure, and misalignment are draining the other 40%. This programme restores full neurological and emotional capacity — so you lead with clarity, make better decisions, and achieve more by doing less from a place of force.",
+    outcomes: ["Burnout recovery & prevention", "Executive decision clarity", "Authentic leadership presence", "Sustainable peak performance"],
   },
   {
     tag: "Couples & Individuals",
     title: "Conscious Relationship Coaching",
-    body: "The most overlooked driver of executive performance is relational health. This work heals attachment wounds, improves communication, and builds the intimacy that fuels everything else in your life.",
-    outcomes: ["Attachment healing", "Deep intimacy", "Communication mastery", "Partnership alignment"],
+    body: "The most overlooked driver of executive performance and personal fulfilment is the quality of your closest relationships. Attachment wounds, communication breakdowns, and emotional distance don't stay in your personal life — they follow you into the boardroom, your parenting, your self-worth. This work heals the relational patterns keeping you disconnected and builds the intimacy that makes everything else in life richer.",
+    outcomes: ["Attachment healing & secure bonding", "Deep intimacy restoration", "Communication & conflict mastery", "Aligned partnership or self-relationship"],
   },
   {
     tag: "Immersive",
     title: "Bespoke Retreat Experience",
-    body: "A multi-day private experience in Dubai or your preferred location. For leaders who want transformational results in compressed time — this is the deepest work we offer.",
-    outcomes: ["Full immersion", "Rapid transformation", "Luxury setting", "Complete life audit"],
+    body: "For leaders who want years of transformation in days. A fully private, fully bespoke multi-day experience in Dubai or your preferred location worldwide. You arrive at a carefully curated environment, with nothing to manage but your own evolution. This is the most intensive work Christina offers — and the results match the depth of the experience. Limited to a handful of clients per year.",
+    outcomes: ["Full-immersion transformation", "Rapid subconscious reprogramming", "Luxury private setting", "Complete life & leadership audit"],
   },
 ];
 
@@ -39,7 +37,6 @@ export function Services() {
     <section id="services" className="bg-[#FAF5ED] py-32">
       <div className="max-w-6xl mx-auto px-6">
 
-        {/* Header */}
         <div className="mb-14">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -48,22 +45,20 @@ export function Services() {
             className="flex items-center gap-3 mb-6"
           >
             <span className="h-px w-7 bg-[#c9a86c]/40" />
-            <span className="text-[#c9a86c]/70 text-[10px] tracking-[0.45em] uppercase">Services</span>
+            <span className="text-[#c9a86c]/70 text-[10px] tracking-[0.45em] uppercase">Private Programmes</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-light text-[#1c160e] leading-tight"
+            className="text-4xl md:text-6xl font-light text-[#1c160e] leading-tight max-w-xl"
             style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
           >
-            Choose your <em className="text-[#c9a86c]">path</em>
+            Every programme is<br /><em className="text-[#c9a86c]">built around you</em>
           </motion.h2>
         </div>
 
-        {/* Layout */}
         <div className="grid md:grid-cols-[280px_1fr] gap-4">
-          {/* Tabs */}
           <div className="flex flex-col gap-2">
             {services.map((s, i) => (
               <motion.button
@@ -87,7 +82,6 @@ export function Services() {
             ))}
           </div>
 
-          {/* Panel */}
           <AnimatePresence mode="wait">
             <motion.div
               key={active}

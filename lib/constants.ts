@@ -1,8 +1,8 @@
 export const SITE = {
   name: "Christina Steinhoff",
-  tagline: "Private Life Mentor · Dubai",
+  tagline: "Life Mentor & Executive Coach · Dubai",
   description:
-    "Private mentorship for executives and entrepreneurs in Dubai. Christina Steinhoff's Science + Soul Fusion™ method combines neuroscience, NLP, hypnotherapy and spiritual alignment for transformational results.",
+    "Christina Steinhoff is Dubai's leading life mentor and executive coach. Her Science + Soul Fusion™ method combines neuroscience, NLP, and clinical hypnotherapy to help executives and entrepreneurs in the UAE achieve lasting transformation — not just results.",
   url: "https://christinasteinhoff.com",
   email: "mail@christinasteinhoff.com",
   phone: "+971 56 273 7368",

@@ -1,14 +1,11 @@
 "use client";
-import { CALENDLY } from "@/lib/constants";
+import { CALENDLY, SITE } from "@/lib/constants";
 import { motion } from "framer-motion";
-
-
 
 export function CTA() {
   return (
     <section id="contact" className="bg-[#060606] py-40 overflow-hidden relative">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(201,168,108,0.06),transparent)]" />
-      {/* Subtle grid */}
       <div
         className="absolute inset-0 opacity-[0.025]"
         style={{
@@ -25,7 +22,7 @@ export function CTA() {
           className="flex items-center justify-center gap-4 mb-8"
         >
           <span className="h-px w-7 bg-[#c9a86c]/30" />
-          <span className="text-[#c9a86c]/55 text-[10px] tracking-[0.45em] uppercase">Begin Here</span>
+          <span className="text-[#c9a86c]/55 text-[10px] tracking-[0.45em] uppercase">Work With Christina</span>
           <span className="h-px w-7 bg-[#c9a86c]/30" />
         </motion.div>
 
@@ -36,8 +33,9 @@ export function CTA() {
           className="text-5xl md:text-7xl font-light text-white leading-tight mb-8"
           style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
         >
-          Ready to stop <em className="text-[#c9a86c]">surviving</em><br />
-          your success?
+          The version of you
+          <br />
+          <em className="text-[#c9a86c]">waiting to emerge</em>
         </motion.h2>
 
         <motion.p
@@ -45,9 +43,19 @@ export function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-white/35 text-base font-light max-w-md mx-auto leading-relaxed mb-12"
+          className="text-white/35 text-base font-light max-w-md mx-auto leading-relaxed mb-4"
         >
-          Book a complimentary discovery session. Limited availability — only accepting clients who are truly ready.
+          Begin with a complimentary 30-minute discovery call. Christina personally reviews every application — she works with a select number of clients at any one time to ensure complete dedication to your transformation.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.25 }}
+          className="text-white/20 text-xs tracking-widest uppercase mb-10"
+        >
+          Currently accepting new clients in Dubai & globally
         </motion.p>
 
         <motion.div
@@ -63,13 +71,13 @@ export function CTA() {
             rel="noopener noreferrer"
             className="px-10 py-4 bg-[#c9a86c] text-[#060606] text-[11px] tracking-[0.2em] uppercase font-medium rounded-full hover:bg-[#d4b880] transition-colors"
           >
-            Book a Discovery Call
+            Book Your Discovery Call
           </a>
           <a
-            href="mailto:mail@christinasteinhoff.com"
+            href={`mailto:${SITE.email}`}
             className="text-white/30 hover:text-white/55 text-[11px] tracking-[0.2em] uppercase transition-colors"
           >
-            mail@christinasteinhoff.com
+            {SITE.email}
           </a>
         </motion.div>
 
@@ -80,7 +88,7 @@ export function CTA() {
           transition={{ delay: 0.5 }}
           className="mt-8 text-white/18 text-xs"
         >
-          Dubai, UAE · Working globally
+          Dubai Investment Park · UAE · Working globally across three continents
         </motion.p>
       </div>
     </section>

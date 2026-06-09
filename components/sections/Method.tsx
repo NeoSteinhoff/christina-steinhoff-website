@@ -5,23 +5,23 @@ import { SpotlightCard } from "@/components/ui/SpotlightCard";
 const pillars = [
   {
     n: "01",
-    title: "Neuroscience",
-    body: "Rewire the neural patterns driving reactive behaviour, decision fatigue, and chronic stress. We work at the biology level — changing how your brain actually fires.",
+    title: "Neuroscience & Brain Rewiring",
+    body: "Chronic stress, decision fatigue, and reactive behaviour are neurological patterns — not personality flaws. Using proven neuroscience protocols, we literally rewire the neural pathways driving your most limiting responses, creating lasting change at the biology level.",
   },
   {
     n: "02",
-    title: "NLP & Hypnotherapy",
-    body: "Access the subconscious programs running your identity and performance. Reprogram limiting beliefs before they cost you another decade of results.",
+    title: "NLP & Clinical Hypnotherapy",
+    body: "95% of your behaviour runs from the subconscious. NLP and clinical hypnotherapy bypass the critical mind to directly update the programs running your identity, confidence, and performance — often in a fraction of the time traditional therapy takes.",
   },
   {
     n: "03",
-    title: "Somatic Release",
-    body: "Trauma and tension live in the body, not just the mind. Emotional release work clears the physiological charge keeping you stuck in old cycles.",
+    title: "Somatic & Trauma Release",
+    body: "Unresolved stress and trauma are stored in the body — not just the mind. Somatic release work dissolves the physiological charge of past experiences, freeing the nervous system from patterns that have silently shaped your decisions and relationships for years.",
   },
   {
     n: "04",
-    title: "Soul Alignment",
-    body: "Reconnect with your authentic vision and values. When strategy aligns with essence, you stop grinding and start flowing — and results amplify naturally.",
+    title: "Soul Alignment & Purpose",
+    body: "Strategy without soul is exhausting. When your goals, values, and authentic vision are genuinely aligned, high performance stops feeling like effort and starts feeling inevitable. This is the work that makes everything else sustainable.",
   },
 ];
 
@@ -31,7 +31,6 @@ export function Method() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_60%,rgba(201,168,108,0.05),transparent)]" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
-        {/* Header */}
         <div className="grid md:grid-cols-2 gap-12 items-end mb-16">
           <div>
             <motion.div
@@ -50,8 +49,9 @@ export function Method() {
               className="text-4xl md:text-6xl font-light text-white leading-tight"
               style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
             >
-              Science + Soul<br />
-              <em className="text-[#c9a86c]">Fusion™</em>
+              Why most coaching
+              <br />
+              <em className="text-[#c9a86c]">doesn't last</em>
             </motion.h2>
           </div>
           <motion.p
@@ -61,11 +61,10 @@ export function Method() {
             transition={{ delay: 0.2 }}
             className="text-white/35 font-light leading-relaxed text-[15px] md:pb-2"
           >
-            Four integrated pillars that dissolve the gap between your highest ambitions and your deepest sense of peace. No surface-level tactics — only permanent transformation.
+            Most coaching works at the conscious level — mindset, habits, strategy. But your results are driven 95% by subconscious programs, nervous system patterns, and unresolved emotional charge. Science + Soul Fusion™ is the only method that addresses all four layers simultaneously, which is why the transformations are permanent rather than temporary.
           </motion.p>
         </div>
 
-        {/* Cards */}
         <div className="grid sm:grid-cols-2 gap-4">
           {pillars.map((p, i) => (
             <motion.div
@@ -93,7 +92,6 @@ export function Method() {
           ))}
         </div>
 
-        {/* Pull quote */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -105,8 +103,8 @@ export function Method() {
             className="text-2xl md:text-3xl font-light text-white/50 italic max-w-2xl mx-auto leading-relaxed"
             style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
           >
-            "Luxury is alignment. Power is presence.{" "}
-            <span className="text-[#c9a86c] not-italic">Success is both."</span>
+            "The goal is not a better version of you.{" "}
+            <span className="text-[#c9a86c] not-italic">It's the real one.</span>"
           </p>
         </motion.div>
       </div>
