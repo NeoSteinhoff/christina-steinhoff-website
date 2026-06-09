@@ -10,7 +10,7 @@ import { BackToTop } from "@/components/ui/BackToTop";
 import { ExitIntent } from "@/components/ui/ExitIntent";
 import { NewsletterPopup } from "@/components/ui/NewsletterPopup";
 
-const CLARITY_ID = "XXXXXXXXXX"; // Replace with real Clarity ID
+const CLARITY_ID = "x4cstiql2r";
 import { SITE } from "@/lib/constants";
 
 const GA_ID = "G-W88WM4W49F";
