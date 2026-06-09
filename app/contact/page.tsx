@@ -15,7 +15,7 @@ export default function ContactPage() {
     const form = e.currentTarget;
     const data = new FormData(form);
     // Sends via Formspree — replace with Christina's endpoint once set up
-    await fetch("https://formspree.io/f/xwpbpqnb", {
+    await fetch("https://formspree.io/mail@christinasteinhoff.com", {
       method: "POST",
       body: data,
       headers: { Accept: "application/json" },

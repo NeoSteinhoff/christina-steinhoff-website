@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { CookieBanner } from "@/components/ui/CookieBanner";
+import { PageLoader } from "@/components/ui/PageLoader";
 import { SITE } from "@/lib/constants";
 
 const GA_ID = "G-W88WM4W49F";
@@ -118,6 +119,7 @@ export default function RootLayout({
           gtag('js', new Date());
           gtag('config', '${GA_ID}');
         `}</Script>
+        <PageLoader />
         {children}
         <WhatsAppButton />
         <CookieBanner />
