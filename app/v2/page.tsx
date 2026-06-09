@@ -1,6 +1,5 @@
 import Image from "next/image";
-
-const CALENDLY = "https://calendly.com/consultwithc/consultingwithchris?month=2026-06";
+import { CALENDLY, SOCIAL, SITE } from "@/lib/constants";
 
 export default function V2() {
   return (

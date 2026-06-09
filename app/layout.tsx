@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { CookieBanner } from "@/components/ui/CookieBanner";
 import { SITE } from "@/lib/constants";
+
+const GA_ID = "G-XXXXXXXXXX"; // Replace with real GA4 ID once Christina creates the account
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -49,7 +53,7 @@ export const metadata: Metadata = {
     description: SITE.description,
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Christina Steinhoff — Life Mentor Dubai",
@@ -60,7 +64,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Christina Steinhoff — Life Mentor & Executive Coach Dubai",
     description: SITE.description,
-    images: ["/og-image.jpg"],
+    images: ["/og-image.svg"],
   },
   robots: {
     index: true,
@@ -106,8 +110,17 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-[#060606]">
+        {/* Google Analytics */}
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+        <Script id="ga" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}');
+        `}</Script>
         {children}
         <WhatsAppButton />
+        <CookieBanner />
       </body>
     </html>
   );
