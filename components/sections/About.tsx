@@ -87,7 +87,7 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="space-y-4 text-[#1c160e]/55 font-light leading-relaxed text-[15px]"
+              className="space-y-4 text-[#1c160e]/75 font-light leading-relaxed text-base"
             >
               <p>
                 Christina Steinhoff is Dubai's leading life mentor and executive coach — working with high-achieving professionals across the UAE and globally who have built extraordinary careers, yet find themselves running on empty, disconnected from purpose, or quietly unfulfilled despite every external marker of success.
@@ -110,7 +110,7 @@ export function About() {
               {credentials.map((c) => (
                 <div key={c} className="flex items-start gap-2.5">
                   <span className="mt-[6px] w-1 h-1 rounded-full bg-[#c9a86c] shrink-0" />
-                  <span className="text-[#1c160e]/50 text-sm">{c}</span>
+                  <span className="text-[#1c160e]/70 text-sm">{c}</span>
                 </div>
               ))}
             </motion.div>

@@ -28,10 +28,23 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), sans-serif;
   -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
 h1, h2, h3 {
   font-family: var(--font-cormorant), serif;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+p {
+  line-height: 1.8;
+}
+
+/* Improve readability on all paragraphs */
+.leading-relaxed {
+  line-height: 1.8 !important;
 }
 
 ::selection {

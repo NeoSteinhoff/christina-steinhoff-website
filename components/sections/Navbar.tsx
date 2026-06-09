@@ -72,7 +72,7 @@ export function Navbar() {
                 href={link.href}
                 className={cn(
                   "text-[10px] tracking-[0.3em] uppercase transition-colors relative",
-                  isActive ? "text-[#c9a86c]" : "text-white/40 hover:text-white/75"
+                  isActive ? "text-[#c9a86c]" : "text-white/65 hover:text-white/75"
                 )}
               >
                 {link.label}

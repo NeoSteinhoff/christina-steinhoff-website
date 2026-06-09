@@ -85,7 +85,7 @@ export function Process() {
                     style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}>
                     {s.title}
                   </h3>
-                  <p className="text-[#1c160e]/45 font-light leading-relaxed text-[15px]">{s.body}</p>
+                  <p className="text-[#1c160e]/65 font-light leading-relaxed text-base">{s.body}</p>
                 </div>
               </motion.div>
             ))}

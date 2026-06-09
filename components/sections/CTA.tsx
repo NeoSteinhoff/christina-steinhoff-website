@@ -43,7 +43,7 @@ export function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-white/35 text-base font-light max-w-md mx-auto leading-relaxed mb-4"
+          className="text-white/60 text-base font-light max-w-md mx-auto leading-relaxed mb-4"
         >
           Begin with a complimentary 30-minute discovery call. Christina personally reviews every application — she works with a select number of clients at any one time to ensure complete dedication to your transformation.
         </motion.p>
@@ -86,7 +86,7 @@ export function CTA() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-8 text-white/18 text-xs"
+          className="mt-8 text-white/35 text-xs"
         >
           Dubai Investment Park · UAE · Working globally across three continents
         </motion.p>

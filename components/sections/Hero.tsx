@@ -46,7 +46,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="text-white/45 text-lg font-light max-w-xl mx-auto leading-relaxed mb-12"
+          className="text-white/70 text-lg font-light max-w-xl mx-auto leading-relaxed mb-12"
         >
           Private mentorship for executives and entrepreneurs in Dubai who have achieved remarkable success — and are ready to feel as good on the inside as it looks on the outside.
         </motion.p>
@@ -67,7 +67,7 @@ export function Hero() {
           </a>
           <a
             href="#method"
-            className="text-white/35 hover:text-white/60 text-[11px] tracking-[0.25em] uppercase transition-colors"
+            className="text-white/60 hover:text-white/60 text-[11px] tracking-[0.25em] uppercase transition-colors"
           >
             Discover the method ↓
           </a>
@@ -79,9 +79,9 @@ export function Hero() {
           transition={{ delay: 1.1, duration: 0.8 }}
           className="mt-24 flex items-center justify-center gap-1 flex-wrap"
         >
-          <span className="text-white/18 text-[10px] tracking-[0.35em] uppercase mr-4">As seen in</span>
+          <span className="text-white/35 text-[10px] tracking-[0.35em] uppercase mr-4">As seen in</span>
           {["UAE Times", "Khaleej Times", "Impactpreneur"].map((p) => (
-            <span key={p} className="text-white/22 text-[10px] tracking-[0.3em] uppercase px-4 border-r border-white/10 last:border-0">
+            <span key={p} className="text-white/40 text-[10px] tracking-[0.3em] uppercase px-4 border-r border-white/10 last:border-0">
               {p}
             </span>
           ))}

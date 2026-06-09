@@ -59,7 +59,7 @@ export function Method() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-white/35 font-light leading-relaxed text-[15px] md:pb-2"
+            className="text-white/60 font-light leading-relaxed text-base md:pb-2"
           >
             Most coaching works at the conscious level — mindset, habits, strategy. But your results are driven 95% by subconscious programs, nervous system patterns, and unresolved emotional charge. Science + Soul Fusion™ is the only method that addresses all four layers simultaneously, which is why the transformations are permanent rather than temporary.
           </motion.p>
@@ -84,7 +84,7 @@ export function Method() {
                   </span>
                   <div>
                     <h3 className="text-white text-lg font-light mb-3">{p.title}</h3>
-                    <p className="text-white/35 text-sm font-light leading-relaxed">{p.body}</p>
+                    <p className="text-white/60 text-[15px] font-light leading-relaxed">{p.body}</p>
                   </div>
                 </div>
               </SpotlightCard>

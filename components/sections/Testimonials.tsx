@@ -83,7 +83,7 @@ export function Testimonials() {
             </p>
             <div className="mt-8 flex flex-col items-center gap-1">
               <span className="text-white/70 text-sm font-light">{testimonials[active].name}</span>
-              <span className="text-white/28 text-xs tracking-wide">{testimonials[active].role}</span>
+              <span className="text-white/45 text-xs tracking-wide">{testimonials[active].role}</span>
               <span className="mt-2 px-3 py-0.5 rounded-full border border-[#c9a86c]/20 text-[#c9a86c]/50 text-[9px] tracking-widest uppercase">
                 {testimonials[active].arc}
               </span>

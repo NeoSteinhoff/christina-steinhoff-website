@@ -75,7 +75,7 @@ export function Services() {
                 }`}
               >
                 <span className="block text-[9px] tracking-widest text-[#c9a86c]/60 uppercase mb-1">{s.tag}</span>
-                <span className={`text-sm font-light transition-colors ${active === i ? "text-[#1c160e]" : "text-[#1c160e]/45"}`}>
+                <span className={`text-sm font-light transition-colors ${active === i ? "text-[#1c160e]" : "text-[#1c160e]/65"}`}>
                   {s.title}
                 </span>
               </motion.button>
@@ -99,7 +99,7 @@ export function Services() {
                 >
                   {services[active].title}
                 </h3>
-                <p className="text-[#1c160e]/50 font-light leading-relaxed text-[15px]">{services[active].body}</p>
+                <p className="text-[#1c160e]/70 font-light leading-relaxed text-base">{services[active].body}</p>
 
                 <div className="mt-8 grid grid-cols-2 gap-3">
                   {services[active].outcomes.map((o) => (
