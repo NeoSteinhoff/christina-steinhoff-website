@@ -1,4 +1,5 @@
 "use client";
+// Metadata is handled in a separate server component — contact form requires "use client"
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/sections/Navbar";

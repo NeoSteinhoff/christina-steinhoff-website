@@ -5,6 +5,8 @@ import "./globals.css";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { CookieBanner } from "@/components/ui/CookieBanner";
 import { PageLoader } from "@/components/ui/PageLoader";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
+import { BackToTop } from "@/components/ui/BackToTop";
 import { SITE } from "@/lib/constants";
 
 const GA_ID = "G-W88WM4W49F";
@@ -105,6 +107,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable} h-full antialiased`}>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://christinasteinhoff.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -119,9 +124,14 @@ export default function RootLayout({
           gtag('js', new Date());
           gtag('config', '${GA_ID}');
         `}</Script>
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[999] focus:px-4 focus:py-2 focus:bg-[#c9a86c] focus:text-[#060606] focus:text-sm focus:rounded-full">
+          Skip to content
+        </a>
+        <ScrollProgress />
         <PageLoader />
         {children}
         <WhatsAppButton />
+        <BackToTop />
         <CookieBanner />
       </body>
     </html>

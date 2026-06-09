@@ -35,7 +35,7 @@ export function About() {
                 alt="Christina Steinhoff"
                 fill
                 className="object-cover object-top"
-                unoptimized
+               
               />
               {/* subtle gold left bar */}
               <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-transparent via-[#c9a86c]/50 to-transparent" />
