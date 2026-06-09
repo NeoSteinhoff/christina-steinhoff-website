@@ -6,7 +6,7 @@ import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { CookieBanner } from "@/components/ui/CookieBanner";
 import { SITE } from "@/lib/constants";
 
-const GA_ID = "G-XXXXXXXXXX"; // Replace with real GA4 ID once Christina creates the account
+const GA_ID = "G-W88WM4W49F";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
