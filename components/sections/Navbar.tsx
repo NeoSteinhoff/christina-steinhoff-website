@@ -19,10 +19,28 @@ export function Navbar() {
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     return scrollY.on("change", (v) => setScrolled(v > 40));
   }, [scrollY]);
+
+  useEffect(() => {
+    const sectionIds = ["about", "method", "services", "testimonials", "contact"];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <motion.nav
@@ -45,15 +63,25 @@ export function Navbar() {
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
-          {links.map((link, i) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-white/40 hover:text-white/75 text-[10px] tracking-[0.3em] uppercase transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          {links.map((link) => {
+            const sectionId = link.href.replace("#", "");
+            const isActive = activeSection === sectionId;
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "text-[10px] tracking-[0.3em] uppercase transition-colors relative",
+                  isActive ? "text-[#c9a86c]" : "text-white/40 hover:text-white/75"
+                )}
+              >
+                {link.label}
+                {isActive && (
+                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#c9a86c]" />
+                )}
+              </a>
+            );
+          })}
           <a
             href={CALENDLY}
             target="_blank"

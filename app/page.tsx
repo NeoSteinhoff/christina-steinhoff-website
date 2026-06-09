@@ -8,6 +8,7 @@ import { Process } from "@/components/sections/Process";
 import { CTA } from "@/components/sections/CTA";
 import { Footer } from "@/components/sections/Footer";
 import { InfiniteScrollBanner } from "@/components/ui/InfiniteScroll";
+import { NewsletterSection } from "@/components/sections/NewsletterSection";
 
 const bannerItems = [
   "Science + Soul Fusion™",
@@ -31,6 +32,7 @@ export default function Home() {
       <Testimonials />
       <Process />
       <CTA />
+      <NewsletterSection />
       <Footer />
     </main>
   );

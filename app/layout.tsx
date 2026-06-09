@@ -7,6 +7,10 @@ import { CookieBanner } from "@/components/ui/CookieBanner";
 import { PageLoader } from "@/components/ui/PageLoader";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { BackToTop } from "@/components/ui/BackToTop";
+import { ExitIntent } from "@/components/ui/ExitIntent";
+import { NewsletterPopup } from "@/components/ui/NewsletterPopup";
+
+const CLARITY_ID = "XXXXXXXXXX"; // Replace with real Clarity ID
 import { SITE } from "@/lib/constants";
 
 const GA_ID = "G-W88WM4W49F";
@@ -116,6 +120,10 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-[#060606]">
+        {/* Microsoft Clarity heatmaps */}
+        <Script id="clarity" strategy="afterInteractive">{`
+          (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${CLARITY_ID}");
+        `}</Script>
         {/* Google Analytics */}
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
         <Script id="ga" strategy="afterInteractive">{`
@@ -132,6 +140,8 @@ export default function RootLayout({
         {children}
         <WhatsAppButton />
         <BackToTop />
+        <ExitIntent />
+        <NewsletterPopup />
         <CookieBanner />
       </body>
     </html>

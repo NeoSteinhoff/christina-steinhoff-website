@@ -1,12 +1,13 @@
 "use client";
-// Metadata is handled in a separate server component — contact form requires "use client"
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
+import { CalendlyEmbed } from "@/components/ui/CalendlyEmbed";
 import { SITE, SOCIAL, CALENDLY } from "@/lib/constants";
 
 export default function ContactPage() {
+  const [tab, setTab] = useState<"form" | "book">("book");
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -41,13 +42,30 @@ export default function ContactPage() {
               style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}>
             Let's <em className="text-[#c9a86c]">connect</em>
           </h1>
-          <p className="text-white/40 font-light">
+          <p className="text-white/40 font-light mb-8">
             Reach out directly, or book a complimentary discovery call below.
           </p>
+          {/* Tab switcher */}
+          <div className="inline-flex bg-white/5 rounded-full p-1 gap-1">
+            {(["book", "form"] as const).map((t) => (
+              <button key={t} onClick={() => setTab(t)}
+                className={`px-6 py-2 rounded-full text-[10px] tracking-[0.25em] uppercase transition-all ${tab === t ? "bg-[#c9a86c] text-[#060606] font-medium" : "text-white/40 hover:text-white/70"}`}>
+                {t === "book" ? "Book a Call" : "Send a Message"}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 py-20 grid md:grid-cols-[1fr_1.4fr] gap-14">
+      {/* Calendly embed */}
+      {tab === "book" && (
+        <div className="max-w-4xl mx-auto px-6 pb-20">
+          <CalendlyEmbed />
+        </div>
+      )}
+
+      {tab === "form" && (
+      <div className="max-w-5xl mx-auto px-6 py-4 pb-20 grid md:grid-cols-[1fr_1.4fr] gap-14">
 
         {/* Left — contact info */}
         <div>
@@ -190,6 +208,7 @@ export default function ContactPage() {
           )}
         </div>
       </div>
+      )}
 
       <Footer />
     </div>
