@@ -7,13 +7,16 @@ import { cn } from "@/lib/utils";
 
 
 const links = [
-  { label: "About", href: "#about" },
-  { label: "Method", href: "#method" },
-  { label: "Services", href: "#services" },
+  { label: "About", href: "/#about" },
+  { label: "Method", href: "/#method" },
+  { label: "Services", href: "/#services" },
+  { label: "Executive", href: "/executive-coaching-dubai" },
+  { label: "Workshops", href: "/group-workshop" },
   { label: "Blog", href: "/blog" },
-  { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];
+
+const mobileOnlyLinks = [{ label: "FAQ", href: "/faq" }];
 
 export function Navbar() {
   const { scrollY } = useScroll();
@@ -54,7 +57,7 @@ export function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a
-          href="#"
+          href="/"
           className="text-[#c9a86c] font-light tracking-[0.2em] text-xs uppercase"
           style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
         >
@@ -64,7 +67,7 @@ export function Navbar() {
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => {
-            const sectionId = link.href.replace("#", "");
+            const sectionId = link.href.startsWith("/#") ? link.href.slice(2) : link.href;
             const isActive = activeSection === sectionId;
             return (
               <a
@@ -113,7 +116,7 @@ export function Navbar() {
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden bg-[#060606]/96 backdrop-blur border-t border-white/5 px-6 py-6 flex flex-col gap-4"
         >
-          {links.map((link) => (
+          {[...links, ...mobileOnlyLinks].map((link) => (
             <a
               key={link.href}
               href={link.href}

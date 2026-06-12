@@ -3,7 +3,13 @@ import { CALENDLY } from "@/lib/constants";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-const services = [
+const services: {
+  tag: string;
+  title: string;
+  body: string;
+  outcomes: string[];
+  page?: { href: string; label: string };
+}[] = [
   {
     tag: "1:1 Private",
     title: "Personal Life Mentorship",
@@ -15,6 +21,7 @@ const services = [
     title: "High Performance Coaching",
     body: "Built for leaders who are performing at the top of their field but running on fumes. Most high performers are operating at 60% of their real capacity because stress, unresolved pressure, and misalignment are draining the other 40%. This programme restores full neurological and emotional capacity — so you lead with clarity, make better decisions, and achieve more by doing less from a place of force.",
     outcomes: ["Burnout recovery & prevention", "Executive decision clarity", "Authentic leadership presence", "Sustainable peak performance"],
+    page: { href: "/executive-coaching-dubai", label: "Explore executive coaching" },
   },
   {
     tag: "Couples & Individuals",
@@ -28,10 +35,18 @@ const services = [
     body: "For leaders who want years of transformation in days. A fully private, fully bespoke multi-day experience in Dubai or your preferred location worldwide. You arrive at a carefully curated environment, with nothing to manage but your own evolution. This is the most intensive work Christina offers — and the results match the depth of the experience. Limited to a handful of clients per year.",
     outcomes: ["Full-immersion transformation", "Rapid subconscious reprogramming", "Luxury private setting", "Complete life & leadership audit"],
   },
+  {
+    tag: "Group · Women",
+    title: "UnleashHER Potential™",
+    body: "Christina's signature monthly group coaching workshop for ambitious women in Dubai. Entrepreneurs, leaders, creatives, and women in transition come together to work on confidence, emotional resilience, business clarity, and subconscious transformation — in a supportive community where personal growth meets business brilliance. No previous coaching experience required.",
+    outcomes: ["Confidence & self-worth", "Emotional resilience", "Business & leadership clarity", "Community of ambitious women"],
+    page: { href: "/group-workshop", label: "Explore the workshop" },
+  },
 ];
 
 export function Services() {
   const [active, setActive] = useState(0);
+  const current = services[active];
 
   return (
     <section id="services" className="bg-[#FAF5ED] py-32">
@@ -45,7 +60,7 @@ export function Services() {
             className="flex items-center gap-3 mb-6"
           >
             <span className="h-px w-7 bg-[#c9a86c]/40" />
-            <span className="text-[#c9a86c]/70 text-[10px] tracking-[0.45em] uppercase">Private Programmes</span>
+            <span className="text-[#c9a86c]/70 text-[10px] tracking-[0.45em] uppercase">Coaching Programmes</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -92,17 +107,17 @@ export function Services() {
               className="rounded-2xl border border-[#1c160e]/8 bg-white p-10 flex flex-col justify-between min-h-[380px]"
             >
               <div>
-                <span className="text-[9px] tracking-widest text-[#c9a86c]/60 uppercase">{services[active].tag}</span>
+                <span className="text-[9px] tracking-widest text-[#c9a86c]/60 uppercase">{current.tag}</span>
                 <h3
                   className="text-3xl font-light text-[#1c160e] mt-2 mb-6"
                   style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
                 >
-                  {services[active].title}
+                  {current.title}
                 </h3>
-                <p className="text-[#1c160e]/70 font-light leading-relaxed text-base">{services[active].body}</p>
+                <p className="text-[#1c160e]/70 font-light leading-relaxed text-base">{current.body}</p>
 
                 <div className="mt-8 grid grid-cols-2 gap-3">
-                  {services[active].outcomes.map((o) => (
+                  {current.outcomes.map((o) => (
                     <div key={o} className="flex items-center gap-2.5">
                       <span className="w-1 h-1 rounded-full bg-[#c9a86c]" />
                       <span className="text-[#1c160e]/40 text-sm">{o}</span>
@@ -111,14 +126,24 @@ export function Services() {
                 </div>
               </div>
 
-              <a
-                href={CALENDLY}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-10 inline-flex items-center gap-2 text-[#c9a86c] text-[11px] tracking-[0.25em] uppercase hover:gap-4 transition-all"
-              >
-                Book a discovery call <span>→</span>
-              </a>
+              <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3">
+                <a
+                  href={CALENDLY}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[#c9a86c] text-[11px] tracking-[0.25em] uppercase hover:gap-4 transition-all"
+                >
+                  Book a discovery call <span>→</span>
+                </a>
+                {current.page && (
+                  <a
+                    href={current.page.href}
+                    className="inline-flex items-center gap-2 text-[#1c160e]/55 hover:text-[#1c160e] text-[11px] tracking-[0.25em] uppercase transition-colors"
+                  >
+                    {current.page.label} <span>→</span>
+                  </a>
+                )}
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>

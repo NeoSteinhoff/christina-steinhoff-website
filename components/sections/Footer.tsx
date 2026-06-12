@@ -39,10 +39,11 @@ export function Footer() {
             <h4 className="text-white/40 text-[9px] tracking-[0.4em] uppercase mb-5">Services</h4>
             <ul className="space-y-3">
               {[
-                ["Personal Life Mentorship", "#services"],
-                ["High Performance Coaching", "#services"],
-                ["Conscious Relationships", "#services"],
-                ["Bespoke Retreat", "#services"],
+                ["Personal Life Mentorship", "/#services"],
+                ["Executive Coaching Dubai", "/executive-coaching-dubai"],
+                ["UnleashHER™ Women's Workshop", "/group-workshop"],
+                ["Conscious Relationships", "/#services"],
+                ["Bespoke Retreat", "/#services"],
               ].map(([label, href]) => (
                 <li key={label}>
                   <a href={href} className="text-white/60 hover:text-[#c9a86c] text-sm font-light transition-colors">
@@ -58,11 +59,11 @@ export function Footer() {
             <h4 className="text-white/40 text-[9px] tracking-[0.4em] uppercase mb-5">Explore</h4>
             <ul className="space-y-3">
               {[
-                ["About", "#about"],
-                ["The Method", "#method"],
+                ["About", "/#about"],
+                ["The Method", "/#method"],
                 ["Blog", "/blog"],
                 ["FAQ", "/faq"],
-                ["Contact", "#contact"],
+                ["Contact", "/contact"],
               ].map(([label, href]) => (
                 <li key={label}>
                   <a href={href} className="text-white/60 hover:text-[#c9a86c] text-sm font-light transition-colors">
