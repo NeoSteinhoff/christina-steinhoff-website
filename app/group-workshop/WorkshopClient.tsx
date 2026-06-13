@@ -4,7 +4,10 @@ import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { NewsletterSection } from "@/components/sections/NewsletterSection";
 import { FAQAccordion, FAQItem } from "@/components/ui/FAQAccordion";
+import { GoldButton } from "@/components/ui/GoldButton";
 import { CALENDLY, SITE } from "@/lib/constants";
+
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 const struggles = [
   "Self-doubt and imposter syndrome",
@@ -72,42 +75,42 @@ const outcomes = [
 
 export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
   return (
-    <div className="bg-[#FAF5ED] min-h-screen">
+    <div className="bg-[#f7f1e7] min-h-screen">
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative bg-[#060606] pt-40 pb-28 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_30%,rgba(201,168,108,0.08),transparent)]" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
+      {/* Hero — centered statement */}
+      <section className="relative overflow-hidden bg-[#060606] px-6 pb-28 pt-40">
+        <div className="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[760px] -translate-x-1/2 rounded-full bg-[#c9a86c]/[0.09] blur-[150px]" />
+        <div className="relative z-10 mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center justify-center gap-4 mb-8"
+            transition={{ ease: EASE }}
+            className="mb-8 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5"
           >
-            <span className="h-px w-10 bg-[#c9a86c]/30" />
-            <span className="text-[#c9a86c]/60 text-[11px] tracking-[0.45em] uppercase font-light">
-              Group Coaching for Women · Dubai
-            </span>
-            <span className="h-px w-10 bg-[#c9a86c]/30" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#c9a86c]" />
+            <span className="text-[10px] uppercase tracking-[0.28em] text-white/60">Group Coaching for Women · Dubai</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-light text-white leading-[1.05] mb-6"
-            style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+            transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
+            className="display text-white"
           >
-            Empower. Evolve.
-            <br />
-            <em className="text-[#c9a86c]">Excel — together.</em>
+            <span className="block text-[clamp(2.5rem,6vw,5rem)] font-[420] leading-[1.0] text-white/90">
+              Empower. Evolve.
+            </span>
+            <span className="block text-[clamp(2.9rem,7.5vw,7rem)] font-[680] leading-[0.94] text-[#c9a86c]">
+              Excel — together.
+            </span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-[#c9a86c]/80 text-sm tracking-[0.2em] uppercase mb-8"
+            transition={{ duration: 0.7, delay: 0.35, ease: EASE }}
+            className="mt-7 text-sm uppercase tracking-[0.2em] text-[#c9a86c]/80"
           >
             UnleashHER Potential™ — Christina&apos;s signature monthly workshop
           </motion.p>
@@ -115,42 +118,35 @@ export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="text-white/70 text-lg font-light max-w-2xl mx-auto leading-relaxed mb-12"
+            transition={{ duration: 0.7, delay: 0.45, ease: EASE }}
+            className="mx-auto mt-6 max-w-2xl text-lg font-light leading-relaxed text-white/65"
           >
             Success means more when you don&apos;t have to achieve it alone. A transformational
             group coaching workshop for ambitious women in Dubai — where personal growth meets
-            business brilliance, and deep internal change meets external success.
+            business brilliance.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.55 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-5"
+            transition={{ duration: 0.6, delay: 0.6, ease: EASE }}
+            className="mt-11 flex flex-col items-center justify-center gap-5 sm:flex-row"
           >
-            <a
-              href={CALENDLY}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-9 py-4 bg-[#c9a86c] text-[#060606] text-[11px] tracking-[0.2em] uppercase font-medium rounded-full hover:bg-[#d4b880] transition-colors"
-            >
-              Reserve Your Place
-            </a>
+            <GoldButton href={CALENDLY}>Reserve your place</GoldButton>
             <a
               href={SITE.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/60 hover:text-white text-[11px] tracking-[0.25em] uppercase transition-colors"
+              className="link-underline text-[12px] uppercase tracking-[0.2em] text-white/55 transition-colors hover:text-white"
             >
-              Ask a question on WhatsApp →
+              Ask on WhatsApp
             </a>
           </motion.div>
         </div>
       </section>
 
       {/* Silent struggles */}
-      <section className="bg-[#FAF5ED] py-28 px-6">
+      <section className="bg-[#f7f1e7] py-28 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <motion.div
@@ -279,7 +275,7 @@ export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
       </section>
 
       {/* Who it's for */}
-      <section className="bg-[#FAF5ED] py-28 px-6">
+      <section className="bg-[#f7f1e7] py-28 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-14 items-start">
             <div>
@@ -362,7 +358,7 @@ export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#FAF5ED] pb-28 px-6">
+      <section className="bg-[#f7f1e7] pb-28 px-6">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-14">
             <motion.div
@@ -419,22 +415,16 @@ export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.25 }}
+            className="flex justify-center"
           >
-            <a
-              href={CALENDLY}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-10 py-4 bg-[#c9a86c] text-[#060606] text-[11px] tracking-[0.2em] uppercase font-medium rounded-full hover:bg-[#d4b880] transition-colors"
-            >
-              Reserve Your Place
-            </a>
+            <GoldButton href={CALENDLY}>Reserve your place</GoldButton>
           </motion.div>
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="mt-10 text-white/40 text-sm font-light"
+            className="mt-10 text-white/55 text-sm font-light"
           >
             Looking for deeper one-to-one transformation?{" "}
             <a href="/#services" className="text-[#c9a86c]/80 hover:text-[#c9a86c] underline underline-offset-4 transition-colors">

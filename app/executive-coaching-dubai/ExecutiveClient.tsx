@@ -5,7 +5,10 @@ import { Footer } from "@/components/sections/Footer";
 import { NewsletterSection } from "@/components/sections/NewsletterSection";
 import { FAQAccordion, FAQItem } from "@/components/ui/FAQAccordion";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
+import { GoldButton } from "@/components/ui/GoldButton";
 import { CALENDLY, SITE } from "@/lib/constants";
+
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 const struggles = [
   "Burnout and chronic stress",
@@ -75,76 +78,71 @@ const outcomes = [
 
 export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
   return (
-    <div className="bg-[#FAF5ED] min-h-screen">
+    <div className="bg-[#f7f1e7] min-h-screen">
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative bg-[#060606] pt-40 pb-28 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_30%,rgba(201,168,108,0.07),transparent)]" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center justify-center gap-4 mb-8"
-          >
-            <span className="h-px w-10 bg-[#c9a86c]/30" />
-            <span className="text-[#c9a86c]/60 text-[11px] tracking-[0.45em] uppercase font-light">
-              Executive Coaching · Dubai & UAE
-            </span>
-            <span className="h-px w-10 bg-[#c9a86c]/30" />
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-light text-white leading-[1.05] mb-8"
-            style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
-          >
-            Lead with clarity.
-            <br />
-            <em className="text-[#c9a86c]">Carry less.</em>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-white/70 text-lg font-light max-w-2xl mx-auto leading-relaxed mb-12"
-          >
-            Executive coaching in Dubai for CEOs, founders, and senior leaders who carry success
-            without truly enjoying it. Christina rebuilds leadership from the inside out — clarity,
-            emotional intelligence, and sustainable high performance without the burnout.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.45 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-5"
-          >
-            <a
-              href={CALENDLY}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-9 py-4 bg-[#c9a86c] text-[#060606] text-[11px] tracking-[0.2em] uppercase font-medium rounded-full hover:bg-[#d4b880] transition-colors"
+      {/* Hero — editorial, left-aligned (distinct from the homepage & workshop heroes) */}
+      <section className="relative min-h-[88vh] overflow-hidden bg-[#060606] px-6 pb-24 pt-40 flex items-center">
+        <div className="pointer-events-none absolute -top-1/4 right-0 h-[700px] w-[700px] rounded-full bg-[#c9a86c]/[0.07] blur-[160px]" />
+        <div className="relative z-10 mx-auto grid w-full max-w-6xl items-end gap-10 md:grid-cols-12">
+          <div className="md:col-span-8">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: EASE }}
+              className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5"
             >
-              Book a Free Discovery Call
-            </a>
-            <a
-              href={SITE.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/60 hover:text-white text-[11px] tracking-[0.25em] uppercase transition-colors"
+              <span className="h-1.5 w-1.5 rounded-full bg-[#c9a86c]" />
+              <span className="text-[10px] uppercase tracking-[0.28em] text-white/60">Executive Coaching · Dubai &amp; UAE</span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
+              className="display text-white"
             >
-              Message on WhatsApp →
-            </a>
-          </motion.div>
+              <span className="block text-[clamp(2.6rem,6vw,5.5rem)] font-[420] leading-[1.0] text-white/90">
+                Lead with clarity.
+              </span>
+              <span className="block text-[clamp(3rem,8vw,8rem)] font-[680] leading-[0.92] text-[#c9a86c]">
+                Carry less.
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.35, ease: EASE }}
+              className="measure mt-8 text-lg font-light leading-relaxed text-white/65"
+            >
+              For CEOs, founders, and senior leaders in Dubai who carry success without truly
+              enjoying it. Christina rebuilds leadership from the inside out — clarity, emotional
+              intelligence, and high performance that doesn&apos;t cost you the burnout.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5, ease: EASE }}
+              className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4"
+            >
+              <GoldButton href={CALENDLY}>Book a discovery call</GoldButton>
+              <a
+                href={SITE.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-underline text-[12px] uppercase tracking-[0.2em] text-white/55 transition-colors hover:text-white"
+              >
+                Message on WhatsApp
+              </a>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* The hidden weight */}
-      <section className="bg-[#FAF5ED] py-28 px-6">
+      <section className="bg-[#f7f1e7] py-28 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-14 items-start">
             <div>
@@ -275,7 +273,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
       </section>
 
       {/* Focus areas */}
-      <section className="bg-[#FAF5ED] py-28 px-6">
+      <section className="bg-[#f7f1e7] py-28 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="mb-14">
             <motion.div
@@ -419,7 +417,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#FAF5ED] py-28 px-6">
+      <section className="bg-[#f7f1e7] py-28 px-6">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-14">
             <motion.div
@@ -476,22 +474,16 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.25 }}
+            className="flex justify-center"
           >
-            <a
-              href={CALENDLY}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-10 py-4 bg-[#c9a86c] text-[#060606] text-[11px] tracking-[0.2em] uppercase font-medium rounded-full hover:bg-[#d4b880] transition-colors"
-            >
-              Book Your Discovery Call
-            </a>
+            <GoldButton href={CALENDLY}>Book a discovery call</GoldButton>
           </motion.div>
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="mt-10 text-white/40 text-sm font-light"
+            className="mt-10 text-white/55 text-sm font-light"
           >
             Leading a team rather than yourself?{" "}
             <a href="/group-workshop" className="text-[#c9a86c]/80 hover:text-[#c9a86c] underline underline-offset-4 transition-colors">
