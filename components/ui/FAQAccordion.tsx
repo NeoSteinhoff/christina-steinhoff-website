@@ -17,7 +17,7 @@ export function FAQAccordion({ items }: { items: FAQItem[] }) {
           >
             <span
               className="text-[#1c160e] font-light text-[17px] leading-snug"
-              style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+              style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
               {faq.q}
             </span>

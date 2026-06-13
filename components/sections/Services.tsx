@@ -67,7 +67,7 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-light text-[#1c160e] leading-tight max-w-xl"
-            style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+            style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
             Every programme is<br /><em className="text-[#c9a86c]">built around you</em>
           </motion.h2>
@@ -110,7 +110,7 @@ export function Services() {
                 <span className="text-[9px] tracking-widest text-[#c9a86c]/60 uppercase">{current.tag}</span>
                 <h3
                   className="text-3xl font-light text-[#1c160e] mt-2 mb-6"
-                  style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+                  style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
                 >
                   {current.title}
                 </h3>
@@ -120,7 +120,7 @@ export function Services() {
                   {current.outcomes.map((o) => (
                     <div key={o} className="flex items-center gap-2.5">
                       <span className="w-1 h-1 rounded-full bg-[#c9a86c]" />
-                      <span className="text-[#1c160e]/40 text-sm">{o}</span>
+                      <span className="text-[#1c160e]/65 text-sm">{o}</span>
                     </div>
                   ))}
                 </div>

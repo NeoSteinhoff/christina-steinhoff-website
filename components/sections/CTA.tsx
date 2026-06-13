@@ -1,95 +1,53 @@
 "use client";
 import { CALENDLY, SITE } from "@/lib/constants";
-import { motion } from "framer-motion";
+import { Reveal } from "@/components/ui/Reveal";
+import { GoldButton } from "@/components/ui/GoldButton";
 
 export function CTA() {
   return (
-    <section id="contact" className="bg-[#060606] py-40 overflow-hidden relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(201,168,108,0.06),transparent)]" />
-      <div
-        className="absolute inset-0 opacity-[0.025]"
-        style={{
-          backgroundImage: "linear-gradient(#c9a86c 1px,transparent 1px),linear-gradient(90deg,#c9a86c 1px,transparent 1px)",
-          backgroundSize: "72px 72px",
-        }}
-      />
+    <section id="contact" className="relative overflow-hidden bg-[#060606] py-32 md:py-44">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(201,168,108,0.07),transparent)]" />
 
-      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex items-center justify-center gap-4 mb-8"
-        >
-          <span className="h-px w-7 bg-[#c9a86c]/30" />
-          <span className="text-[#c9a86c]/55 text-[10px] tracking-[0.45em] uppercase">Work With Christina</span>
-          <span className="h-px w-7 bg-[#c9a86c]/30" />
-        </motion.div>
+      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+        <Reveal blur={false}>
+          <span className="text-[10px] uppercase tracking-[0.4em] text-[#c9a86c]/70">Work with Christina</span>
+        </Reveal>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-5xl md:text-7xl font-light text-white leading-tight mb-8"
-          style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
-        >
-          The version of you
-          <br />
-          <em className="text-[#c9a86c]">waiting to emerge</em>
-        </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="text-white/60 text-base font-light max-w-md mx-auto leading-relaxed mb-4"
-        >
-          Begin with a complimentary 30-minute discovery call. Christina personally reviews every application — she works with a select number of clients at any one time to ensure complete dedication to your transformation.
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.25 }}
-          className="text-white/20 text-xs tracking-widest uppercase mb-10"
-        >
-          Currently accepting new clients in Dubai & globally
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-5"
-        >
-          <a
-            href={CALENDLY}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-10 py-4 bg-[#c9a86c] text-[#060606] text-[11px] tracking-[0.2em] uppercase font-medium rounded-full hover:bg-[#d4b880] transition-colors"
+        <Reveal delay={0.05}>
+          <h2
+            className="mt-6 text-[clamp(2.8rem,7vw,6.5rem)] font-light leading-[0.98] text-white"
+            style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
-            Book Your Discovery Call
-          </a>
-          <a
-            href={`mailto:${SITE.email}`}
-            className="text-white/30 hover:text-white/55 text-[11px] tracking-[0.2em] uppercase transition-colors"
-          >
-            {SITE.email}
-          </a>
-        </motion.div>
+            The version of you
+            <br />
+            <em className="font-medium text-[#c9a86c]">waiting to emerge</em>
+          </h2>
+        </Reveal>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="mt-8 text-white/35 text-xs"
-        >
-          Dubai Investment Park · UAE · Working globally across three continents
-        </motion.p>
+        <Reveal delay={0.12} blur={false}>
+          <p className="measure mx-auto mt-8 text-base font-light leading-relaxed text-white/65">
+            It starts with a complimentary 30-minute call. Christina reviews every application
+            personally and takes a small number of clients at a time — so the work goes deep.
+          </p>
+        </Reveal>
+
+        <Reveal delay={0.2} blur={false}>
+          <div className="mt-11 flex flex-col items-center justify-center gap-5 sm:flex-row">
+            <GoldButton href={CALENDLY}>Book a discovery call</GoldButton>
+            <a
+              href={`mailto:${SITE.email}`}
+              className="link-underline text-[12px] uppercase tracking-[0.2em] text-white/50 transition-colors hover:text-white"
+            >
+              {SITE.email}
+            </a>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.3} blur={false}>
+          <p className="mt-10 text-[11px] uppercase tracking-[0.18em] text-white/35">
+            Dubai Investment Park · Working with clients worldwide
+          </p>
+        </Reveal>
       </div>
     </section>
   );

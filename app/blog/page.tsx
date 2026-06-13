@@ -1,118 +1,112 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
-import { BLOG_POSTS, CALENDLY } from "@/lib/constants";
+import { NewsletterSection } from "@/components/sections/NewsletterSection";
+import { ARTICLES } from "@/lib/blog-content";
+import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Blog — Insights on Mindset, Leadership & Transformation",
+  title: "Journal — Mindset, Neuroscience & Leadership",
   description:
-    "Articles on mindset coaching, neuroscience, executive performance, and conscious living by Christina Steinhoff — Dubai's leading life mentor.",
-  alternates: { canonical: "https://christinasteinhoff.com/blog" },
+    "Essays on mindset, neuroscience, subconscious change, and conscious leadership by Christina Steinhoff — life mentor and executive coach in Dubai.",
+  alternates: { canonical: `${SITE.url}/blog` },
 };
 
+const fmtDate = (iso: string) =>
+  new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+
 export default function BlogPage() {
-  const [featured, ...rest] = BLOG_POSTS;
+  const [featured, ...rest] = ARTICLES;
 
   return (
-    <div className="bg-[#FAF5ED] min-h-screen">
+    <div className="min-h-screen bg-[#f7f1e7]">
       <Navbar />
 
       {/* Hero */}
-      <div className="bg-[#060606] pt-32 pb-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="h-px w-7 bg-[#c9a86c]/30" />
-            <span className="text-[#c9a86c]/60 text-[10px] tracking-[0.45em] uppercase">Insights</span>
-            <span className="h-px w-7 bg-[#c9a86c]/30" />
-          </div>
-          <h1 className="text-5xl md:text-7xl font-light text-white leading-tight mb-6"
-              style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}>
-            Ideas worth <em className="text-[#c9a86c]">living by</em>
+      <div className="relative overflow-hidden bg-[#060606] px-6 pb-20 pt-36">
+        <div className="pointer-events-none absolute left-1/2 top-0 h-[360px] w-[600px] -translate-x-1/2 rounded-full bg-[#c9a86c]/[0.06] blur-[140px]" />
+        <div className="relative z-10 mx-auto max-w-4xl">
+          <span className="text-[10px] uppercase tracking-[0.4em] text-[#c9a86c]/75">The Journal</span>
+          <h1
+            className="mt-5 text-[clamp(2.6rem,6vw,4.75rem)] font-light leading-[1.0] text-white"
+            style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+          >
+            Ideas worth <em className="font-medium text-[#c9a86c]">living by</em>
           </h1>
-          <p className="text-white/40 font-light max-w-lg mx-auto">
-            Insights on mindset, neuroscience, conscious leadership, and the science of lasting transformation.
+          <p className="mt-5 max-w-xl text-base font-light leading-relaxed text-white/60">
+            On mindset, neuroscience, the subconscious, and the inner work behind outer success.
           </p>
         </div>
       </div>
 
-      {/* Featured post */}
-      <div className="max-w-6xl mx-auto px-6 -mt-8 mb-16">
-        <a href={featured.url} target="_blank" rel="noopener noreferrer"
-           className="group block rounded-2xl overflow-hidden bg-white border border-black/5 shadow-sm hover:shadow-md transition-shadow">
-          <div className="grid md:grid-cols-2">
-            <div className="relative aspect-[4/3] md:aspect-auto bg-[#e8dfd3]">
-              <Image src={featured.image} alt={featured.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+      {/* Featured */}
+      <div className="mx-auto -mt-10 max-w-6xl px-6">
+        <Link href={`/blog/${featured.slug}`} className="group block">
+          <div className="grid overflow-hidden rounded-3xl border border-[#1c160e]/8 bg-white md:grid-cols-2">
+            <div className="relative aspect-[16/11] overflow-hidden bg-[#e8dfd3] md:aspect-auto">
+              <Image
+                src={featured.image}
+                alt={featured.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                priority
+              />
             </div>
-            <div className="p-10 md:p-14 flex flex-col justify-center">
-              <span className="inline-block mb-4 px-3 py-1 rounded-full text-[10px] tracking-widest uppercase border border-[#c9a86c]/30 text-[#c9a86c]">
-                {featured.category} · Featured
-              </span>
-              <h2 className="text-2xl md:text-3xl font-light text-[#1c160e] leading-tight mb-4"
-                  style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}>
+            <div className="flex flex-col justify-center p-9 md:p-12">
+              <div className="mb-4 flex items-center gap-3 text-[10px] uppercase tracking-[0.18em]">
+                <span className="rounded-full bg-[#c9a86c]/12 px-3 py-1 text-[#a8884e]">{featured.category}</span>
+                <span className="text-[#1c160e]/40">{featured.readingTime}</span>
+              </div>
+              <h2
+                className="text-3xl font-light leading-tight text-[#1c160e] md:text-4xl"
+                style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+              >
                 {featured.title}
               </h2>
-              <p className="text-[#1c160e]/50 font-light leading-relaxed mb-6 text-sm">{featured.excerpt}</p>
-              <div className="flex items-center justify-between">
-                <span className="text-[#1c160e]/35 text-xs">{featured.date}</span>
-                <span className="text-[#c9a86c] text-xs tracking-widest uppercase group-hover:gap-4 transition-all">
-                  Read article →
-                </span>
-              </div>
+              <p className="mt-4 text-[15px] font-light leading-relaxed text-[#1c160e]/65">{featured.dek}</p>
+              <span className="mt-6 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[#a8884e] transition-all group-hover:gap-3.5">
+                Read the essay
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              </span>
             </div>
           </div>
-        </a>
+        </Link>
       </div>
 
       {/* Grid */}
-      <div className="max-w-6xl mx-auto px-6 mb-24">
-        <div className="grid md:grid-cols-3 gap-6">
+      <div className="mx-auto max-w-6xl px-6 py-20">
+        <div className="grid gap-x-7 gap-y-12 md:grid-cols-3">
           {rest.map((post) => (
-            <a key={post.slug} href={post.url} target="_blank" rel="noopener noreferrer"
-               className="group bg-white rounded-2xl overflow-hidden border border-black/5 hover:shadow-md transition-shadow">
-              <div className="relative aspect-[16/10] bg-[#e8dfd3] overflow-hidden">
-                <Image src={post.image} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
+              <div className="relative mb-5 aspect-[16/11] overflow-hidden rounded-2xl bg-[#e8dfd3]">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
               </div>
-              <div className="p-7">
-                <span className="inline-block mb-3 px-2.5 py-0.5 rounded-full text-[9px] tracking-widest uppercase border border-[#c9a86c]/25 text-[#c9a86c]/70">
-                  {post.category}
-                </span>
-                <h3 className="text-[#1c160e] font-light leading-snug mb-3 text-lg"
-                    style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}>
-                  {post.title}
-                </h3>
-                <p className="text-[#1c160e]/45 text-sm font-light leading-relaxed mb-4 line-clamp-2">{post.excerpt}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-[#1c160e]/30 text-xs">{post.date}</span>
-                  <span className="text-[#c9a86c]/70 text-xs tracking-widest uppercase">Read →</span>
-                </div>
+              <div className="mb-2.5 flex items-center gap-3 text-[10px] uppercase tracking-[0.18em]">
+                <span className="text-[#a8884e]">{post.category}</span>
+                <span className="text-[#1c160e]/35">{fmtDate(post.date)}</span>
               </div>
-            </a>
+              <h3
+                className="text-xl font-light leading-snug text-[#1c160e] transition-colors group-hover:text-[#a8884e]"
+                style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+              >
+                {post.title}
+              </h3>
+              <p className="mt-2.5 text-sm font-light leading-relaxed text-[#1c160e]/60">{post.dek}</p>
+            </Link>
           ))}
         </div>
-
-        {/* Load more — links to original blog */}
-        <div className="text-center mt-14">
-          <a href="https://christinasteinhoff.com/blog/" target="_blank" rel="noopener noreferrer"
-             className="inline-flex items-center gap-2 px-8 py-3.5 border border-[#1c160e]/15 text-[#1c160e]/60 text-[11px] tracking-widest uppercase rounded-full hover:border-[#c9a86c]/40 hover:text-[#c9a86c] transition-all">
-            View all articles →
-          </a>
-        </div>
       </div>
 
-      {/* CTA strip */}
-      <div className="bg-[#060606] py-20 px-6 text-center">
-        <p className="text-white/40 text-sm font-light mb-4">Ready to go deeper than articles?</p>
-        <h2 className="text-3xl font-light text-white mb-8"
-            style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}>
-          Book a complimentary <em className="text-[#c9a86c]">discovery session</em>
-        </h2>
-        <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
-           className="inline-flex px-9 py-4 bg-[#c9a86c] text-[#060606] text-[11px] tracking-[0.2em] uppercase font-medium rounded-full hover:bg-[#d4b880] transition-colors">
-          Book a Discovery Call
-        </a>
-      </div>
-
+      <NewsletterSection />
       <Footer />
     </div>
   );

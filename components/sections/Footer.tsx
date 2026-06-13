@@ -9,22 +9,25 @@ export function Footer() {
           {/* Brand */}
           <div>
             <p className="text-[#c9a86c] text-sm tracking-[0.2em] uppercase mb-4 font-light"
-               style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}>
+               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
               Christina Steinhoff
             </p>
             <p className="text-white/45 text-sm font-light leading-relaxed max-w-xs mb-5">
               Private mentorship for executives and entrepreneurs. Science + Soul Fusion™. Based in Dubai, working globally.
             </p>
             {/* Contact */}
-            <div className="space-y-2 mb-5">
-              <a href={`mailto:${SITE.email}`} className="flex items-center gap-2 text-white/30 hover:text-[#c9a86c] text-xs transition-colors">
-                <span>✉</span> {SITE.email}
+            <div className="space-y-2.5 mb-5">
+              <a href={`mailto:${SITE.email}`} className="flex items-center gap-2.5 text-white/45 hover:text-[#c9a86c] text-xs transition-colors">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                {SITE.email}
               </a>
-              <a href={`tel:${SITE.phone}`} className="flex items-center gap-2 text-white/30 hover:text-[#c9a86c] text-xs transition-colors">
-                <span>☎</span> {SITE.phone}
+              <a href={`tel:${SITE.phone}`} className="flex items-center gap-2.5 text-white/45 hover:text-[#c9a86c] text-xs transition-colors">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden><path d="M3 5a2 2 0 0 1 2-2h2.5a1 1 0 0 1 1 .76l1 4a1 1 0 0 1-.29.95l-1.8 1.6a14 14 0 0 0 6 6l1.6-1.8a1 1 0 0 1 .95-.29l4 1a1 1 0 0 1 .76 1V19a2 2 0 0 1-2 2A16 16 0 0 1 3 5Z"/></svg>
+                {SITE.phone}
               </a>
-              <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/30 hover:text-[#c9a86c] text-xs transition-colors">
-                <span>💬</span> WhatsApp
+              <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 text-white/45 hover:text-[#c9a86c] text-xs transition-colors">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487 2.461 1.062 2.96.85 3.494.798.534-.052 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/></svg>
+                WhatsApp
               </a>
             </div>
             <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
@@ -109,7 +112,8 @@ export function Footer() {
               <li>
                 <a href={`mailto:${SITE.email}`}
                    className="text-white/60 hover:text-[#c9a86c] text-sm font-light transition-colors flex items-center gap-2">
-                  ✉ Email
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                  Email
                 </a>
               </li>
             </ul>
@@ -117,10 +121,10 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-3">
-          <span className="text-white/35 text-xs">© 2026 Christina Steinhoff. All rights reserved. · {SITE.location}</span>
+          <span className="text-white/45 text-xs">© 2026 Christina Steinhoff · {SITE.location}</span>
           <div className="flex gap-6">
-            {[["Privacy Policy", "https://christinasteinhoff.com/privacy-policy/"], ["Terms", "https://christinasteinhoff.com/legal-terms/"]].map(([label, href]) => (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="text-white/35 hover:text-white/60 text-xs transition-colors">
+            {[["Privacy", "/privacy"], ["Terms", "/terms"]].map(([label, href]) => (
+              <a key={label} href={href} className="text-white/45 hover:text-[#c9a86c] text-xs transition-colors">
                 {label}
               </a>
             ))}

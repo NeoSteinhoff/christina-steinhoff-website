@@ -12,25 +12,24 @@ import { NewsletterSection } from "@/components/sections/NewsletterSection";
 
 const bannerItems = [
   "Science + Soul Fusion™",
-  "Neuroscience-Based Coaching",
-  "Executive Mentorship",
-  "Dubai's Elite Life Coach",
-  "NLP & Hypnotherapy",
+  "Neuroscience",
+  "NLP & Clinical Hypnotherapy",
   "Somatic Release",
   "Conscious Leadership",
+  "Executive Mentorship",
 ];
 
 export default function Home() {
   return (
-    <main className="bg-[#060606]">
+    <main id="main" className="bg-[#060606]">
       <Navbar />
       <Hero />
       <InfiniteScrollBanner items={bannerItems} />
       <About />
       <Method />
       <Services />
-      <Testimonials />
       <Process />
+      <Testimonials />
       <CTA />
       <NewsletterSection />
       <Footer />

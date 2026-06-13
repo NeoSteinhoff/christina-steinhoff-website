@@ -28,7 +28,7 @@ export function NewsletterSection() {
           <span className="h-px w-7 bg-[#c9a86c]/30" />
         </div>
         <h2 className="text-4xl md:text-5xl font-light text-[#1c160e] mb-4"
-            style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}>
+            style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
           Wisdom for the <em className="text-[#c9a86c]">high achiever</em>
         </h2>
         <p className="text-[#1c160e]/45 font-light mb-8 leading-relaxed">

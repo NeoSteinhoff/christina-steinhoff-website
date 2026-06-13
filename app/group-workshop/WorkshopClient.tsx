@@ -96,7 +96,7 @@ export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-5xl md:text-7xl font-light text-white leading-[1.05] mb-6"
-            style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+            style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
             Empower. Evolve.
             <br />
@@ -168,7 +168,7 @@ export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-4xl md:text-5xl font-light text-[#1c160e] leading-tight max-w-2xl mx-auto"
-              style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+              style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
               What ambitious women
               <br />
@@ -208,7 +208,7 @@ export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
             className="text-center text-xl md:text-2xl font-light text-[#1c160e]/60 italic max-w-2xl mx-auto mt-14 leading-relaxed"
-            style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+            style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
             "This is not motivation or networking. It is transformational coaching —{" "}
             <span className="text-[#c9a86c] not-italic">deep internal change, real external results."</span>
@@ -236,7 +236,7 @@ export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-4xl md:text-5xl font-light text-white"
-              style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+              style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
               What every workshop <em className="text-[#c9a86c]">includes</em>
             </motion.h2>
@@ -266,7 +266,7 @@ export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
               >
                 <span
                   className="text-[36px] font-light leading-none text-[#c9a86c]/20 block mb-4"
-                  style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+                  style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
                 >
                   {m.n}
                 </span>
@@ -297,7 +297,7 @@ export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="text-4xl font-light text-[#1c160e] leading-tight mb-6"
-                style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+                style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
               >
                 Every woman,
                 <br />
@@ -344,7 +344,7 @@ export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
                 {outcomes.map((o) => (
                   <li key={o} className="flex items-center gap-3">
                     <span className="text-[#c9a86c] text-xs">✦</span>
-                    <span className="text-white/75 text-lg font-light" style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}>
+                    <span className="text-white/75 text-lg font-light" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
                       {o}
                     </span>
                   </li>
@@ -380,7 +380,7 @@ export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-4xl md:text-5xl font-light text-[#1c160e]"
-              style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+              style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
               Before you <em className="text-[#c9a86c]">join</em>
             </motion.h2>
@@ -398,7 +398,7 @@ export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-light text-white leading-tight mb-7"
-            style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+            style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
             Transformation begins the moment
             <br />

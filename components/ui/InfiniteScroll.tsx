@@ -1,24 +1,27 @@
-"use client";
-import { motion } from "framer-motion";
-
+/**
+ * Brand marquee band. CSS-driven (GPU transform), pauses on hover, and is large
+ * enough to read as a statement rather than a notice bar.
+ */
 export function InfiniteScrollBanner({ items }: { items: string[] }) {
+  const row = [...items, ...items];
   return (
-    <div className="relative overflow-hidden py-4 bg-[#d4b483]/5 border-y border-[#d4b483]/10">
-      <motion.div
-        className="flex gap-16 whitespace-nowrap"
-        animate={{ x: [0, -50 + "%"] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-      >
-        {[...items, ...items].map((item, i) => (
-          <span
-            key={i}
-            className="text-[#d4b483]/60 text-xs tracking-[0.3em] uppercase font-light shrink-0"
-          >
-            {item}
-            <span className="mx-8 text-[#d4b483]/30">✦</span>
+    <div className="group relative overflow-hidden border-y border-white/[0.06] bg-[#0a0908] py-7">
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-32 bg-gradient-to-r from-[#0a0908] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-32 bg-gradient-to-l from-[#0a0908] to-transparent" />
+      <div className="flex w-max animate-[cos-marquee_34s_linear_infinite] group-hover:[animation-play-state:paused] motion-reduce:animate-none">
+        {row.map((item, i) => (
+          <span key={i} className="flex items-center whitespace-nowrap">
+            <span
+              className="px-8 text-2xl font-light tracking-tight text-white/70 md:text-3xl"
+              style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+            >
+              {item}
+            </span>
+            <span className="text-[#c9a86c]/40">✦</span>
           </span>
         ))}
-      </motion.div>
+      </div>
+      <style>{`@keyframes cos-marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }`}</style>
     </div>
   );
 }

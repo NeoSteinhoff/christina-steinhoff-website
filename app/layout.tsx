@@ -1,31 +1,31 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
-import Script from "next/script";
+import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
-import { CookieBanner } from "@/components/ui/CookieBanner";
-import { PageLoader } from "@/components/ui/PageLoader";
-import { ScrollProgress } from "@/components/ui/ScrollProgress";
+import { CookieConsent } from "@/components/ui/CookieConsent";
+import { SmoothScroll } from "@/components/ui/SmoothScroll";
+import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import { BackToTop } from "@/components/ui/BackToTop";
-import { ExitIntent } from "@/components/ui/ExitIntent";
-import { NewsletterPopup } from "@/components/ui/NewsletterPopup";
 
-const CLARITY_ID = "x4cstiql2r";
 import { SITE } from "@/lib/constants";
 
 const GA_ID = "G-W88WM4W49F";
+const CLARITY_ID = "x4cstiql2r";
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+// Display serif — high contrast, full weight range (light → black) for editorial impact.
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
   style: ["normal", "italic"],
+  axes: ["opsz"],
+  display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+// Body grotesk — clean, premium, variable.
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -70,20 +70,12 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: "Christina Steinhoff — Life Mentor & Executive Coach Dubai",
     description: SITE.description,
-    images: [
-      {
-        url: "/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: "Christina Steinhoff — Life Mentor Dubai",
-      },
-    ],
+    // og:image is generated automatically by app/opengraph-image.tsx (PNG)
   },
   twitter: {
     card: "summary_large_image",
     title: "Christina Steinhoff — Life Mentor & Executive Coach Dubai",
     description: SITE.description,
-    images: ["/og-image.svg"],
   },
   robots: {
     index: true,
@@ -108,7 +100,7 @@ export default function RootLayout({
       url: SITE.url,
       email: SITE.email,
       telephone: SITE.phone,
-      image: "https://christinasteinhoff.com/wp-content/uploads/2025/10/about-me.png",
+      image: `${SITE.url}/opengraph-image`,
       address: {
         "@type": "PostalAddress",
         streetAddress: "Green Community West, Dubai Investment Park 1",
@@ -136,7 +128,7 @@ export default function RootLayout({
       url: SITE.url,
       telephone: SITE.phone,
       email: SITE.email,
-      image: "https://christinasteinhoff.com/wp-content/uploads/2025/10/about-me.png",
+      image: `${SITE.url}/opengraph-image`,
       priceRange: "$$$",
       currenciesAccepted: "AED, USD, EUR, GBP",
       address: {
@@ -166,7 +158,7 @@ export default function RootLayout({
   ];
 
   return (
-    <html lang="en" className={`${cormorant.variable} ${inter.variable} h-full antialiased`}>
+    <html lang="en" className={`${fraunces.variable} ${jakarta.variable} h-full antialiased`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -177,29 +169,16 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-[#060606]">
-        {/* Microsoft Clarity heatmaps */}
-        <Script id="clarity" strategy="afterInteractive">{`
-          (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${CLARITY_ID}");
-        `}</Script>
-        {/* Google Analytics */}
-        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
-        <Script id="ga" strategy="afterInteractive">{`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GA_ID}');
-        `}</Script>
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[999] focus:px-4 focus:py-2 focus:bg-[#c9a86c] focus:text-[#060606] focus:text-sm focus:rounded-full">
           Skip to content
         </a>
-        <ScrollProgress />
-        <PageLoader />
+        <SmoothScroll />
+        <GrainOverlay />
         {children}
         <WhatsAppButton />
         <BackToTop />
-        <ExitIntent />
-        <NewsletterPopup />
-        <CookieBanner />
+        {/* GA + Clarity load only after the visitor accepts cookies (handled inside) */}
+        <CookieConsent gaId={GA_ID} clarityId={CLARITY_ID} />
       </body>
     </html>
   );

@@ -17,7 +17,7 @@ export default function NotFound() {
         </div>
 
         <h1 className="text-6xl md:text-8xl font-light text-white mb-6 leading-tight"
-            style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}>
+            style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
           Lost in <em className="text-[#c9a86c]">thought?</em>
         </h1>
 

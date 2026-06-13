@@ -44,7 +44,7 @@ export function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-4xl md:text-5xl font-light text-[#1c160e] leading-tight mb-10 md:sticky md:top-32"
-              style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+              style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
               How we<br />
               <em className="text-[#c9a86c]">work together</em>
@@ -58,9 +58,9 @@ export function Process() {
               href={CALENDLY}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#060606] text-white text-[10px] tracking-[0.2em] uppercase rounded-full hover:bg-[#1a1410] transition-colors"
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#0b0a08] text-white text-[10px] tracking-[0.2em] uppercase rounded-full hover:bg-[#1a1410] transition-colors"
             >
-              Book your free call
+              Book a discovery call
             </motion.a>
           </div>
 
@@ -82,7 +82,7 @@ export function Process() {
                 </div>
                 <div className="pt-3">
                   <h3 className="text-[#1c160e] text-xl font-light mb-2.5"
-                    style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}>
+                    style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
                     {s.title}
                   </h3>
                   <p className="text-[#1c160e]/65 font-light leading-relaxed text-base">{s.body}</p>

@@ -59,7 +59,7 @@ export function Navbar() {
         <a
           href="/"
           className="text-[#c9a86c] font-light tracking-[0.2em] text-xs uppercase"
-          style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+          style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
         >
           Christina Steinhoff
         </a>

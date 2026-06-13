@@ -99,7 +99,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-5xl md:text-7xl font-light text-white leading-[1.05] mb-8"
-            style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+            style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
             Lead with clarity.
             <br />
@@ -162,7 +162,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="text-4xl md:text-5xl font-light text-[#1c160e] leading-tight mb-6"
-                style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+                style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
               >
                 The hidden weight
                 <br />
@@ -221,7 +221,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-light text-white mb-6"
-            style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+            style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
             Leadership from the <em className="text-[#c9a86c]">inside out</em>
           </motion.h2>
@@ -252,7 +252,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
                 <span className="text-white/70 text-sm font-light">{a}</span>
                 <span
                   className="text-[#c9a86c] text-xl leading-none font-light"
-                  style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+                  style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
                 >
                   +
                 </span>
@@ -266,7 +266,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="text-2xl md:text-3xl font-light text-white/50 italic max-w-2xl mx-auto leading-relaxed"
-            style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+            style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
             "The goal is not to work harder —{" "}
             <span className="text-[#c9a86c] not-italic">it&apos;s to lead from a different place."</span>
@@ -292,7 +292,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-4xl md:text-5xl font-light text-[#1c160e] leading-tight max-w-2xl"
-              style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+              style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
               Five dimensions of
               <br />
@@ -312,13 +312,13 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
               >
                 <span
                   className="text-[36px] font-light leading-none text-[#c9a86c]/25 block mb-4"
-                  style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+                  style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
                 >
                   {f.n}
                 </span>
                 <h3
                   className="text-2xl font-light text-[#1c160e] mb-3"
-                  style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+                  style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
                 >
                   {f.title}
                 </h3>
@@ -338,7 +338,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
             >
               <p
                 className="text-2xl font-light text-white leading-snug"
-                style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+                style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
               >
                 Every programme is <em className="text-[#c9a86c]">bespoke</em> — built around your
                 goals, challenges, and stage of growth.
@@ -371,7 +371,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="text-4xl font-light text-white leading-tight mb-8"
-                style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+                style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
               >
                 Built for leaders who
                 <br />
@@ -437,7 +437,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-4xl md:text-5xl font-light text-[#1c160e]"
-              style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+              style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
               Questions leaders <em className="text-[#c9a86c]">ask</em>
             </motion.h2>
@@ -455,7 +455,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-light text-white leading-tight mb-7"
-            style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+            style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
             Leadership shouldn&apos;t cost you
             <br />

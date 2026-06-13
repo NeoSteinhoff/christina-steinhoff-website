@@ -1,112 +1,93 @@
 "use client";
-import { motion } from "framer-motion";
-import { SpotlightCard } from "@/components/ui/SpotlightCard";
+import { motion, useReducedMotion } from "framer-motion";
+import { Reveal } from "@/components/ui/Reveal";
 
 const pillars = [
   {
     n: "01",
-    title: "Neuroscience & Brain Rewiring",
-    body: "Chronic stress, decision fatigue, and reactive behaviour are neurological patterns — not personality flaws. Using proven neuroscience protocols, we literally rewire the neural pathways driving your most limiting responses, creating lasting change at the biology level.",
+    title: "Neuroscience & brain rewiring",
+    body: "Chronic stress, decision fatigue, and reactivity are neurological patterns — not character flaws. We rewire the pathways driving your most limiting responses, so change holds at the level of biology.",
   },
   {
     n: "02",
-    title: "NLP & Clinical Hypnotherapy",
-    body: "95% of your behaviour runs from the subconscious. NLP and clinical hypnotherapy bypass the critical mind to directly update the programs running your identity, confidence, and performance — often in a fraction of the time traditional therapy takes.",
+    title: "NLP & clinical hypnotherapy",
+    body: "Most of your behaviour runs from the subconscious. NLP and clinical hypnotherapy update the programs governing identity, confidence, and performance — often in a fraction of the time talk therapy takes.",
   },
   {
     n: "03",
-    title: "Somatic & Trauma Release",
-    body: "Unresolved stress and trauma are stored in the body — not just the mind. Somatic release work dissolves the physiological charge of past experiences, freeing the nervous system from patterns that have silently shaped your decisions and relationships for years.",
+    title: "Somatic & trauma release",
+    body: "Unresolved stress lives in the body, not just the mind. Somatic work discharges the physiological residue of past experience, freeing a nervous system that has been quietly running the show for years.",
   },
   {
     n: "04",
-    title: "Soul Alignment & Purpose",
-    body: "Strategy without soul is exhausting. When your goals, values, and authentic vision are genuinely aligned, high performance stops feeling like effort and starts feeling inevitable. This is the work that makes everything else sustainable.",
+    title: "Soul alignment & purpose",
+    body: "Strategy without meaning is exhausting. When your goals, values, and vision genuinely line up, high performance stops feeling like force and starts feeling inevitable. This is what makes it last.",
   },
 ];
 
 export function Method() {
+  const reduce = useReducedMotion();
   return (
-    <section id="method" className="bg-[#060606] py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_60%,rgba(201,168,108,0.05),transparent)]" />
+    <section id="method" className="relative overflow-hidden bg-[#060606] py-28 md:py-40">
+      <div className="pointer-events-none absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-[#a8884e]/[0.06] blur-[150px]" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-end mb-16">
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-3 mb-6"
-            >
-              <span className="h-px w-7 bg-[#c9a86c]/30" />
-              <span className="text-[#c9a86c]/60 text-[10px] tracking-[0.45em] uppercase">The Method</span>
-            </motion.div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-light text-white leading-tight"
-              style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+      <div className="relative z-10 mx-auto max-w-6xl px-6">
+        {/* Lead — asymmetric, no centered eyebrow */}
+        <div className="grid gap-10 md:grid-cols-12 md:gap-16">
+          <div className="md:col-span-7">
+            <span className="text-[10px] uppercase tracking-[0.4em] text-[#c9a86c]/70">The method</span>
+            <h2
+              className="mt-5 text-[clamp(2.4rem,5vw,4.25rem)] font-light leading-[1.02] text-white"
+              style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
               Why most coaching
               <br />
-              <em className="text-[#c9a86c]">doesn't last</em>
-            </motion.h2>
+              <em className="font-medium text-[#c9a86c]">doesn&apos;t last</em>
+            </h2>
           </div>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-white/60 font-light leading-relaxed text-base md:pb-2"
-          >
-            Most coaching works at the conscious level — mindset, habits, strategy. But your results are driven 95% by subconscious programs, nervous system patterns, and unresolved emotional charge. Science + Soul Fusion™ is the only method that addresses all four layers simultaneously, which is why the transformations are permanent rather than temporary.
-          </motion.p>
+          <Reveal direction="left" className="md:col-span-5 md:pt-16">
+            <p className="text-base font-light leading-relaxed text-white/65">
+              Coaching usually works at the conscious level — mindset, habits, strategy. But results
+              are driven far more by subconscious programs, nervous-system patterns, and unresolved
+              emotion. Science + Soul Fusion™ is the rare method that addresses all four at once.
+              That&apos;s why the change is permanent, not temporary.
+            </p>
+          </Reveal>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-4">
-          {pillars.map((p, i) => (
+        {/* Pillars as an editorial numbered list */}
+        <div className="mt-20 border-t border-white/8">
+          {pillars.map((p, idx) => (
             <motion.div
               key={p.n}
-              initial={{ opacity: 0, y: 24 }}
+              initial={reduce ? false : { opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true, margin: "-15% 0px" }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="group grid gap-4 border-b border-white/8 py-9 md:grid-cols-12 md:items-baseline md:gap-8"
             >
-              <SpotlightCard className="h-full">
-                <div className="flex gap-6 h-full">
-                  <span
-                    className="text-[42px] font-light leading-none mt-1 shrink-0 text-[#c9a86c]/15"
-                    style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
-                  >
-                    {p.n}
-                  </span>
-                  <div>
-                    <h3 className="text-white text-lg font-light mb-3">{p.title}</h3>
-                    <p className="text-white/60 text-[15px] font-light leading-relaxed">{p.body}</p>
-                  </div>
-                </div>
-              </SpotlightCard>
+              <span
+                className="font-display text-3xl font-light text-[#c9a86c]/40 transition-colors duration-500 group-hover:text-[#c9a86c]/80 md:col-span-1"
+              >
+                {p.n}
+              </span>
+              <h3 className="text-xl font-medium text-white md:col-span-4 md:text-2xl">{p.title}</h3>
+              <p className="text-base font-light leading-relaxed text-white/60 md:col-span-7">
+                {p.body}
+              </p>
             </motion.div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="mt-20 border-t border-white/6 pt-14 text-center"
-        >
+        <Reveal className="mt-20 text-center" blur={false}>
           <p
-            className="text-2xl md:text-3xl font-light text-white/50 italic max-w-2xl mx-auto leading-relaxed"
-            style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+            className="mx-auto max-w-2xl text-2xl font-light italic leading-relaxed text-white/55 md:text-3xl"
+            style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
-            "The goal is not a better version of you.{" "}
-            <span className="text-[#c9a86c] not-italic">It's the real one.</span>"
+            &ldquo;The goal isn&apos;t a better version of you.{" "}
+            <span className="not-italic text-[#c9a86c]">It&apos;s the real one.&rdquo;</span>
           </p>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

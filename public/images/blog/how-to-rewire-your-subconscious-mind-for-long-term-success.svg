@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+  <defs>
+    <radialGradient id="g" cx="45.0%" cy="18.7%" r="75%">
+      <stop offset="0%" stop-color="#c9a86c" stop-opacity="0.34"/>
+      <stop offset="45%" stop-color="#8f6f3e" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#060606" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="v" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c0b0a"/>
+      <stop offset="100%" stop-color="#060606"/>
+    </linearGradient>
+    <filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+  </defs>
+  <rect width="1200" height="750" fill="url(#v)"/>
+  <rect width="1200" height="750" fill="url(#g)"/>
+  <g opacity="0.06"><circle cx="540" cy="140" r="2.5" fill="#c9a86c"/></g>
+  <text x="60" y="690" font-family="Georgia, serif" font-size="34" fill="#c9a86c" opacity="0.5">✦</text>
+  <text x="600" y="420" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="150" fill="#f2ede4" opacity="0.05" letter-spacing="-4">Subconscious</text>
+  <text x="600" y="400" text-anchor="middle" font-family="Georgia, serif" font-size="58" fill="#f2ede4" opacity="0.9">Subconscious</text>
+  <text x="600" y="448" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" letter-spacing="6" fill="#c9a86c">NEUROSCIENCE</text>
+  <rect x="60" y="60" width="1080" height="630" fill="none" stroke="#c9a86c" stroke-opacity="0.18" rx="18"/>
+  <rect width="1200" height="750" filter="url(#n)" opacity="0.05"/>
+</svg>

@@ -1,119 +1,99 @@
 "use client";
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
+import { Reveal } from "@/components/ui/Reveal";
+import { BrandPanel } from "@/components/ui/BrandPanel";
 
 const credentials = [
-  "Certified NLP Master Practitioner",
+  "Master NLP Practitioner",
   "Clinical Hypnotherapist",
-  "Neuroscience-Based Coaching",
-  "Somatic Release Facilitator",
-  "Spiritual Integration Coach",
-  "Trauma-Informed Practice",
+  "Neuroscience-based coaching",
+  "Somatic & trauma-informed practice",
+  "Conscious leadership",
+  "Subconscious reprogramming",
 ];
 
 const stats = [
-  { n: "500+", label: "Lives Transformed" },
-  { n: "12+", label: "Years Experience" },
+  { n: "500+", label: "Private clients" },
+  { n: "12 yrs", label: "In practice" },
   { n: "3", label: "Continents" },
 ];
 
 export function About() {
+  const reduce = useReducedMotion();
   return (
-    <section id="about" className="bg-[#FAF5ED] py-32 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
-
+    <section id="about" className="relative overflow-hidden bg-[#f7f1e7] py-28 md:py-36">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="grid items-center gap-16 md:grid-cols-2 lg:gap-24">
+          {/* Portrait + stats */}
           <motion.div
-            initial={{ opacity: 0, x: -32 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={reduce ? false : { opacity: 0, scale: 1.03 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.9 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-[#e8dfd3]">
-              <Image
-                src="https://christinasteinhoff.com/wp-content/uploads/2025/10/about-me.png"
-                alt="Christina Steinhoff — Life Mentor and Executive Coach Dubai"
-                fill
-                className="object-cover object-top"
-              />
-              <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-transparent via-[#c9a86c]/50 to-transparent" />
-            </div>
-
+            <BrandPanel className="aspect-[4/5]" />
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={reduce ? false : { opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="absolute -bottom-6 left-4 right-4 bg-[#060606] rounded-2xl px-6 py-5 flex justify-between"
+              transition={{ delay: 0.25, duration: 0.7 }}
+              className="absolute -bottom-7 left-5 right-5 flex justify-between rounded-2xl bg-[#0b0a08] px-7 py-5"
             >
               {stats.map((s) => (
                 <div key={s.n} className="text-center">
-                  <p className="text-2xl font-light text-[#c9a86c]"
-                    style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}>
+                  <p
+                    className="font-display text-2xl font-medium text-[#c9a86c]"
+                    style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+                  >
                     {s.n}
                   </p>
-                  <p className="text-white/35 text-[10px] tracking-widest uppercase mt-0.5">{s.label}</p>
+                  <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-white/50">{s.label}</p>
                 </div>
               ))}
             </motion.div>
           </motion.div>
 
-          <div className="pt-8 md:pt-0">
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-3 mb-7"
-            >
-              <span className="h-px w-7 bg-[#c9a86c]/40" />
-              <span className="text-[#c9a86c]/70 text-[10px] tracking-[0.45em] uppercase">About Christina</span>
-            </motion.div>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-light text-[#1c160e] leading-tight mb-8"
-              style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+          {/* Copy */}
+          <div className="pt-10 md:pt-0">
+            <span className="text-[10px] uppercase tracking-[0.4em] text-[#a8884e]">Meet Christina</span>
+            <h2
+              className="mt-5 text-[clamp(2.1rem,4vw,3.4rem)] font-light leading-[1.08] text-[#1c160e]"
+              style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
               The most successful people
               <br />
-              <em className="text-[#c9a86c]">still feel stuck inside.</em>
-            </motion.h2>
+              <em className="font-medium text-[#a8884e]">still feel stuck inside.</em>
+            </h2>
 
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="space-y-4 text-[#1c160e]/75 font-light leading-relaxed text-base"
-            >
+            <Reveal className="mt-7 space-y-4 text-[15px] font-light leading-relaxed text-[#1c160e]/75" blur={false}>
               <p>
-                Christina Steinhoff is Dubai's leading life mentor and executive coach — working with high-achieving professionals across the UAE and globally who have built extraordinary careers, yet find themselves running on empty, disconnected from purpose, or quietly unfulfilled despite every external marker of success.
+                Christina works with high-achieving people who look unstoppable on paper and feel
+                hollow underneath it — running on empty, disconnected from why they started, quietly
+                certain that something is missing despite having &ldquo;everything.&rdquo;
               </p>
               <p>
-                Her proprietary <strong className="text-[#1c160e]/70 font-normal">Science + Soul Fusion™</strong> method is the only approach that works simultaneously at the neurological, psychological, and spiritual level — addressing root causes rather than symptoms. The result isn't temporary motivation. It's permanent transformation in how you think, lead, relate, and feel about your own life.
+                Her <strong className="font-medium text-[#1c160e]">Science + Soul Fusion™</strong>{" "}
+                method works at three levels at once — neurological, psychological, and spiritual —
+                so it reaches the root, not the symptom. The outcome isn&apos;t a motivational high.
+                It&apos;s a durable change in how you think, lead, relate, and feel about your own life.
               </p>
               <p>
-                Based in Dubai Investment Park, Christina works privately with executives, founders, and entrepreneurs across the Middle East, Europe, and the Americas.
+                Based in Dubai Investment Park, she works privately with founders and executives
+                across the Middle East, Europe, and the Americas.
               </p>
-            </motion.div>
+            </Reveal>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.35 }}
-              className="mt-9 grid grid-cols-2 gap-3"
-            >
+            <div className="mt-9 flex flex-wrap gap-2.5">
               {credentials.map((c) => (
-                <div key={c} className="flex items-start gap-2.5">
-                  <span className="mt-[6px] w-1 h-1 rounded-full bg-[#c9a86c] shrink-0" />
-                  <span className="text-[#1c160e]/70 text-sm">{c}</span>
-                </div>
+                <span
+                  key={c}
+                  className="rounded-full border border-[#1c160e]/12 bg-white/50 px-3.5 py-1.5 text-xs font-light text-[#1c160e]/70"
+                >
+                  {c}
+                </span>
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

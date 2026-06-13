@@ -1,123 +1,150 @@
 "use client";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 
 const testimonials = [
   {
-    quote: "I came to Christina after burning out for the third time in five years. I'd tried therapy, I'd tried meditation — nothing touched the root. Within four sessions something fundamentally shifted. My revenue has grown 40% since, but honestly, that's the least interesting part of what changed.",
+    quote:
+      "I'd burned out three times in five years. Therapy, meditation, the usual — nothing reached the root. Four sessions in, something structural shifted. Revenue is up since, but that's the least of what changed.",
     name: "Ahmed R.",
-    role: "CEO · Dubai",
+    role: "Founder & CEO",
+    place: "Dubai",
     arc: "Burnout → Clarity",
   },
   {
-    quote: "I was making decisions from fear disguised as logic. Christina helped me see that my 'rational' thinking was actually my nervous system trying to stay safe. Now I lead from genuine conviction. The difference in how my team responds to me has been night and day.",
+    quote:
+      "I was making decisions from fear dressed up as logic. Christina showed me my 'rational' thinking was a nervous system trying to stay safe. I lead from conviction now, and my team feels the difference.",
     name: "Layla M.",
-    role: "Founder · UAE",
+    role: "Managing Partner",
+    place: "Abu Dhabi",
     arc: "Fear → Conviction",
   },
   {
-    quote: "Fifteen years in finance and I had every credential except peace of mind. The self-doubt I thought was just 'how I was wired' dissolved completely. I was promoted to Managing Director six months after working with Christina. More importantly, I stopped waking up at 3am.",
+    quote:
+      "Fifteen years in finance and every credential except peace of mind. The self-doubt I assumed was just how I'm wired dissolved. I made MD six months later — but mostly, I stopped waking at 3am.",
     name: "James T.",
-    role: "Managing Director · London",
-    arc: "Self-Doubt → Mastery",
+    role: "Managing Director",
+    place: "London",
+    arc: "Self-doubt → Mastery",
   },
   {
-    quote: "As a female entrepreneur in the Gulf, I was performing strength I didn't always feel. Christina helped me stop performing and start embodying. My relationships — business and personal — transformed as a direct result. I finally stopped apologising for taking up space.",
+    quote:
+      "As a woman building in the Gulf, I was performing a strength I didn't always feel. Christina helped me stop performing and start embodying. Every relationship I have — work and home — changed because of it.",
     name: "Sara K.",
-    role: "Entrepreneur · Abu Dhabi",
+    role: "Entrepreneur",
+    place: "Dubai",
     arc: "Performance → Presence",
   },
   {
-    quote: "I spent a decade confusing hustle with high performance. What Christina gave me was the ability to create results from a completely different internal state — one that doesn't cost me my health or my marriage. My business has never done better and for the first time I'm actually enjoying it.",
+    quote:
+      "I'd spent a decade confusing hustle with high performance. She gave me a different internal gear — results without the cost to my health or marriage. The business has never been stronger, and I'm finally enjoying it.",
     name: "Daniel W.",
-    role: "Tech Founder · Dubai",
+    role: "Tech Founder",
+    place: "Dubai",
     arc: "Hustle → Harmony",
   },
 ];
 
 export function Testimonials() {
-  const [active, setActive] = useState(0);
+  const [i, setI] = useState(0);
+  const reduce = useReducedMotion();
+  const t = testimonials[i];
+  const go = (n: number) => setI((n + testimonials.length) % testimonials.length);
 
   return (
-    <section id="testimonials" className="bg-[#060606] py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_100%,rgba(201,168,108,0.05),transparent)]" />
+    <section id="testimonials" className="relative overflow-hidden bg-[#060606] py-28 md:py-40">
+      <div className="pointer-events-none absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-[#c9a86c]/[0.05] blur-[150px]" />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6">
-        <div className="text-center mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex items-center justify-center gap-4 mb-6"
-          >
-            <span className="h-px w-7 bg-[#c9a86c]/30" />
-            <span className="text-[#c9a86c]/60 text-[10px] tracking-[0.45em] uppercase">Client Transformations</span>
-            <span className="h-px w-7 bg-[#c9a86c]/30" />
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-light text-white"
-            style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
-          >
-            Not what they achieved.{" "}
-            <em className="text-[#c9a86c]">Who they became.</em>
-          </motion.h2>
+      <div className="relative z-10 mx-auto max-w-5xl px-6">
+        <div className="mb-12 flex items-end justify-between gap-6">
+          <div>
+            <span className="text-[10px] uppercase tracking-[0.4em] text-[#c9a86c]/70">In their words</span>
+            <h2
+              className="mt-4 text-4xl font-light leading-[1.05] text-white md:text-6xl"
+              style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+            >
+              Not what they achieved.
+              <br />
+              <em className="font-medium text-[#c9a86c]">Who they became.</em>
+            </h2>
+          </div>
+          <span className="hidden shrink-0 font-display text-sm tabular-nums text-white/35 md:block">
+            {String(i + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}
+          </span>
         </div>
 
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={active}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -16 }}
-            transition={{ duration: 0.4 }}
-            className="text-center mb-12"
-          >
-            <p
-              className="text-white/60 text-xl md:text-2xl font-light leading-relaxed max-w-3xl mx-auto"
-              style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
+        <div className="min-h-[300px] md:min-h-[240px]">
+          <AnimatePresence mode="wait">
+            <motion.figure
+              key={i}
+              initial={reduce ? false : { opacity: 0, y: 18, filter: "blur(6px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={reduce ? undefined : { opacity: 0, y: -12, filter: "blur(4px)" }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
-              "{testimonials[active].quote}"
-            </p>
-            <div className="mt-8 flex flex-col items-center gap-1">
-              <span className="text-white/70 text-sm font-light">{testimonials[active].name}</span>
-              <span className="text-white/45 text-xs tracking-wide">{testimonials[active].role}</span>
-              <span className="mt-2 px-3 py-0.5 rounded-full border border-[#c9a86c]/20 text-[#c9a86c]/50 text-[9px] tracking-widest uppercase">
-                {testimonials[active].arc}
+              <span
+                className="block text-6xl leading-none text-[#c9a86c]/30"
+                style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+                aria-hidden
+              >
+                &ldquo;
               </span>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-
-        <div className="flex items-center justify-center gap-2.5 mb-14">
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              className={`rounded-full transition-all duration-300 ${
-                active === i ? "w-6 h-[3px] bg-[#c9a86c]" : "w-[3px] h-[3px] bg-white/20 hover:bg-white/40"
-              }`}
-            />
-          ))}
+              <blockquote
+                className="-mt-4 text-2xl font-light leading-[1.4] text-white/85 md:text-[2rem]"
+                style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+              >
+                {t.quote}
+              </blockquote>
+              <figcaption className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-1">
+                <span className="text-sm font-medium text-white">{t.name}</span>
+                <span className="h-3 w-px bg-white/20" aria-hidden />
+                <span className="text-sm font-light text-white/55">
+                  {t.role} · {t.place}
+                </span>
+                <span className="rounded-full border border-[#c9a86c]/25 px-3 py-0.5 text-[10px] uppercase tracking-[0.18em] text-[#c9a86c]/70">
+                  {t.arc}
+                </span>
+              </figcaption>
+            </motion.figure>
+          </AnimatePresence>
         </div>
 
-        <div className="grid grid-cols-5 gap-2">
-          {testimonials.map((t, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              className={`p-3 rounded-xl border text-left transition-all duration-300 ${
-                active === i
-                  ? "border-[#c9a86c]/25 bg-[#c9a86c]/5"
-                  : "border-white/5 bg-white/[0.02] hover:border-white/10"
-              }`}
-            >
-              <span className="block text-[9px] text-[#c9a86c]/45 tracking-widest uppercase mb-1">{t.arc}</span>
-              <span className="text-white/30 text-xs">{t.name}</span>
-            </button>
-          ))}
+        {/* Controls — proper 44px touch targets */}
+        <div className="mt-12 flex flex-wrap items-center gap-3">
+          <button
+            onClick={() => go(i - 1)}
+            aria-label="Previous testimonial"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-white/60 transition-colors hover:border-[#c9a86c]/50 hover:text-[#c9a86c]"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+              <path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+          <button
+            onClick={() => go(i + 1)}
+            aria-label="Next testimonial"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-white/60 transition-colors hover:border-[#c9a86c]/50 hover:text-[#c9a86c]"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+              <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+
+          <div className="ml-2 flex flex-wrap gap-1.5">
+            {testimonials.map((tt, idx) => (
+              <button
+                key={tt.name}
+                onClick={() => setI(idx)}
+                aria-label={`Show ${tt.name}'s story`}
+                aria-current={idx === i}
+                className={`rounded-full px-3.5 py-2 text-xs transition-colors ${
+                  idx === i ? "bg-[#c9a86c]/12 text-[#c9a86c]" : "text-white/40 hover:text-white/70"
+                }`}
+              >
+                {tt.name}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </section>
