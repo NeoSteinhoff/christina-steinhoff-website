@@ -6,6 +6,7 @@ import { CookieConsent } from "@/components/ui/CookieConsent";
 import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import { BackToTop } from "@/components/ui/BackToTop";
+import { Analytics } from "@vercel/analytics/next";
 
 import { SITE } from "@/lib/constants";
 
@@ -179,6 +180,7 @@ export default function RootLayout({
         <BackToTop />
         {/* GA + Clarity load only after the visitor accepts cookies (handled inside) */}
         <CookieConsent gaId={GA_ID} clarityId={CLARITY_ID} />
+        <Analytics />
       </body>
     </html>
   );
