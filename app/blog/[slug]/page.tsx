@@ -191,12 +191,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         {/* Author + CTA */}
         <section className="mt-14 rounded-2xl bg-[#0b0a08] p-8">
           <div className="flex items-start gap-5">
-            <div
-              className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-[#c9a86c]/30 bg-[#1a1410] text-xl text-[#c9a86c]"
-              style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
-              aria-hidden
-            >
-              CS
+            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border border-[#c9a86c]/30 bg-[#f7f1e7]">
+              <Image
+                src="/images/christina-avatar.jpg"
+                alt="Christina Steinhoff"
+                fill
+                sizes="64px"
+                className="object-cover object-[center_42%]"
+              />
             </div>
             <div>
               <p className="text-sm font-medium text-white">Christina Steinhoff</p>

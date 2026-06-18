@@ -1,7 +1,7 @@
 "use client";
 import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
-import { BrandPanel } from "@/components/ui/BrandPanel";
 
 const credentials = [
   "Master NLP Practitioner",
@@ -32,7 +32,15 @@ export function About() {
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <BrandPanel className="aspect-[4/5]" />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-gradient-to-b from-white to-[#efe7d9]">
+              <Image
+                src="/images/christina.jpg"
+                alt="Christina Steinhoff, life mentor and executive coach, seated portrait"
+                fill
+                sizes="(max-width: 768px) 90vw, 45vw"
+                className="object-cover object-bottom"
+              />
+            </div>
             <motion.div
               initial={reduce ? false : { opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}

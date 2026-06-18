@@ -101,7 +101,7 @@ export default function RootLayout({
       url: SITE.url,
       email: SITE.email,
       telephone: SITE.phone,
-      image: `${SITE.url}/opengraph-image`,
+      image: `${SITE.url}/images/christina.jpg`,
       address: {
         "@type": "PostalAddress",
         streetAddress: "Green Community West, Dubai Investment Park 1",
@@ -129,7 +129,7 @@ export default function RootLayout({
       url: SITE.url,
       telephone: SITE.phone,
       email: SITE.email,
-      image: `${SITE.url}/opengraph-image`,
+      image: `${SITE.url}/images/christina.jpg`,
       priceRange: "$$$",
       currenciesAccepted: "AED, USD, EUR, GBP",
       address: {
