@@ -107,16 +107,15 @@ export function Hero() {
           transition={{ duration: 1.1, ease: EASE, delay: 0.2 }}
           className="relative lg:col-span-5"
         >
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[1.75rem] bg-gradient-to-b from-[#f7f1e7] to-[#ece3d4] lg:max-w-none">
+          <div className="relative mx-auto aspect-[850/1040] w-full max-w-sm lg:max-w-none">
             <Image
-              src="/images/christina.jpg"
+              src="/images/christina-hero-duotone.webp"
               alt="Christina Steinhoff, life mentor and executive coach in Dubai"
               fill
               priority
               sizes="(max-width: 1024px) 90vw, 40vw"
-              className="object-cover object-bottom"
+              className="object-contain object-bottom"
             />
-            <div className="pointer-events-none absolute inset-0 rounded-[1.75rem] ring-1 ring-inset ring-[#c9a86c]/25" />
           </div>
 
           {/* floating credential chip */}
