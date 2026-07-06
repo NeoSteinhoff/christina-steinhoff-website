@@ -5,7 +5,7 @@ import { SITE } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Emotional Healing Coaching in Dubai | Christina Steinhoff",
   description:
-    "Emotional healing coaching in Dubai using somatic release, NLP & clinical hypnotherapy. Coaching, not clinical treatment — Christina Steinhoff helps you process patterns that talk alone hasn't shifted.",
+    "Emotional healing coaching in Dubai using somatic release, NLP & advanced conversational hypnotherapy. Coaching, not clinical treatment — Christina Steinhoff helps you process patterns that talk alone hasn't shifted.",
   keywords: [
     "emotional healing dubai",
     "emotional healing coach dubai",
@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     "trauma-informed coaching dubai",
     "subconscious healing dubai",
     "nervous system coaching dubai",
-    "clinical hypnotherapy dubai",
+    "advanced conversational hypnotherapy dubai",
     "NLP coaching dubai",
   ],
   alternates: { canonical: `${SITE.url}/emotional-healing-dubai` },
   openGraph: {
     title: "Emotional Healing Coaching in Dubai | Christina Steinhoff",
     description:
-      "Somatic, NLP, and clinical hypnotherapy-based coaching for emotional patterns you've outgrown but can't quite shake. Coaching, not clinical treatment.",
+      "Somatic, NLP, and advanced conversational hypnotherapy-based coaching for emotional patterns you've outgrown but can't quite shake. Coaching, not clinical treatment.",
     url: `${SITE.url}/emotional-healing-dubai`,
     type: "website",
   },
@@ -29,11 +29,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Is emotional healing coaching the same as therapy?",
-    a: "No. Emotional healing coaching is not psychotherapy, and Christina is not a licensed psychotherapist — she is a certified Master NLP Practitioner and Clinical Hypnotherapist. Coaching works with present-day emotional patterns and nervous-system responses; therapy diagnoses and treats mental health conditions. If you need clinical treatment, Christina will tell you directly and help you find the right licensed professional.",
+    a: "No. Emotional healing coaching is not psychotherapy, and Christina is not a licensed psychotherapist — she is a certified Licensed Master NLP Practitioner and Certified Master Hypnotist. Coaching works with present-day emotional patterns and nervous-system responses; therapy diagnoses and treats mental health conditions. If you need clinical treatment, Christina will tell you directly and help you find the right licensed professional.",
   },
   {
     q: "What is emotional healing coaching, exactly?",
-    a: "It's coaching that uses somatic release, NLP, and clinical hypnotherapy to help you process and release stored stress, emotional reactivity, and subconscious patterns — the ones that keep resurfacing in your relationships and work even though you've 'thought it through' many times.",
+    a: "It's coaching that uses somatic release, NLP, and advanced conversational hypnotherapy to help you process and release stored stress, emotional reactivity, and subconscious patterns — the ones that keep resurfacing in your relationships and work even though you've 'thought it through' many times.",
   },
   {
     q: "Can coaching help with trauma?",
@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: "What does a typical emotional healing session involve?",
-    a: "Sessions may include somatic awareness work, NLP techniques to interrupt automatic emotional reactions, clinical hypnotherapy to work with subconscious patterns, and practical nervous-system regulation tools — tailored to what you're working through.",
+    a: "Sessions may include somatic awareness work, NLP techniques to interrupt automatic emotional reactions, advanced conversational hypnotherapy to work with subconscious patterns, and practical nervous-system regulation tools — tailored to what you're working through.",
   },
   {
     q: "How is this different from meditation or breathwork apps?",
@@ -63,11 +63,11 @@ const jsonLd = {
       provider: {
         "@type": "Person",
         name: "Christina Steinhoff",
-        jobTitle: "Life Coach & Clinical Hypnotherapist",
+        jobTitle: "Life Coach & Certified Master Hypnotist",
         url: SITE.url,
         hasCredential: [
           { "@type": "EducationalOccupationalCredential", credentialCategory: "Certification", name: "Master NLP Practitioner" },
-          { "@type": "EducationalOccupationalCredential", credentialCategory: "Certification", name: "Clinical Hypnotherapist" },
+          { "@type": "EducationalOccupationalCredential", credentialCategory: "Certification", name: "Certified Master Hypnotist" },
         ],
       },
       areaServed: [
@@ -75,7 +75,7 @@ const jsonLd = {
         { "@type": "Place", name: "Online / Worldwide" },
       ],
       description:
-        "Emotional healing coaching in Dubai combining somatic release, NLP, and clinical hypnotherapy. Coaching and mentorship, not psychotherapy or clinical treatment.",
+        "Emotional healing coaching in Dubai combining somatic release, NLP, and advanced conversational hypnotherapy. Coaching and mentorship, not psychotherapy or clinical treatment.",
       disambiguatingDescription:
         "This is coaching, not psychotherapy, medical treatment, or a substitute for licensed mental health care.",
       url: `${SITE.url}/emotional-healing-dubai`,

@@ -1,5 +1,5 @@
 "use client";
-import { CALENDLY } from "@/lib/constants";
+import { CALENDLY, STATS } from "@/lib/constants";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
@@ -8,9 +8,9 @@ import { GoldButton } from "@/components/ui/GoldButton";
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 const trust = [
-  "Master NLP Practitioner",
-  "Clinical Hypnotherapist",
-  "500+ private clients",
+  "Licensed Master NLP Practitioner",
+  "Certified Master Hypnotist",
+  `${STATS.clients} private clients`,
   "Dubai · Worldwide",
 ];
 
@@ -42,19 +42,19 @@ export function Hero() {
           >
             <span className="h-1.5 w-1.5 rounded-full bg-[#c9a86c]" />
             <span className="text-[10px] uppercase tracking-[0.28em] text-white/60">
-              Life Mentor &amp; Executive Coach · Dubai
+              Executive &amp; Emotional Mastery Coach · Dubai
             </span>
           </motion.div>
 
           <h1 className="display text-white">
             <Line delay={0.05}>
-              <span className="block text-[clamp(2.6rem,6.2vw,5.75rem)] font-[420] leading-[1.0] text-white/90">
-                You built the life.
+              <span className="block text-[clamp(2.4rem,5.6vw,5rem)] font-[420] leading-[1.05] text-white/90">
+                Executive coaching for
               </span>
             </Line>
             <Line delay={0.16}>
-              <span className="block text-[clamp(3.4rem,9.2vw,9rem)] font-[680] leading-[0.92] text-[#c9a86c]">
-                Now master it.
+              <span className="block text-[clamp(2.7rem,7vw,6.5rem)] font-[680] leading-[1.0] text-[#c9a86c]">
+                high-achieving women &amp; leaders.
               </span>
             </Line>
           </h1>
@@ -65,8 +65,8 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4, ease: EASE }}
             className="measure mt-8 text-lg font-light leading-relaxed text-white/65"
           >
-            Private mentorship for the founders, executives, and leaders who already have the
-            success — and want the inner life to finally match it.
+            Helping ambitious executives, founders, and professionals achieve emotional mastery,
+            resilient leadership, and sustainable success through the Science + Soul Fusion™ methodology.
           </motion.p>
 
           <motion.div
@@ -110,7 +110,7 @@ export function Hero() {
           <div className="relative mx-auto aspect-[850/1040] w-full max-w-sm lg:max-w-none">
             <Image
               src="/images/christina-hero-duotone.webp"
-              alt="Christina Steinhoff, life mentor and executive coach in Dubai"
+              alt="Christina Steinhoff, executive and emotional mastery coach in Dubai"
               fill
               priority
               sizes="(max-width: 1024px) 90vw, 40vw"

@@ -5,16 +5,28 @@ import { SITE } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Best Executive Coach in Dubai | Christina Steinhoff",
   description:
-    "Certified executive coach in Dubai for CEOs, founders & senior leaders. Christina Steinhoff's Science + Soul Fusion™ method combines neuroscience, NLP & conscious leadership for high performance without burnout.",
+    "Certified executive coach in Dubai for CEOs, founders & senior leaders. Christina Steinhoff's Science + Soul Fusion™ method combines NLP, master hypnosis & conscious leadership for high performance without burnout.",
   keywords: [
     "best executive coach dubai",
     "executive coaching dubai",
     "executive coach dubai",
+    "executive coach UAE",
     "CEO coaching dubai",
     "leadership coaching dubai",
-    "burnout coach dubai",
+    "leadership coaching for CEOs",
+    "executive coach for founders",
+    "executive coaching for women",
+    "executive coach for women in dubai",
+    "leadership coach for female executives",
+    "executive burnout coach dubai",
+    "how to recover from executive burnout",
+    "burnout recovery for executives",
+    "emotional intelligence coaching for leaders",
+    "executive presence coaching",
+    "executive confidence coaching",
+    "leadership coaching uae",
+    "executive coaching online",
     "conscious leadership coaching",
-    "executive coach UAE",
   ],
   alternates: { canonical: `${SITE.url}/executive-coaching-dubai` },
   openGraph: {
@@ -37,11 +49,11 @@ const faqs = [
   },
   {
     q: "Is Christina Steinhoff a certified executive coach in Dubai?",
-    a: "Yes. Christina Steinhoff is a certified executive coach in Dubai who works with executives, entrepreneurs, CEOs, and professionals through a holistic methodology combining neuroscience, subconscious transformation, and conscious leadership principles.",
+    a: "Yes. Christina Steinhoff is a certified executive coach in Dubai who works with executives, entrepreneurs, CEOs, and professionals through a holistic methodology combining NLP, subconscious transformation, and conscious leadership principles.",
   },
   {
     q: "What makes Christina Steinhoff's executive coaching different?",
-    a: "Christina uses her proprietary Science + Soul Fusion™ Method, integrating neuroscience, NLP, hypnotherapy, emotional intelligence coaching, subconscious reprogramming, and energetic alignment. It addresses both external leadership performance and the internal patterns driving it — which is why the change lasts.",
+    a: "Christina uses her proprietary Science + Soul Fusion™ Method, integrating NLP, master hypnosis, Time Line Therapy®, and emotional mastery coaching. It addresses both external leadership performance and the internal patterns driving it — which is why the change lasts.",
   },
   {
     q: "Who should work with an executive coach in the UAE?",
@@ -67,6 +79,22 @@ const faqs = [
     q: "How do I choose the best executive coach in Dubai?",
     a: "Look at certifications, experience, methodology, and specialisation — and whether the coach addresses root causes or just surface strategy. The best test is a discovery call: you should leave with more clarity than you arrived with, regardless of whether you proceed.",
   },
+  {
+    q: "Do you offer executive coaching for women in Dubai?",
+    a: "Yes. Christina works with women executives, founders, and senior leaders as a core part of her practice — including a dedicated leadership coach perspective for female executives navigating visibility, boundaries, and confidence at the top. Her UnleashHER Potential™ group programme sits alongside 1:1 executive coaching for women who want a more private setting.",
+  },
+  {
+    q: "How do I recover from executive burnout?",
+    a: "Recovery starts with identifying the nervous-system and subconscious patterns keeping you in a stress response — not just resting until you feel better. Christina's executive burnout coaching in Dubai combines nervous system regulation, NLP, and master hypnosis to rebuild sustainable capacity, not just temporary relief.",
+  },
+  {
+    q: "Is executive coaching available online?",
+    a: "Yes. Alongside in-person sessions in Dubai, Christina offers executive coaching online for clients across the Middle East, Europe, and the Americas, with the same structured Science + Soul Fusion™ methodology delivered over private video sessions.",
+  },
+  {
+    q: "What is emotional mastery coaching for executives?",
+    a: "Emotional mastery coaching helps leaders regulate their emotional and nervous-system responses under pressure, so decisions come from clarity rather than reactivity. It's a core pillar of Christina's Science + Soul Fusion™ method, alongside NLP and master hypnosis.",
+  },
 ];
 
 const jsonLd = {
@@ -79,11 +107,12 @@ const jsonLd = {
       provider: {
         "@type": "Person",
         name: "Christina Steinhoff",
-        jobTitle: "Executive Coach & Life Mentor",
+        jobTitle: "Executive & Emotional Mastery Coach",
         url: SITE.url,
         hasCredential: [
-          { "@type": "EducationalOccupationalCredential", credentialCategory: "Certification", name: "Master NLP Practitioner" },
-          { "@type": "EducationalOccupationalCredential", credentialCategory: "Certification", name: "Clinical Hypnotherapist" },
+          { "@type": "EducationalOccupationalCredential", credentialCategory: "Certification", name: "Licensed Master Practitioner of NLP" },
+          { "@type": "EducationalOccupationalCredential", credentialCategory: "Certification", name: "Certified Master Hypnotist" },
+          { "@type": "EducationalOccupationalCredential", credentialCategory: "Certification", name: "Time Line Therapy® Practitioner" },
         ],
       },
       areaServed: [
@@ -91,7 +120,7 @@ const jsonLd = {
         { "@type": "Place", name: "Online / Worldwide" },
       ],
       description:
-        "Executive coaching for CEOs, founders and senior leaders in Dubai, combining neuroscience, NLP, hypnotherapy and conscious leadership through the Science + Soul Fusion™ Method.",
+        "Executive coaching for CEOs, founders, and senior leaders in Dubai, combining NLP (Neuro-Linguistic Programming), master hypnosis, and Time Line Therapy® through the Science + Soul Fusion™ Method.",
       url: `${SITE.url}/executive-coaching-dubai`,
     },
     {

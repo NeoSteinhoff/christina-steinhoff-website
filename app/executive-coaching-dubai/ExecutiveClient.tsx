@@ -231,7 +231,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
             className="text-white/60 font-light leading-relaxed text-base max-w-2xl mx-auto mb-14"
           >
             Traditional executive coaching optimises the external — strategy, metrics, habits.
-            Christina&apos;s Science + Soul Fusion™ Method integrates neuroscience-based coaching,
+            Christina&apos;s Science + Soul Fusion™ Method integrates NLP-based coaching,
             NLP, hypnotherapy, emotional intelligence, and conscious leadership to transform the
             internal patterns driving it all: stress responses, imposter syndrome, overworking,
             fear of failure.

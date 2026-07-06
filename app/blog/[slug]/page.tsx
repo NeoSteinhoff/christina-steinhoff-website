@@ -67,7 +67,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         author: {
           "@type": "Person",
           name: "Christina Steinhoff",
-          jobTitle: "Life Mentor & Executive Coach",
+          jobTitle: "Executive & Emotional Mastery Coach",
           url: SITE.url,
         },
         publisher: {

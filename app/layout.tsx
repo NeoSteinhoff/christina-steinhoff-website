@@ -8,7 +8,7 @@ import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import { BackToTop } from "@/components/ui/BackToTop";
 
-import { SITE } from "@/lib/constants";
+import { SITE, CREDENTIALS } from "@/lib/constants";
 
 const GA_ID = "G-W88WM4W49F";
 const CLARITY_ID = "x4cstiql2r";
@@ -32,35 +32,60 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Christina Steinhoff — Life Mentor & Executive Coach Dubai",
-    template: "%s | Christina Steinhoff — Life Coach Dubai",
+    default: "Christina Steinhoff — Executive & Emotional Mastery Coach Dubai",
+    template: "%s | Christina Steinhoff — Executive Coach Dubai",
   },
   description: SITE.description,
   keywords: [
-    "life coach Dubai",
+    // Layer 1 — primary
     "executive coach Dubai",
-    "life mentor Dubai",
+    "executive coaching Dubai",
+    "executive coach UAE",
+    "leadership coach Dubai",
+    "executive leadership coach",
+    "leadership coaching",
+    "executive coaching for women",
+    "emotional intelligence coach",
+    "burnout coach",
+    "stress management coach",
+    // Layer 2 — supporting
+    "burnout recovery for executives",
+    "high performance coaching",
+    "executive presence coaching",
+    "women's leadership coaching",
+    "emotional intelligence training",
+    "emotional resilience coaching",
+    "leadership development coach",
+    "performance coaching",
+    "career coaching for executives",
+    // Long-tail, high-intent
+    "executive coach for women in Dubai",
+    "leadership coach for female executives",
+    "executive burnout coach Dubai",
+    "how to recover from executive burnout",
+    "emotional intelligence coaching for leaders",
+    "leadership coaching for CEOs",
+    "executive coach for founders",
+    "coaching for high-achieving women",
+    "improve executive presence",
+    "executive confidence coaching",
+    "leadership coaching UAE",
+    "executive coaching online",
+    "best executive coach Dubai",
+    // Niche / owned positioning
+    "emotional mastery coaching",
+    "nervous system coaching",
+    "nervous system regulation for leaders",
+    "success without burnout",
+    "calm leadership coaching",
+    "subconscious mind coaching",
     "NLP coach Dubai",
-    "burnout coach Dubai",
-    "high performance coaching Dubai",
-    "mindset coaching Dubai",
+    // Supporting SEO value (kept, not primary positioning)
+    "life coach Dubai",
     "personal development coach Dubai",
+    "women's coach Dubai",
     "Christina Steinhoff",
     "Science Soul Fusion coaching",
-    "spiritual life coach Dubai",
-    "clinical hypnotherapy Dubai",
-    "conscious relationship coaching Dubai",
-    "executive burnout coach UAE",
-    "neuroscience coach Dubai",
-    "life coach UAE",
-    "transformational coach Dubai",
-    "somatic coach Dubai",
-    "subconscious reprogramming Dubai",
-    "entrepreneur coach Dubai",
-    "women's coach Dubai",
-    "leadership coach Dubai",
-    "private coaching Dubai",
-    "bespoke retreat Dubai",
   ],
   authors: [{ name: "Christina Steinhoff", url: SITE.url }],
   creator: "Christina Steinhoff",
@@ -69,13 +94,13 @@ export const metadata: Metadata = {
     locale: "en_AE",
     url: SITE.url,
     siteName: SITE.name,
-    title: "Christina Steinhoff — Life Mentor & Executive Coach Dubai",
+    title: "Christina Steinhoff — Executive & Emotional Mastery Coach Dubai",
     description: SITE.description,
     // og:image is generated automatically by app/opengraph-image.tsx (PNG)
   },
   twitter: {
     card: "summary_large_image",
-    title: "Christina Steinhoff — Life Mentor & Executive Coach Dubai",
+    title: "Christina Steinhoff — Executive & Emotional Mastery Coach Dubai",
     description: SITE.description,
   },
   robots: {
@@ -96,7 +121,7 @@ export default function RootLayout({
       "@context": "https://schema.org",
       "@type": "Person",
       name: "Christina Steinhoff",
-      jobTitle: "Life Mentor & Executive Coach",
+      jobTitle: "Executive & Emotional Mastery Coach",
       description: SITE.description,
       url: SITE.url,
       email: SITE.email,
@@ -111,26 +136,19 @@ export default function RootLayout({
       },
       // Not a licensed psychotherapist — credentials are named explicitly so this
       // claim is never ambiguous to Google (YMYL/E-E-A-T) or to readers.
-      hasCredential: [
-        {
-          "@type": "EducationalOccupationalCredential",
-          credentialCategory: "Certification",
-          name: "Master NLP Practitioner",
-        },
-        {
-          "@type": "EducationalOccupationalCredential",
-          credentialCategory: "Certification",
-          name: "Clinical Hypnotherapist",
-        },
-      ],
+      hasCredential: CREDENTIALS.map((name) => ({
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: /Accredited/i.test(name) ? "Accreditation" : "Certification",
+        name,
+      })),
       sameAs: [
         "https://www.instagram.com/christinasteinhof/",
         "https://www.linkedin.com/in/christina-steinhoff-thecoscoaching",
         "https://www.facebook.com/share/1FbRkQY78X/",
       ],
       knowsAbout: [
-        "Life Coaching", "NLP", "Neuroscience", "Clinical Hypnotherapy",
-        "Executive Coaching", "Mindset Coaching", "Somatic Release",
+        "Executive Coaching", "NLP", "Emotional Mastery", "Master Hypnosis",
+        "Time Line Therapy", "Mindset Coaching", "Nervous System Regulation",
         "Subconscious Reprogramming", "Burnout Recovery", "Leadership Coaching",
         "Emotional Resilience Coaching",
       ],
@@ -139,7 +157,7 @@ export default function RootLayout({
       "@context": "https://schema.org",
       "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": SITE.url,
-      name: "Christina Steinhoff — Life Mentor & Executive Coach",
+      name: "Christina Steinhoff — Executive & Emotional Mastery Coach",
       description: SITE.description,
       url: SITE.url,
       telephone: SITE.phone,
@@ -167,7 +185,7 @@ export default function RootLayout({
       ],
       serviceType: [
         "Life Coaching", "Executive Coaching", "NLP Coaching",
-        "Clinical Hypnotherapy", "Relationship Coaching", "Burnout Coaching",
+        "Master Hypnosis", "Relationship Coaching", "Burnout Coaching",
         "Mindset Coaching", "Emotional Healing Coaching", "Retreat Experience",
       ],
       sameAs: [

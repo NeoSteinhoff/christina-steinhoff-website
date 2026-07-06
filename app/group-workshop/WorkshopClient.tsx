@@ -24,7 +24,7 @@ const method = [
   {
     n: "01",
     title: "Mindset Reprogramming",
-    body: "Neuroscience-based techniques that shift limiting beliefs at the subconscious level and build empowering thought patterns that hold under pressure.",
+    body: "NLP-based techniques that shift limiting beliefs at the subconscious level and build empowering thought patterns that hold under pressure.",
   },
   {
     n: "02",
@@ -243,7 +243,7 @@ export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
               transition={{ delay: 0.15 }}
               className="text-white/60 font-light leading-relaxed text-base max-w-2xl mx-auto mt-6"
             >
-              Built on Christina&apos;s Science + Soul Fusion™ Method — combining neuroscience, NLP,
+              Built on Christina&apos;s Science + Soul Fusion™ Method — combining NLP, master hypnosis,
               emotional intelligence, and subconscious transformation in a supportive group
               environment. Most workshops address strategy. This one transforms the patterns
               underneath it.

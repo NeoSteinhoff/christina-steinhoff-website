@@ -3,7 +3,7 @@ export type FAQ = { q: string; a: string };
 export const faqs: FAQ[] = [
   {
     q: "How is Christina's approach different from traditional coaching?",
-    a: "Most coaching operates at the level of strategy, habits, and mindset — useful, but surface-level. Christina's Science + Soul Fusion™ method goes into the root cause: the subconscious programs, nervous system patterns, and identity structures that determine your results. We use neuroscience, NLP, clinical hypnotherapy, and somatic release to create permanent change, not temporary motivation.",
+    a: "Most coaching operates at the level of strategy, habits, and mindset — useful, but surface-level. Christina's Science + Soul Fusion™ method goes into the root cause: the subconscious programs, nervous system patterns, and identity structures that determine your results. We use NLP, master hypnosis, Time Line Therapy®, and somatic release to create permanent change, not temporary motivation.",
   },
   {
     q: "What's the difference between a life coach and a life mentor?",

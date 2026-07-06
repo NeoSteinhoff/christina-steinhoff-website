@@ -32,7 +32,7 @@ const modalities = [
   },
   {
     n: "03",
-    title: "Clinical hypnotherapy",
+    title: "Advanced conversational hypnotherapy",
     body: "Works directly with the subconscious, where most emotional patterns were first encoded — often faster than conscious-only approaches.",
   },
   {
@@ -82,7 +82,7 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
               transition={{ duration: 0.7, delay: 0.35, ease: EASE }}
               className="measure mt-8 text-lg font-light leading-relaxed text-white/65"
             >
-              Somatic, NLP, and clinical hypnotherapy-based coaching for the emotional patterns
+              Somatic, NLP, and advanced conversational hypnotherapy-based coaching for the emotional patterns
               you've outgrown but can't quite shake. This is coaching, not clinical treatment —
               and Christina will always tell you clearly which one you need.
             </motion.p>
@@ -136,7 +136,7 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
           >
             Emotional healing coaching helps you process and release stress, emotional patterns,
             and nervous-system reactivity that keep showing up in your work and relationships —
-            using somatic release, NLP, and clinical hypnotherapy to work below the surface, where
+            using somatic release, NLP, and advanced conversational hypnotherapy to work below the surface, where
             willpower alone doesn't reach.
           </motion.p>
           <motion.p

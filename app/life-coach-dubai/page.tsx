@@ -5,7 +5,7 @@ import { SITE } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Best Life Coach in Dubai | Christina Steinhoff",
   description:
-    "Christina Steinhoff is a certified life coach in Dubai — Master NLP Practitioner & Clinical Hypnotherapist. Private coaching for high achievers who feel stuck despite success. Book a free discovery call.",
+    "Christina Steinhoff is a certified life coach in Dubai — Master NLP Practitioner & Certified Master Hypnotist. Private coaching for high achievers who feel stuck despite success. Book a free discovery call.",
   keywords: [
     "best life coach dubai",
     "life coach dubai",
@@ -15,6 +15,8 @@ export const metadata: Metadata = {
     "certified life coach dubai",
     "transformational coach dubai",
     "private life coaching dubai",
+    "subconscious mind coaching dubai",
+    "emotional mastery coaching dubai",
   ],
   alternates: { canonical: `${SITE.url}/life-coach-dubai` },
   openGraph: {
@@ -29,7 +31,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Who is the best life coach in Dubai?",
-    a: "The best life coach for you depends on fit, but look for verifiable credentials, a structured methodology (not just motivational conversation), and a track record of experience. Christina Steinhoff is a certified Master NLP Practitioner and Clinical Hypnotherapist with 12+ years in practice and 500+ private clients, using her Science + Soul Fusion™ method to work at the subconscious level rather than surface habits alone.",
+    a: "The best life coach for you depends on fit, but look for verifiable credentials, a structured methodology (not just motivational conversation), and a track record of experience. Christina Steinhoff is a certified Licensed Master NLP Practitioner and Certified Master Hypnotist with 10+ years in practice and 400+ private clients, using her Science + Soul Fusion™ method to work at the subconscious level rather than surface habits alone.",
   },
   {
     q: "What does a life coach in Dubai actually do?",
@@ -57,7 +59,7 @@ const faqs = [
   },
   {
     q: "What makes Christina Steinhoff's coaching different from other Dubai life coaches?",
-    a: "Her Science + Soul Fusion™ method combines neuroscience-based coaching, NLP, and clinical hypnotherapy — addressing the subconscious and nervous-system patterns underneath your habits, not just the habits themselves. That's why the change tends to hold rather than fade after a few weeks.",
+    a: "Her Science + Soul Fusion™ method combines NLP-based coaching, NLP, and advanced conversational hypnotherapy — addressing the subconscious and nervous-system patterns underneath your habits, not just the habits themselves. That's why the change tends to hold rather than fade after a few weeks.",
   },
 ];
 
@@ -75,7 +77,7 @@ const jsonLd = {
         url: SITE.url,
         hasCredential: [
           { "@type": "EducationalOccupationalCredential", credentialCategory: "Certification", name: "Master NLP Practitioner" },
-          { "@type": "EducationalOccupationalCredential", credentialCategory: "Certification", name: "Clinical Hypnotherapist" },
+          { "@type": "EducationalOccupationalCredential", credentialCategory: "Certification", name: "Certified Master Hypnotist" },
         ],
       },
       areaServed: [
@@ -83,7 +85,7 @@ const jsonLd = {
         { "@type": "Place", name: "Online / Worldwide" },
       ],
       description:
-        "Private life coaching in Dubai combining neuroscience, NLP, and clinical hypnotherapy through the Science + Soul Fusion™ Method — for high achievers who feel stuck despite outward success.",
+        "Private life coaching in Dubai combining NLP (Neuro-Linguistic Programming), master hypnosis, and Time Line Therapy® through the Science + Soul Fusion™ Method — for high achievers who feel stuck despite outward success.",
       url: `${SITE.url}/life-coach-dubai`,
     },
     {

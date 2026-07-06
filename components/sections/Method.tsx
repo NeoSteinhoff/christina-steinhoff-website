@@ -2,30 +2,14 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
 
-const pillars = [
-  {
-    n: "01",
-    title: "Neuroscience & brain rewiring",
-    body: "Chronic stress, decision fatigue, and reactivity are neurological patterns — not character flaws. We rewire the pathways driving your most limiting responses, so change holds at the level of biology.",
-  },
-  {
-    n: "02",
-    title: "NLP & clinical hypnotherapy",
-    body: "Most of your behaviour runs from the subconscious. NLP and clinical hypnotherapy update the programs governing identity, confidence, and performance — often in a fraction of the time talk therapy takes.",
-  },
-  {
-    n: "03",
-    title: "Somatic & trauma release",
-    body: "Unresolved stress lives in the body, not just the mind. Somatic work discharges the physiological residue of past experience, freeing a nervous system that has been quietly running the show for years.",
-    href: "/emotional-healing-dubai",
-    linkLabel: "More on emotional healing coaching",
-  },
-  {
-    n: "04",
-    title: "Soul alignment & purpose",
-    body: "Strategy without meaning is exhausting. When your goals, values, and vision genuinely line up, high performance stops feeling like force and starts feeling inevitable. This is what makes it last.",
-  },
+const science = [
+  "Neuro-Linguistic Programming (NLP)",
+  "Master hypnosis",
+  "Emotional regulation",
+  "Subconscious pattern reprogramming",
 ];
+
+const soul = ["Purpose", "Values", "Intuition", "Authentic leadership"];
 
 export function Method() {
   const reduce = useReducedMotion();
@@ -50,46 +34,69 @@ export function Method() {
           <Reveal direction="left" className="md:col-span-5 md:pt-16">
             <p className="text-base font-light leading-relaxed text-white/65">
               Coaching usually works at the conscious level — mindset, habits, strategy. But results
-              are driven far more by subconscious programs, nervous-system patterns, and unresolved
-              emotion. Science + Soul Fusion™ is the rare method that addresses all four at once.
-              That&apos;s why the change is permanent, not temporary.
+              are driven far more by subconscious patterns and unresolved emotion. Science + Soul
+              Fusion™ addresses both at once, which is why the change is permanent, not temporary.
             </p>
           </Reveal>
         </div>
 
-        {/* Pillars as an editorial numbered list */}
-        <div className="mt-20 border-t border-white/8">
-          {pillars.map((p, idx) => (
-            <motion.div
-              key={p.n}
-              initial={reduce ? false : { opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-15% 0px" }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="group grid gap-4 border-b border-white/8 py-9 md:grid-cols-12 md:items-baseline md:gap-8"
-            >
-              <span
-                className="font-display text-3xl font-light text-[#c9a86c]/40 transition-colors duration-500 group-hover:text-[#c9a86c]/80 md:col-span-1"
-              >
-                {p.n}
-              </span>
-              <h3 className="text-xl font-medium text-white md:col-span-4 md:text-2xl">{p.title}</h3>
-              <div className="md:col-span-7">
-                <p className="text-base font-light leading-relaxed text-white/60">{p.body}</p>
-                {p.href && (
-                  <a
-                    href={p.href}
-                    className="link-underline mt-2 inline-block text-sm font-light text-[#c9a86c]/80 hover:text-[#c9a86c] transition-colors"
-                  >
-                    {p.linkLabel} →
-                  </a>
-                )}
-              </div>
-            </motion.div>
-          ))}
+        {/* Two pillars, fused */}
+        <div className="mt-20 grid items-center gap-6 md:grid-cols-[1fr_auto_1fr]">
+          <motion.div
+            initial={reduce ? false : { opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-15% 0px" }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="rounded-2xl border border-white/8 bg-white/[0.02] p-8"
+          >
+            <span className="text-[10px] uppercase tracking-[0.4em] text-[#c9a86c]/70">Science</span>
+            <ul className="mt-5 space-y-3.5">
+              {science.map((s) => (
+                <li key={s} className="flex items-center gap-3">
+                  <span className="h-1 w-1 shrink-0 rounded-full bg-[#c9a86c]" />
+                  <span className="text-base font-light text-white/75">{s}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <span
+            className="mx-auto hidden font-display text-3xl font-light text-[#c9a86c]/40 md:block"
+            style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+            aria-hidden
+          >
+            +
+          </span>
+
+          <motion.div
+            initial={reduce ? false : { opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-15% 0px" }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="rounded-2xl border border-white/8 bg-white/[0.02] p-8"
+          >
+            <span className="text-[10px] uppercase tracking-[0.4em] text-[#c9a86c]/70">Soul</span>
+            <ul className="mt-5 space-y-3.5">
+              {soul.map((s) => (
+                <li key={s} className="flex items-center gap-3">
+                  <span className="h-1 w-1 shrink-0 rounded-full bg-[#c9a86c]" />
+                  <span className="text-base font-light text-white/75">{s}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
 
-        <Reveal className="mt-20 text-center" blur={false}>
+        <Reveal className="mt-10 text-center" blur={false}>
+          <a
+            href="/emotional-healing-dubai"
+            className="link-underline text-sm font-light text-[#c9a86c]/80 hover:text-[#c9a86c] transition-colors"
+          >
+            More on emotional healing coaching →
+          </a>
+        </Reveal>
+
+        <Reveal className="mt-16 text-center" blur={false}>
           <p
             className="mx-auto max-w-2xl text-2xl font-light italic leading-relaxed text-white/55 md:text-3xl"
             style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}

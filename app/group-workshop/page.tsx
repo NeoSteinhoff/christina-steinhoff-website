@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     q: "What makes UnleashHER Potential™ different from other workshops?",
-    a: "Most workshops stop at strategy or motivation. UnleashHER Potential™ combines neuroscience, NLP, emotional intelligence, and subconscious transformation through Christina's Science + Soul Fusion™ Method — addressing the patterns underneath the behaviour, which is why the change lasts.",
+    a: "Most workshops stop at strategy or motivation. UnleashHER Potential™ combines NLP, emotional intelligence, and subconscious transformation through Christina's Science + Soul Fusion™ Method — addressing the patterns underneath the behaviour, which is why the change lasts.",
   },
   {
     q: "Can group coaching help with confidence and anxiety?",
@@ -79,12 +79,12 @@ const jsonLd = {
       provider: {
         "@type": "Person",
         name: "Christina Steinhoff",
-        jobTitle: "Life Mentor & Executive Coach",
+        jobTitle: "Executive & Emotional Mastery Coach",
         url: SITE.url,
       },
       areaServed: { "@type": "City", name: "Dubai" },
       description:
-        "A monthly transformational group coaching workshop for women in Dubai combining mindset coaching, emotional intelligence, neuroscience, and conscious leadership.",
+        "A monthly transformational group coaching workshop for women in Dubai combining mindset coaching, emotional intelligence, NLP, and conscious leadership.",
       url: `${SITE.url}/group-workshop`,
     },
     {

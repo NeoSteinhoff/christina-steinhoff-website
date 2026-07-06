@@ -8,9 +8,9 @@ import { ARTICLES } from "@/lib/blog-content";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Journal — Mindset, Neuroscience & Leadership",
+  title: "Journal — Mindset, Emotional Mastery & Leadership",
   description:
-    "Essays on mindset, neuroscience, subconscious change, and conscious leadership by Christina Steinhoff — life mentor and executive coach in Dubai.",
+    "Essays on mindset, emotional mastery, subconscious change, and conscious leadership by Christina Steinhoff — executive and emotional mastery coach in Dubai.",
   alternates: { canonical: `${SITE.url}/blog` },
 };
 
@@ -36,7 +36,7 @@ export default function BlogPage() {
             Ideas worth <em className="font-medium text-[#c9a86c]">living by</em>
           </h1>
           <p className="mt-5 max-w-xl text-base font-light leading-relaxed text-white/60">
-            On mindset, neuroscience, the subconscious, and the inner work behind outer success.
+            On mindset, emotional mastery, the subconscious, and the inner work behind outer success.
           </p>
         </div>
       </div>

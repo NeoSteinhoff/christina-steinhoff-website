@@ -20,7 +20,7 @@ const services: {
   {
     tag: "Executive",
     title: "High Performance Coaching",
-    body: "Built for leaders who are performing at the top of their field but running on fumes. Most high performers are operating at 60% of their real capacity because stress, unresolved pressure, and misalignment are draining the other 40%. This programme restores full neurological and emotional capacity — so you lead with clarity, make better decisions, and achieve more by doing less from a place of force.",
+    body: "Built for leaders who are performing at the top of their field but running on fumes. Most high performers are operating at 60% of their real capacity because stress, unresolved pressure, and misalignment are draining the other 40%. This programme restores full mental and emotional capacity — so you lead with clarity, make better decisions, and achieve more by doing less from a place of force.",
     outcomes: ["Burnout recovery & prevention", "Executive decision clarity", "Authentic leadership presence", "Sustainable peak performance"],
     page: { href: "/executive-coaching-dubai", label: "Explore executive coaching" },
   },
@@ -34,7 +34,7 @@ const services: {
     tag: "Immersive",
     title: "Bespoke Retreat Experience",
     body: "For leaders who want years of transformation in days. A fully private, fully bespoke multi-day experience in Dubai or your preferred location worldwide. You arrive at a carefully curated environment, with nothing to manage but your own evolution. This is the most intensive work Christina offers — and the results match the depth of the experience. Limited to a handful of clients per year.",
-    outcomes: ["Full-immersion transformation", "Rapid subconscious reprogramming", "Luxury private setting", "Complete life & leadership audit"],
+    outcomes: ["Full-immersion transformation", "Rapid subconscious reprogramming", "Fully private, curated setting", "Complete life & leadership audit"],
   },
   {
     tag: "Group · Women",

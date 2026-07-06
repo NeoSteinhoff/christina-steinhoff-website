@@ -2,6 +2,7 @@ import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Method } from "@/components/sections/Method";
+import { Outcomes } from "@/components/sections/Outcomes";
 import { Services } from "@/components/sections/Services";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Process } from "@/components/sections/Process";
@@ -12,9 +13,9 @@ import { NewsletterSection } from "@/components/sections/NewsletterSection";
 
 const bannerItems = [
   "Science + Soul Fusion™",
-  "Neuroscience",
-  "NLP & Clinical Hypnotherapy",
-  "Somatic Release",
+  "Emotional Mastery",
+  "NLP & Master Hypnosis",
+  "Nervous System Regulation",
   "Conscious Leadership",
   "Executive Mentorship",
 ];
@@ -27,6 +28,7 @@ export default function Home() {
       <InfiniteScrollBanner items={bannerItems} />
       <About />
       <Method />
+      <Outcomes />
       <Services />
       <Process />
       <Testimonials />

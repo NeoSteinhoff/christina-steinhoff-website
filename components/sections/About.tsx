@@ -2,20 +2,12 @@
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
-
-const credentials = [
-  "Master NLP Practitioner",
-  "Clinical Hypnotherapist",
-  "Neuroscience-based coaching",
-  "Somatic & trauma-informed practice",
-  "Conscious leadership",
-  "Subconscious reprogramming",
-];
+import { CREDENTIALS, STATS } from "@/lib/constants";
 
 const stats = [
-  { n: "500+", label: "Private clients" },
-  { n: "12 yrs", label: "In practice" },
-  { n: "3", label: "Continents" },
+  { n: STATS.clients, label: STATS.clientsLabel },
+  { n: STATS.years, label: STATS.yearsLabel },
+  { n: STATS.continents, label: STATS.continentsLabel },
 ];
 
 export function About() {
@@ -35,7 +27,7 @@ export function About() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-gradient-to-b from-white to-[#efe7d9]">
               <Image
                 src="/images/christina.jpg"
-                alt="Christina Steinhoff, life mentor and executive coach, seated portrait"
+                alt="Christina Steinhoff, executive and emotional mastery coach, seated portrait"
                 fill
                 sizes="(max-width: 768px) 90vw, 45vw"
                 className="object-cover object-bottom"
@@ -49,7 +41,7 @@ export function About() {
               className="absolute -bottom-7 left-5 right-5 flex justify-between rounded-2xl bg-[#0b0a08] px-7 py-5"
             >
               {stats.map((s) => (
-                <div key={s.n} className="text-center">
+                <div key={s.label} className="text-center">
                   <p
                     className="font-display text-2xl font-medium text-[#c9a86c]"
                     style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
@@ -76,30 +68,29 @@ export function About() {
 
             <Reveal className="mt-7 space-y-4 text-[15px] font-light leading-relaxed text-[#1c160e]/75" blur={false}>
               <p>
-                Christina works with high-achieving people who look unstoppable on paper and feel
-                hollow underneath it — running on empty, disconnected from why they started, quietly
-                certain that something is missing despite having &ldquo;everything.&rdquo;
+                Christina works with executives, founders, and high-achieving women who look
+                unstoppable on paper and feel hollow underneath it — running on empty, disconnected
+                from why they started, quietly certain that something is missing despite having
+                &ldquo;everything.&rdquo;
               </p>
               <p>
                 Her <strong className="font-medium text-[#1c160e]">Science + Soul Fusion™</strong>{" "}
-                method works at three levels at once — neurological, psychological, and spiritual —
+                method works at three levels at once — conscious, subconscious, and spiritual —
                 so it reaches the root, not the symptom. The outcome isn&apos;t a motivational high.
-                It&apos;s a durable change in how you think, lead, relate, and feel about your own life.
+                It&apos;s a durable change in how you lead, decide, relate, and feel about your own life.
               </p>
               <p>
-                Based in Dubai Investment Park, she works privately with founders and executives
+                Based in Dubai Investment Park, she works privately with executives and founders
                 across the Middle East, Europe, and the Americas.
               </p>
             </Reveal>
 
-            <div className="mt-9 flex flex-wrap gap-2.5">
-              {credentials.map((c) => (
-                <span
-                  key={c}
-                  className="rounded-full border border-[#1c160e]/12 bg-white/50 px-3.5 py-1.5 text-xs font-light text-[#1c160e]/70"
-                >
-                  {c}
-                </span>
+            <div className="mt-9 grid gap-2.5 sm:grid-cols-2">
+              {CREDENTIALS.map((c) => (
+                <div key={c} className="flex items-start gap-2.5">
+                  <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-[#c9a86c]" />
+                  <span className="text-[13px] font-light leading-snug text-[#1c160e]/75">{c}</span>
+                </div>
               ))}
             </div>
           </div>

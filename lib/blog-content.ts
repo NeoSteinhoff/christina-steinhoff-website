@@ -71,7 +71,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "How Science plus Soul Fusion approaches the work",
         "paragraphs": [
-          "My method is built on the understanding that the mind, the body and a person's sense of purpose are one system. I call it Science + Soul Fusion. It draws on neuroscience to explain what is happening, NLP to interrupt and re-pattern the language and imagery the mind runs on, clinical hypnotherapy to work at the subconscious level where beliefs actually live, somatic work to settle the nervous system that holds those beliefs in the body, and soul and purpose alignment so the change points somewhere that matters to you.",
+          "My method is built on the understanding that the mind, the body and a person's sense of purpose are one system. I call it Science + Soul Fusion. It draws on neuroscience to explain what is happening, NLP to interrupt and re-pattern the language and imagery the mind runs on, advanced conversational hypnotherapy to work at the subconscious level where beliefs actually live, somatic work to settle the nervous system that holds those beliefs in the body, and soul and purpose alignment so the change points somewhere that matters to you.",
           "In practice, that means we do not only talk. Talking engages the conscious mind — useful, but limited. We work with the body, with attention, with the deeper layers where the pattern was first encoded. A belief formed in a moment of feeling, not logic, tends to release the same way.",
           "The aim is not to make you a calmer version of someone exhausting to be. It is to align the life you have built with who you actually are, so achievement stops costing you the thing it was supposed to give you. This is framed as coaching and mentorship — a partnership in change, not treatment for an illness."
         ]
@@ -90,7 +90,7 @@ export const ARTICLES: BlogArticle[] = [
       "Most behaviour runs on automatic subconscious programmes, many written early in life, which is why intelligent, successful people stay stuck on patterns they can clearly see but cannot think their way out of.",
       "Willpower fails because beliefs live in faster, older parts of the brain than the prefrontal cortex; under stress the thinking brain is bypassed, so insight alone does not rewire a pattern.",
       "Lasting change comes through neuroplasticity — repeated new experiences and nervous-system safety — rather than force, which is why somatic and subconscious work matters alongside conversation.",
-      "Christina Steinhoff's Science + Soul Fusion method combines neuroscience, NLP, clinical hypnotherapy, somatic work and purpose alignment, framed as coaching and mentorship rather than therapy."
+      "Christina Steinhoff's Science + Soul Fusion method combines neuroscience, NLP, advanced conversational hypnotherapy, somatic work and purpose alignment, framed as coaching and mentorship rather than therapy."
     ],
     "faq": [
       {
@@ -172,7 +172,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Where coaching changes what self-help cannot",
         "paragraphs": [
           "You can build real awareness with the practices above, and you should start there. But there is a ceiling. The deepest patterns sit below conscious reach, which is why you can understand a behaviour perfectly and still repeat it. Insight lives in the prefrontal cortex; the pattern lives lower down, in emotional and somatic memory. Reasoning with it rarely moves it.",
-          "My work uses an approach I call Science and Soul Fusion — combining neuroscience and NLP with clinical hypnotherapy and somatic work, alongside the deeper question of what you are actually building your life around. Hypnotherapy and somatic methods reach the subconscious and the nervous system directly, where the pattern is held, rather than only talking about it. The soul and purpose work makes sure that once you can decide cleanly, you are deciding toward a life that is genuinely yours — not a more efficient version of one you have outgrown.",
+          "My work uses an approach I call Science and Soul Fusion — combining neuroscience and NLP with advanced conversational hypnotherapy and somatic work, alongside the deeper question of what you are actually building your life around. Hypnotherapy and somatic methods reach the subconscious and the nervous system directly, where the pattern is held, rather than only talking about it. The soul and purpose work makes sure that once you can decide cleanly, you are deciding toward a life that is genuinely yours — not a more efficient version of one you have outgrown.",
           "The result clients describe is not dramatic. It is quiet. Decisions that used to take weeks resolve in an afternoon. The constant second-guessing softens. You start trusting the signal because you can finally read it.",
           "If you recognise yourself in this — successful by every external measure, still circling the decisions that matter — it may be worth a conversation. I work with founders and executives from Dubai Investment Park and globally. A discovery call is simply a calm hour to look at what is actually driving your choices, with no obligation to go further. When you are ready, the door is open."
         ]
@@ -270,7 +270,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Where Science Meets Soul in This Work",
         "paragraphs": [
           "Neuroscience explains the machinery. It does not, on its own, answer the harder question underneath most stuckness: change toward what, and for what.",
-          "Many of the people I work with in Dubai have optimised relentlessly toward goals that were never fully theirs. The pattern that needs rewiring is not only a habit. It is a life shaped by other people's definitions of success. This is why my method, Science and Soul Fusion, holds both. Neuroscience, NLP, clinical hypnotherapy and somatic work change the patterns. The soul and purpose work makes sure you are rewiring toward a life you actually want to inhabit, rather than building a more efficient version of the cage.",
+          "Many of the people I work with in Dubai have optimised relentlessly toward goals that were never fully theirs. The pattern that needs rewiring is not only a habit. It is a life shaped by other people's definitions of success. This is why my method, Science and Soul Fusion, holds both. Neuroscience, NLP, advanced conversational hypnotherapy and somatic work change the patterns. The soul and purpose work makes sure you are rewiring toward a life you actually want to inhabit, rather than building a more efficient version of the cage.",
           "Rewire without direction and you become faster at running in place. Direction without rewiring leaves you knowing exactly where you want to go and unable to move. The two belong together."
         ]
       },
@@ -377,7 +377,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "Where Coaching Comes In — and a Quiet Next Step",
         "paragraphs": [
-          "This is the layer my work addresses. My method, Science and Soul Fusion, combines neuroscience and NLP to remap the prediction, clinical hypnotherapy to reach the subconscious where patterns are stored, and somatic work to update what the body holds — alongside the deeper question of purpose, so that the success you build is one you actually want to live inside. It is mentorship and coaching, not therapy, and it is aimed at the part of you that already knows what to do and wants to finally be free to do it.",
+          "This is the layer my work addresses. My method, Science and Soul Fusion, combines neuroscience and NLP to remap the prediction, advanced conversational hypnotherapy to reach the subconscious where patterns are stored, and somatic work to update what the body holds — alongside the deeper question of purpose, so that the success you build is one you actually want to live inside. It is mentorship and coaching, not therapy, and it is aimed at the part of you that already knows what to do and wants to finally be free to do it.",
           "When the operating system changes, the strategy you already have starts working. Decisions get cleaner. The plateau moves. The growth feels less like force and more like alignment, because you are no longer running two programmes at once.",
           "If any of this has named something you have quietly been carrying, that is worth paying attention to. When you are ready, you are welcome to book a discovery call. We will talk honestly about where you are stuck and whether this approach fits — no pressure, no script. I work with clients globally from my base in Dubai Investment Park, and a single unhurried conversation is often enough to see the pattern clearly for the first time."
         ]
@@ -397,7 +397,7 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         "q": "Can mindset really be changed, or is it fixed?",
-        "a": "It can be changed, though not by willpower alone. Because around 95 percent of behaviour runs on subconscious patterns, durable change requires working at the level where those patterns are stored. Approaches that combine neuroscience, NLP, hypnotherapy and somatic work address the belief and the body together, which is why the shift tends to hold rather than fade after a few motivated weeks."
+        "a": "It can be changed, though not by willpower alone. Because around 95 percent of behaviour runs on subconscious patterns, durable change requires working at the level where those patterns are stored. Approaches that combine NLP (Neuro-Linguistic Programming), master hypnosis, and Time Line Therapy® and somatic work address the belief and the body together, which is why the shift tends to hold rather than fade after a few motivated weeks."
       },
       {
         "q": "Why do successful people still feel stuck despite a strong mindset?",
@@ -465,13 +465,13 @@ export const ARTICLES: BlogArticle[] = [
         "paragraphs": [
           "A large share of daily cognition and behaviour, often estimated around ninety-five percent, runs below conscious awareness. The subconscious holds your deepest beliefs about who you are, what you are worth, and what is safe. These beliefs were largely set early and have been reinforced ever since.",
           "Behaviour-level change that contradicts an identity-level belief tends not to hold. If, underneath, you believe your worth is your output, you will rebuild the overwork however many boundaries you set on the surface. The circuit reasserts itself because the belief driving it was never addressed.",
-          "Durable development works at this deeper layer. It updates the pattern at its source rather than managing the symptom. This is precisely where clinical hypnotherapy, NLP and belief-level work earn their place: they reach the subconscious material that conscious effort cannot."
+          "Durable development works at this deeper layer. It updates the pattern at its source rather than managing the symptom. This is precisely where advanced conversational hypnotherapy, NLP and belief-level work earn their place: they reach the subconscious material that conscious effort cannot."
         ]
       },
       {
         "heading": "How this shapes the work, and a quiet invitation",
         "paragraphs": [
-          "This is the reasoning behind Christina Steinhoff's Science and Soul Fusion method. It combines neuroscience and NLP to redirect attention and repetition, clinical hypnotherapy to update subconscious beliefs, and somatic work to regulate the nervous system so the brain can actually change. The soul and purpose dimension addresses the question underneath the patterns: what you are rebuilding towards. The principles of neuroplasticity make clear why each element is there, and why working on only one of them tends to disappoint.",
+          "This is the reasoning behind Christina Steinhoff's Science and Soul Fusion method. It combines neuroscience and NLP to redirect attention and repetition, advanced conversational hypnotherapy to update subconscious beliefs, and somatic work to regulate the nervous system so the brain can actually change. The soul and purpose dimension addresses the question underneath the patterns: what you are rebuilding towards. The principles of neuroplasticity make clear why each element is there, and why working on only one of them tends to disappoint.",
           "If you recognise yourself in this, the next step is not more effort. It is a different kind of attention, applied where it changes the structure rather than the surface.",
           "Christina works with founders and executives from her base in Dubai Investment Park and with clients globally. If you would like to understand how this might apply to your own patterns, you are welcome to book a discovery call. There is no pressure in it. It is simply a conversation about what is keeping you stuck, and what becomes possible when the brain is given the right conditions to change."
         ]

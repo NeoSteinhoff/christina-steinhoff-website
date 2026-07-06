@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Christina Steinhoff — Life Mentor & Executive Coach, Dubai";
+export const alt = "Christina Steinhoff — Executive & Emotional Mastery Coach, Dubai";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -25,7 +25,7 @@ export default function OgImage() {
           <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
             <div style={{ width: 8, height: 8, borderRadius: 8, background: "#c9a86c" }} />
             <div style={{ color: "#c9a86c", fontSize: 22, letterSpacing: 6, textTransform: "uppercase" }}>
-              Life Mentor &amp; Executive Coach
+              Executive &amp; Emotional Mastery Coach
             </div>
           </div>
           <div style={{ color: "rgba(255,255,255,0.45)", fontSize: 22, letterSpacing: 4, textTransform: "uppercase" }}>
@@ -50,7 +50,7 @@ export default function OgImage() {
               lineHeight: 1.35,
             }}
           >
-            Private mentorship for founders and executives who have the success — and want the inner life to match it.
+            Executive coaching for high-achieving women and leaders who want emotional mastery, resilient leadership, and success without burnout.
           </div>
         </div>
 

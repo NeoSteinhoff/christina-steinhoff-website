@@ -1,22 +1,40 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { SITE } from "@/lib/constants";
 
 export function NewsletterSection() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
-    await fetch("https://formspree.io/mail@christinasteinhoff.com", {
-      method: "POST",
-      body: JSON.stringify({ email, _subject: "New newsletter subscriber" }),
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-    });
-    setLoading(false);
-    setSubmitted(true);
+    setError(false);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "newsletter", email }),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (res.ok && json.ok) {
+        setSubmitted(true);
+      } else if (json.code === "unconfigured") {
+        window.location.href = `mailto:${SITE.email}?subject=${encodeURIComponent(
+          "Newsletter signup"
+        )}&body=${encodeURIComponent(`Please subscribe: ${email}`)}`;
+        setSubmitted(true);
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -29,10 +47,11 @@ export function NewsletterSection() {
         </div>
         <h2 className="text-4xl md:text-5xl font-light text-[#1c160e] mb-4"
             style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
-          Wisdom for the <em className="text-[#c9a86c]">high achiever</em>
+          Lead without <em className="text-[#c9a86c]">burning out</em>
         </h2>
         <p className="text-[#1c160e]/45 font-light mb-8 leading-relaxed">
-          Short, sharp insights on mindset, neuroscience, and conscious performance.<br className="hidden md:block" /> Delivered weekly. No fluff, ever.
+          Short, sharp insights on emotional mastery, resilient leadership, and success without
+          burnout.<br className="hidden md:block" /> Delivered weekly. No fluff, ever.
         </p>
 
         {submitted ? (
@@ -62,6 +81,11 @@ export function NewsletterSection() {
               {loading ? "Joining..." : "Join Free"}
             </button>
           </form>
+        )}
+        {error && (
+          <p className="text-red-600/70 text-xs mt-3" role="alert">
+            Something went wrong. Please email {SITE.email} directly.
+          </p>
         )}
         <p className="text-[#1c160e]/25 text-xs mt-4">No spam. Unsubscribe anytime.</p>
       </div>

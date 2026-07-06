@@ -30,9 +30,9 @@ const bridges = [
 
 const credentials = [
   "Master NLP Practitioner",
-  "Clinical Hypnotherapist",
-  "12+ years in practice",
-  "500+ private clients",
+  "Certified Master Hypnotist",
+  "10+ years in practice",
+  "400+ private clients",
 ];
 
 const outcomes = [
@@ -245,7 +245,7 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
             className="text-[#1c160e]/70 font-light leading-relaxed text-base max-w-2xl mx-auto mb-14"
           >
             Most life coaching stays at the level of goals and habits — useful, but shallow.
-            Christina&apos;s method combines neuroscience-based coaching, NLP, and clinical
+            Christina&apos;s method combines NLP-based coaching, NLP, and clinical
             hypnotherapy to work with the subconscious patterns actually driving your choices,
             so the shift isn&apos;t motivation. It&apos;s identity-level change.
           </motion.p>
@@ -308,8 +308,8 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
                 className="text-white/65 font-light leading-relaxed text-base"
               >
                 Anyone can call themselves a life coach — Dubai has no shortage of them. Christina
-                is a certified Master NLP Practitioner and Clinical Hypnotherapist with 12+ years in
-                practice and 500+ private clients, working across three continents. Her approach is
+                is a Licensed Master NLP Practitioner and Certified Master Hypnotist with 10+ years in
+                practice and 400+ private clients, working across three continents. Her approach is
                 structured, not motivational fluff.
               </motion.p>
             </div>
