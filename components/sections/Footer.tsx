@@ -42,9 +42,10 @@ export function Footer() {
             <h4 className="text-white/40 text-[9px] tracking-[0.4em] uppercase mb-5">Services</h4>
             <ul className="space-y-3">
               {[
-                ["Personal Life Mentorship", "/#services"],
-                ["Executive Coaching Dubai", "/executive-coaching-dubai"],
-                ["UnleashHER™ Women's Workshop", "/group-workshop"],
+                ["Life Coach in Dubai", "/life-coach-dubai"],
+                ["Executive Coach in Dubai", "/executive-coaching-dubai"],
+                ["Emotional Healing Coaching", "/emotional-healing-dubai"],
+                ["Women's Coach in Dubai", "/group-workshop"],
                 ["Conscious Relationships", "/#services"],
                 ["Bespoke Retreat", "/#services"],
               ].map(([label, href]) => (

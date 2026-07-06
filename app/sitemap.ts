@@ -6,7 +6,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const staticPages = [
     { url: SITE.url, priority: 1.0, changeFrequency: "weekly" as const },
-    { url: `${SITE.url}/executive-coaching-dubai`, priority: 0.9, changeFrequency: "monthly" as const },
+    { url: `${SITE.url}/life-coach-dubai`, priority: 0.95, changeFrequency: "monthly" as const },
+    { url: `${SITE.url}/executive-coaching-dubai`, priority: 0.95, changeFrequency: "monthly" as const },
+    { url: `${SITE.url}/emotional-healing-dubai`, priority: 0.9, changeFrequency: "monthly" as const },
     { url: `${SITE.url}/group-workshop`, priority: 0.9, changeFrequency: "monthly" as const },
     { url: `${SITE.url}/blog`, priority: 0.8, changeFrequency: "weekly" as const },
     { url: `${SITE.url}/contact`, priority: 0.7, changeFrequency: "monthly" as const },

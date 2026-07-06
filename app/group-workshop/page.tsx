@@ -3,10 +3,11 @@ import { WorkshopClient } from "./WorkshopClient";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Group Coaching for Women in Dubai — UnleashHER Potential™ Workshop",
+  title: "Women's Coach in Dubai | UnleashHER Potential™ Group Coaching",
   description:
     "UnleashHER Potential™ — Christina Steinhoff's monthly group coaching workshop for women in Dubai. Confidence, emotional resilience, business clarity & transformation in a supportive community of ambitious women.",
   keywords: [
+    "women's coach dubai",
     "group coaching for women dubai",
     "women's group coaching dubai",
     "life coaching workshop for women dubai",
@@ -14,7 +15,6 @@ export const metadata: Metadata = {
     "women's business coach dubai",
     "women entrepreneur workshop dubai",
     "UnleashHER Potential",
-    "personal development workshop women dubai",
   ],
   alternates: { canonical: `${SITE.url}/group-workshop` },
   openGraph: {

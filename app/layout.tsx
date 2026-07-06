@@ -109,6 +109,20 @@ export default function RootLayout({
         addressRegion: "Dubai",
         addressCountry: "AE",
       },
+      // Not a licensed psychotherapist — credentials are named explicitly so this
+      // claim is never ambiguous to Google (YMYL/E-E-A-T) or to readers.
+      hasCredential: [
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "Certification",
+          name: "Master NLP Practitioner",
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "Certification",
+          name: "Clinical Hypnotherapist",
+        },
+      ],
       sameAs: [
         "https://www.instagram.com/christinasteinhof/",
         "https://www.linkedin.com/in/christina-steinhoff-thecoscoaching",
@@ -118,11 +132,12 @@ export default function RootLayout({
         "Life Coaching", "NLP", "Neuroscience", "Clinical Hypnotherapy",
         "Executive Coaching", "Mindset Coaching", "Somatic Release",
         "Subconscious Reprogramming", "Burnout Recovery", "Leadership Coaching",
+        "Emotional Resilience Coaching",
       ],
     },
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": SITE.url,
       name: "Christina Steinhoff — Life Mentor & Executive Coach",
       description: SITE.description,
@@ -144,11 +159,16 @@ export default function RootLayout({
         latitude: 24.9964,
         longitude: 55.1681,
       },
-      areaServed: ["Dubai", "Abu Dhabi", "UAE", "Middle East", "Europe", "Global"],
+      areaServed: [
+        { "@type": "City", name: "Dubai" },
+        { "@type": "City", name: "Abu Dhabi" },
+        { "@type": "Country", name: "United Arab Emirates" },
+        { "@type": "Place", name: "Online / Worldwide" },
+      ],
       serviceType: [
         "Life Coaching", "Executive Coaching", "NLP Coaching",
-        "Hypnotherapy", "Relationship Coaching", "Burnout Coaching",
-        "Mindset Coaching", "Retreat Experience",
+        "Clinical Hypnotherapy", "Relationship Coaching", "Burnout Coaching",
+        "Mindset Coaching", "Emotional Healing Coaching", "Retreat Experience",
       ],
       sameAs: [
         "https://www.instagram.com/christinasteinhof/",

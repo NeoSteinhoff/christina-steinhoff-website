@@ -15,6 +15,7 @@ const services: {
     title: "Personal Life Mentorship",
     body: "For the high achiever who has everything on paper — and something essential is still missing. This is Christina's deepest, most transformational offering. Over 3-6 months of private sessions, we dissolve the subconscious patterns blocking your fulfilment, rebuild your relationship with yourself, and create a life that genuinely reflects who you are at your highest. Not who you were trained to be.",
     outcomes: ["Core identity & purpose clarity", "Subconscious reprogramming", "Emotional intelligence mastery", "Complete life redesign"],
+    page: { href: "/life-coach-dubai", label: "Explore life coaching in Dubai" },
   },
   {
     tag: "Executive",

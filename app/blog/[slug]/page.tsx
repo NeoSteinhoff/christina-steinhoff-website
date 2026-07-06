@@ -6,6 +6,7 @@ import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { NewsletterSection } from "@/components/sections/NewsletterSection";
 import { ARTICLES, getArticle } from "@/lib/blog-content";
+import { RELATED_PILLARS } from "@/lib/blog-related-pillars";
 import { SITE, CALENDLY } from "@/lib/constants";
 
 export function generateStaticParams() {
@@ -172,6 +173,21 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             )}
           </section>
         ))}
+
+        {/* Related services — contextual internal links to the relevant pillar page */}
+        {RELATED_PILLARS[a.slug] && RELATED_PILLARS[a.slug].length > 0 && (
+          <div className="mb-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#1c160e]/10 pt-6 text-sm">
+            {RELATED_PILLARS[a.slug].map((r) => (
+              <Link
+                key={r.href}
+                href={r.href}
+                className="font-medium text-[#a8884e] underline underline-offset-4 hover:text-[#c9a86c] transition-colors"
+              >
+                {r.label} →
+              </Link>
+            ))}
+          </div>
+        )}
 
         {/* FAQ */}
         <section className="mt-14 border-t border-[#1c160e]/10 pt-12">

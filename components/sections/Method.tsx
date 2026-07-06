@@ -17,6 +17,8 @@ const pillars = [
     n: "03",
     title: "Somatic & trauma release",
     body: "Unresolved stress lives in the body, not just the mind. Somatic work discharges the physiological residue of past experience, freeing a nervous system that has been quietly running the show for years.",
+    href: "/emotional-healing-dubai",
+    linkLabel: "More on emotional healing coaching",
   },
   {
     n: "04",
@@ -72,9 +74,17 @@ export function Method() {
                 {p.n}
               </span>
               <h3 className="text-xl font-medium text-white md:col-span-4 md:text-2xl">{p.title}</h3>
-              <p className="text-base font-light leading-relaxed text-white/60 md:col-span-7">
-                {p.body}
-              </p>
+              <div className="md:col-span-7">
+                <p className="text-base font-light leading-relaxed text-white/60">{p.body}</p>
+                {p.href && (
+                  <a
+                    href={p.href}
+                    className="link-underline mt-2 inline-block text-sm font-light text-[#c9a86c]/80 hover:text-[#c9a86c] transition-colors"
+                  >
+                    {p.linkLabel} →
+                  </a>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>

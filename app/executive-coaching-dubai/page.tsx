@@ -3,22 +3,22 @@ import { ExecutiveClient } from "./ExecutiveClient";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Executive Coaching in Dubai — Lead with Clarity & Sustainable Success",
+  title: "Best Executive Coach in Dubai | Christina Steinhoff",
   description:
     "Certified executive coach in Dubai for CEOs, founders & senior leaders. Christina Steinhoff's Science + Soul Fusion™ method combines neuroscience, NLP & conscious leadership for high performance without burnout.",
   keywords: [
+    "best executive coach dubai",
     "executive coaching dubai",
     "executive coach dubai",
     "CEO coaching dubai",
     "leadership coaching dubai",
-    "high performance coaching dubai",
-    "burnout coaching dubai",
+    "burnout coach dubai",
     "conscious leadership coaching",
     "executive coach UAE",
   ],
   alternates: { canonical: `${SITE.url}/executive-coaching-dubai` },
   openGraph: {
-    title: "Executive Coaching in Dubai — Christina Steinhoff",
+    title: "Best Executive Coach in Dubai | Christina Steinhoff",
     description:
       "Lead with clarity, purpose & sustainable success. Executive coaching for CEOs, founders and senior leaders in Dubai & the UAE.",
     url: `${SITE.url}/executive-coaching-dubai`,
@@ -81,8 +81,15 @@ const jsonLd = {
         name: "Christina Steinhoff",
         jobTitle: "Executive Coach & Life Mentor",
         url: SITE.url,
+        hasCredential: [
+          { "@type": "EducationalOccupationalCredential", credentialCategory: "Certification", name: "Master NLP Practitioner" },
+          { "@type": "EducationalOccupationalCredential", credentialCategory: "Certification", name: "Clinical Hypnotherapist" },
+        ],
       },
-      areaServed: { "@type": "City", name: "Dubai" },
+      areaServed: [
+        { "@type": "City", name: "Dubai" },
+        { "@type": "Place", name: "Online / Worldwide" },
+      ],
       description:
         "Executive coaching for CEOs, founders and senior leaders in Dubai, combining neuroscience, NLP, hypnotherapy and conscious leadership through the Science + Soul Fusion™ Method.",
       url: `${SITE.url}/executive-coaching-dubai`,
