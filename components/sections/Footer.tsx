@@ -65,6 +65,7 @@ export function Footer() {
               {[
                 ["About", "/#about"],
                 ["The Method", "/#method"],
+                ["Press", "/#press"],
                 ["Blog", "/blog"],
                 ["FAQ", "/faq"],
                 ["Contact", "/contact"],

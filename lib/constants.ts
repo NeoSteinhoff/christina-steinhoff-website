@@ -49,3 +49,16 @@ export const STATS = {
   continents: "3",
   continentsLabel: "Continents",
 };
+
+// Real third-party press mentions — never fabricate an entry here (see the
+// compliance stance in memory re: fabricated reviews/schema). Powers the
+// homepage Press section, the Footer link, and the Person `subjectOf` JSON-LD.
+export const PRESS = [
+  {
+    outlet: "UAE Stories",
+    title: "Christina Steinhoff and the Science of Calm Leadership for High-Achieving Women",
+    url: "https://uaestories.com/christina-steinhoff-and-the-science/",
+    author: "Aditi Goyal",
+    date: "2026-06-25",
+  },
+] as const;

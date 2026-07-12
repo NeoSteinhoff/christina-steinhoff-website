@@ -8,7 +8,7 @@ import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import { BackToTop } from "@/components/ui/BackToTop";
 
-import { SITE, CREDENTIALS } from "@/lib/constants";
+import { SITE, CREDENTIALS, PRESS } from "@/lib/constants";
 
 const GA_ID = "G-W88WM4W49F";
 const CLARITY_ID = "x4cstiql2r";
@@ -152,6 +152,14 @@ export default function RootLayout({
         "Subconscious Reprogramming", "Burnout Recovery", "Leadership Coaching",
         "Emotional Resilience Coaching",
       ],
+      subjectOf: PRESS.map((p) => ({
+        "@type": "NewsArticle",
+        headline: p.title,
+        url: p.url,
+        datePublished: p.date,
+        author: { "@type": "Person", name: p.author },
+        publisher: { "@type": "Organization", name: p.outlet },
+      })),
     },
     {
       "@context": "https://schema.org",
