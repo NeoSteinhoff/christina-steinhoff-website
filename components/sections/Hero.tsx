@@ -109,7 +109,7 @@ export function Hero() {
         >
           <div className="relative mx-auto aspect-[850/1040] w-full max-w-sm lg:max-w-none">
             <Image
-              src="/images/christina-hero-duotone.webp"
+              src="/images/christina-hero.webp"
               alt="Christina Steinhoff, executive and emotional mastery coach in Dubai"
               fill
               priority
