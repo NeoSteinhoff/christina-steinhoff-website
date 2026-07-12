@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { NewsletterSection } from "@/components/sections/NewsletterSection";
@@ -62,7 +63,7 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
       <section className="relative min-h-[88vh] overflow-hidden bg-[#060606] px-6 pb-24 pt-40 flex items-center">
         <div className="pointer-events-none absolute -top-1/4 left-0 h-[700px] w-[700px] rounded-full bg-[#c9a86c]/[0.07] blur-[160px]" />
         <div className="relative z-10 mx-auto grid w-full max-w-6xl items-end gap-10 md:grid-cols-12">
-          <div className="md:col-span-9">
+          <div className="md:col-span-7">
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -115,6 +116,23 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
               </a>
             </motion.div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 1.04 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: EASE, delay: 0.2 }}
+            className="hidden md:col-span-5 md:block"
+          >
+            <div className="relative aspect-[850/1040] w-full overflow-hidden rounded-2xl border border-white/10">
+              <Image
+                src="/images/christina-lifecoach.webp"
+                alt="Christina Steinhoff, life coach in Dubai"
+                fill
+                sizes="(max-width: 1024px) 90vw, 35vw"
+                className="object-cover"
+              />
+            </div>
+          </motion.div>
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { NewsletterSection } from "@/components/sections/NewsletterSection";
@@ -142,6 +143,64 @@ export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
               Ask on WhatsApp
             </a>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Meet your coach */}
+      <section className="bg-[#f7f1e7] py-28 px-6 border-b border-[#1c160e]/8">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 1.03 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, ease: EASE }}
+          >
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-[#1c160e]/8">
+              <Image
+                src="/images/christina-workshop.webp"
+                alt="Christina Steinhoff, host of the UnleashHER Potential workshop in Dubai"
+                fill
+                sizes="(max-width: 768px) 90vw, 45vw"
+                className="object-cover object-top"
+              />
+            </div>
+          </motion.div>
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-3 mb-6"
+            >
+              <span className="h-px w-7 bg-[#c9a86c]/40" />
+              <span className="text-[#c9a86c]/70 text-[10px] tracking-[0.45em] uppercase">Meet Your Coach</span>
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl font-light text-[#1c160e] leading-tight mb-6"
+              style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+            >
+              Christina holds the room
+              <br />
+              <em className="text-[#c9a86c]">so you can grow in it</em>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className="text-[#1c160e]/75 font-light leading-relaxed text-base"
+            >
+              Christina Steinhoff created UnleashHER Potential™ after a decade of private coaching
+              taught her that transformation moves faster in the right room, with the right women,
+              held by someone who&apos;s done the work herself. As an Executive &amp; Emotional
+              Mastery Coach with 400+ private clients across three continents, she brings the same
+              Science + Soul Fusion™ method from her 1:1 practice into a live, guided group setting
+              — structured, not motivational fluff.
+            </motion.p>
+          </div>
         </div>
       </section>
 
