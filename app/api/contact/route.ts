@@ -3,13 +3,21 @@ import { SITE } from "@/lib/constants";
 export const runtime = "nodejs";
 
 type Payload = {
-  type?: "enquiry" | "newsletter";
+  type?: "enquiry" | "newsletter" | "referral";
   firstName?: string;
   lastName?: string;
   email?: string;
   topic?: string;
   message?: string;
   company?: string; // honeypot — real users leave this empty
+  source?: string; // enquiry/newsletter: how they heard about Christina, or the blog slug that captured them
+  referredBy?: string; // enquiry: who referred them, when source === "referral"
+  autoSource?: string; // passive referrer/utm capture, used when `source` wasn't self-reported
+  // referral type — a client introducing someone else
+  referrerName?: string;
+  refereeName?: string;
+  refereeContact?: string;
+  note?: string;
 };
 
 const TOPICS: Record<string, string> = {
@@ -20,6 +28,15 @@ const TOPICS: Record<string, string> = {
   retreat: "Bespoke Retreat",
   workshop: "UnleashHER Potential™ Workshop",
   other: "General Enquiry",
+};
+
+const SOURCES: Record<string, string> = {
+  referral: "Referred by a client",
+  instagram: "Instagram",
+  google: "Google search",
+  press: "Press or article",
+  blog: "Blog",
+  other: "Other",
 };
 
 function valid(email: string) {
@@ -39,21 +56,44 @@ export async function POST(request: Request) {
 
   const email = (body.email || "").trim();
   const isNewsletter = body.type === "newsletter";
+  const isReferral = body.type === "referral";
 
   let subject: string;
   let text: string;
   let html: string;
 
-  if (isNewsletter) {
+  if (isReferral) {
+    const referrerName = (body.referrerName || "").trim();
+    const refereeName = (body.refereeName || "").trim();
+    const refereeContact = (body.refereeContact || "").trim();
+    const note = (body.note || "").trim();
+
+    if (!refereeName || !refereeContact) {
+      return Response.json({ ok: false, code: "invalid" }, { status: 422 });
+    }
+
+    subject = `New client referral — ${refereeName} (via ${referrerName || "a client"})`;
+    text = `New client referral\n\nReferred by: ${referrerName || "Not provided"}\nPerson to introduce: ${refereeName}\nContact: ${refereeContact}${note ? `\n\nNote: ${note}` : ""}`;
+    html = `
+      <div style="font-family:system-ui,sans-serif;line-height:1.6;color:#1c160e">
+        <h2 style="font-weight:600">New client referral 💛</h2>
+        <p><strong>Referred by:</strong> ${escapeHtml(referrerName || "Not provided")}<br/>
+        <strong>Person to introduce:</strong> ${escapeHtml(refereeName)}<br/>
+        <strong>Contact:</strong> ${escapeHtml(refereeContact)}</p>
+        ${note ? `<p style="white-space:pre-wrap;border-left:3px solid #c9a86c;padding-left:14px">${escapeHtml(note)}</p>` : ""}
+      </div>`;
+  } else if (isNewsletter) {
     if (!valid(email)) {
       return Response.json({ ok: false, code: "invalid" }, { status: 422 });
     }
+    const sourceLabel = body.source ? `Blog: ${body.source}` : body.autoSource && body.autoSource !== "direct" ? body.autoSource : null;
     subject = "New newsletter subscriber";
-    text = `New newsletter subscriber\n\nEmail: ${email}`;
+    text = `New newsletter subscriber\n\nEmail: ${email}${sourceLabel ? `\nSource: ${sourceLabel}` : ""}`;
     html = `
       <div style="font-family:system-ui,sans-serif;line-height:1.6;color:#1c160e">
         <h2 style="font-weight:600">New newsletter subscriber</h2>
         <p><strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
+        ${sourceLabel ? `<p><strong>Source:</strong> ${escapeHtml(sourceLabel)}</p>` : ""}
       </div>`;
   } else {
     const firstName = (body.firstName || "").trim();
@@ -65,15 +105,20 @@ export async function POST(request: Request) {
       return Response.json({ ok: false, code: "invalid" }, { status: 422 });
     }
 
+    const isClientReferral = body.source === "referral";
+    const sourceLabel = SOURCES[body.source || ""] || body.autoSource || "Direct";
+    const referredBy = (body.referredBy || "").trim();
+
     const name = `${firstName} ${lastName}`.trim();
-    subject = `New enquiry — ${topic} — ${name}`;
-    text = `New enquiry from the website\n\nName: ${name}\nEmail: ${email}\nInterested in: ${topic}\n\n${message}`;
+    subject = `${isClientReferral ? "[REFERRAL] " : ""}New enquiry — ${topic} — ${name}`;
+    text = `New enquiry from the website\n\nName: ${name}\nEmail: ${email}\nInterested in: ${topic}\nSource: ${sourceLabel}${referredBy ? `\nReferred by: ${referredBy}` : ""}\n\n${message}`;
     html = `
       <div style="font-family:system-ui,sans-serif;line-height:1.6;color:#1c160e">
-        <h2 style="font-weight:600">New website enquiry</h2>
+        <h2 style="font-weight:600">New website enquiry${isClientReferral ? " — via referral 💛" : ""}</h2>
         <p><strong>Name:</strong> ${escapeHtml(name)}<br/>
         <strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a><br/>
-        <strong>Interested in:</strong> ${escapeHtml(topic)}</p>
+        <strong>Interested in:</strong> ${escapeHtml(topic)}<br/>
+        <strong>Source:</strong> ${escapeHtml(sourceLabel)}${referredBy ? `<br/><strong>Referred by:</strong> ${escapeHtml(referredBy)}` : ""}</p>
         <p style="white-space:pre-wrap;border-left:3px solid #c9a86c;padding-left:14px">${escapeHtml(message)}</p>
       </div>`;
   }
@@ -94,7 +139,7 @@ export async function POST(request: Request) {
         body: JSON.stringify({
           from: FROM,
           to: [SITE.email],
-          reply_to: email,
+          reply_to: email || undefined,
           subject,
           html,
           text,

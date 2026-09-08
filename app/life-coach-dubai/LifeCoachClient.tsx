@@ -8,6 +8,7 @@ import { FAQAccordion, FAQItem } from "@/components/ui/FAQAccordion";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { GoldButton } from "@/components/ui/GoldButton";
 import { ScopeNote } from "@/components/ui/ScopeNote";
+import { RelatedReading } from "@/components/sections/RelatedReading";
 import { CALENDLY, SITE } from "@/lib/constants";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -433,6 +434,8 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
           </div>
         </div>
       </section>
+
+      <RelatedReading pillarSlug="life-coach-dubai" />
 
       {/* CTA */}
       <section className="bg-[#f7f1e7] py-32 px-6 relative overflow-hidden">

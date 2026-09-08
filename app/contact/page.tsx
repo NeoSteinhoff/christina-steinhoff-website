@@ -5,6 +5,8 @@ import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { CalendlyEmbed } from "@/components/ui/CalendlyEmbed";
 import { SITE, SOCIAL, CALENDLY } from "@/lib/constants";
+import { track } from "@/lib/track";
+import { getEntrySource } from "@/lib/attribution";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -14,6 +16,7 @@ const inputClass =
 export default function ContactPage() {
   const [tab, setTab] = useState<"book" | "form">("book");
   const [status, setStatus] = useState<Status>("idle");
+  const [source, setSource] = useState("other");
 
   function mailtoFallback(data: Record<string, string>) {
     const subject = encodeURIComponent(`Enquiry — ${data.topic || "General"} — ${data.firstName} ${data.lastName}`);
@@ -28,6 +31,7 @@ export default function ContactPage() {
     const form = e.currentTarget;
     const fd = new FormData(form);
     const data = Object.fromEntries(fd.entries()) as Record<string, string>;
+    data.autoSource = getEntrySource();
     setStatus("loading");
     try {
       const res = await fetch("/api/contact", {
@@ -38,12 +42,14 @@ export default function ContactPage() {
       const json = await res.json().catch(() => ({}));
       if (res.ok && json.ok) {
         setStatus("success");
+        track("generate_lead", { source });
         return;
       }
       // No backend configured yet — make sure the lead still reaches Christina.
       if (json.code === "unconfigured") {
         mailtoFallback(data);
         setStatus("success");
+        track("generate_lead", { source });
         return;
       }
       setStatus("error");
@@ -214,6 +220,22 @@ export default function ContactPage() {
                     <option value="other">General enquiry</option>
                   </select>
                 </div>
+
+                <div>
+                  <label className="mb-2 block text-[10px] uppercase tracking-[0.18em] text-[#1c160e]/45">How did you hear about us?</label>
+                  <select name="source" value={source} onChange={(e) => setSource(e.target.value)} className={inputClass}>
+                    <option value="referral">Referred by a client</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="google">Google search</option>
+                    <option value="press">Press or an article</option>
+                    <option value="blog">The blog</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                {source === "referral" && (
+                  <Field label="Who referred you?" name="referredBy" placeholder="Their name" />
+                )}
 
                 <div>
                   <label className="mb-2 block text-[10px] uppercase tracking-[0.18em] text-[#1c160e]/45">Message</label>

@@ -7,6 +7,7 @@ import { Services } from "@/components/sections/Services";
 import { Press } from "@/components/sections/Press";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Process } from "@/components/sections/Process";
+import { ReferralSection } from "@/components/sections/ReferralSection";
 import { CTA } from "@/components/sections/CTA";
 import { Footer } from "@/components/sections/Footer";
 import { InfiniteScrollBanner } from "@/components/ui/InfiniteScroll";
@@ -34,6 +35,7 @@ export default function Home() {
       <Services />
       <Process />
       <Testimonials />
+      <ReferralSection />
       <CTA />
       <NewsletterSection />
       <Footer />

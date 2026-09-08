@@ -6,6 +6,7 @@ import { Footer } from "@/components/sections/Footer";
 import { NewsletterSection } from "@/components/sections/NewsletterSection";
 import { FAQAccordion, FAQItem } from "@/components/ui/FAQAccordion";
 import { GoldButton } from "@/components/ui/GoldButton";
+import { RelatedReading } from "@/components/sections/RelatedReading";
 import { CALENDLY, SITE } from "@/lib/constants";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -443,6 +444,8 @@ export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
           <FAQAccordion items={faqs} />
         </div>
       </section>
+
+      <RelatedReading pillarSlug="group-workshop" />
 
       {/* CTA */}
       <section className="bg-[#060606] py-32 px-6 relative overflow-hidden">

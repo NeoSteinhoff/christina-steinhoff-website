@@ -7,6 +7,7 @@ import { NewsletterSection } from "@/components/sections/NewsletterSection";
 import { FAQAccordion, FAQItem } from "@/components/ui/FAQAccordion";
 import { GoldButton } from "@/components/ui/GoldButton";
 import { ScopeNote } from "@/components/ui/ScopeNote";
+import { RelatedReading } from "@/components/sections/RelatedReading";
 import { CALENDLY, SITE } from "@/lib/constants";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -335,6 +336,8 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
           <FAQAccordion items={faqs} />
         </div>
       </section>
+
+      <RelatedReading pillarSlug="emotional-healing-dubai" />
 
       {/* CTA */}
       <section className="bg-[#060606] py-32 px-6 relative overflow-hidden">

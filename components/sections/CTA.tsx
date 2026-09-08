@@ -2,6 +2,7 @@
 import { CALENDLY, SITE } from "@/lib/constants";
 import { Reveal } from "@/components/ui/Reveal";
 import { GoldButton } from "@/components/ui/GoldButton";
+import { track } from "@/lib/track";
 
 export function CTA() {
   return (
@@ -36,6 +37,7 @@ export function CTA() {
             <GoldButton href={CALENDLY}>Book a discovery call</GoldButton>
             <a
               href={`mailto:${SITE.email}`}
+              onClick={() => track("contact_email_click")}
               className="link-underline text-[12px] uppercase tracking-[0.2em] text-white/50 transition-colors hover:text-white"
             >
               {SITE.email}

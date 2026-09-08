@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { NewsletterSection } from "@/components/sections/NewsletterSection";
+import { ArticleLeadCapture } from "@/components/sections/ArticleLeadCapture";
 import { ARTICLES, getArticle } from "@/lib/blog-content";
 import { RELATED_PILLARS } from "@/lib/blog-related-pillars";
 import { SITE, CALENDLY } from "@/lib/constants";
@@ -33,7 +34,7 @@ export async function generateMetadata({
       url,
       publishedTime: a.date,
       authors: ["Christina Steinhoff"],
-      // og:image inherits the site's generated PNG card (SVGs don't render on most platforms)
+      // og:image resolves automatically to this route's opengraph-image.tsx (per-article card)
     },
     twitter: { card: "summary_large_image", title: a.metaTitle, description: a.metaDescription },
   };
@@ -173,6 +174,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             )}
           </section>
         ))}
+
+        {a.leadMagnet && (
+          <ArticleLeadCapture leadMagnet={a.leadMagnet} slug={a.slug} keyTakeaways={a.keyTakeaways} />
+        )}
 
         {/* Related services — contextual internal links to the relevant pillar page */}
         {RELATED_PILLARS[a.slug] && RELATED_PILLARS[a.slug].length > 0 && (

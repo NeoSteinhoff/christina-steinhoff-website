@@ -3,6 +3,7 @@
 
 export type BlogSection = { heading: string; paragraphs: string[]; bullets?: string[] };
 export type BlogFAQ = { q: string; a: string };
+export type BlogLeadMagnet = { hook: string; resourceLabel: string };
 export type BlogArticle = {
   slug: string;
   title: string;
@@ -17,6 +18,9 @@ export type BlogArticle = {
   sections: BlogSection[];
   keyTakeaways: string[];
   faq: BlogFAQ[];
+  // Optional mid-article email capture — a saveable checklist reframing this
+  // article's own keyTakeaways. Never introduces claims beyond the article.
+  leadMagnet?: BlogLeadMagnet;
 };
 
 export const ARTICLES: BlogArticle[] = [
@@ -92,6 +96,10 @@ export const ARTICLES: BlogArticle[] = [
       "Lasting change comes through neuroplasticity — repeated new experiences and nervous-system safety — rather than force, which is why somatic and subconscious work matters alongside conversation.",
       "Christina Steinhoff's Science + Soul Fusion method combines neuroscience, NLP, advanced conversational hypnotherapy, somatic work and purpose alignment, framed as coaching and mentorship rather than therapy."
     ],
+    "leadMagnet": {
+      "hook": "Want to keep this? Get the five shifts above as a one-page checklist you can save and revisit.",
+      "resourceLabel": "The Mindset Reset Checklist"
+    },
     "faq": [
       {
         "q": "What is mindset coaching?",
@@ -185,6 +193,10 @@ export const ARTICLES: BlogArticle[] = [
       "Naming an emotion reduces amygdala activation and restores clarity; regulate your state with slow, extended exhales before making any significant choice.",
       "Insight alone rarely changes behaviour, because the deepest patterns live in emotional and somatic memory below conscious reach — which is where somatic and hypnotherapy work go."
     ],
+    "leadMagnet": {
+      "hook": "Want to keep this? Get the regulation steps above as a checklist for your next big decision.",
+      "resourceLabel": "The Clear-Decision Checklist"
+    },
     "faq": [
       {
         "q": "What is the link between self-awareness and decision-making?",
@@ -289,6 +301,10 @@ export const ARTICLES: BlogArticle[] = [
       "The nervous system, not the rational mind, often decides whether a new behaviour feels safe. Many high performers stay stuck because growth registers as threat at a bodily level.",
       "Lasting change combines four levers: state regulation, focused repetition, language and identity, and somatic safety. Working only one of these is why most self-improvement stalls."
     ],
+    "leadMagnet": {
+      "hook": "Want to keep this? Get the four levers above as a checklist you can put into practice this week.",
+      "resourceLabel": "The Subconscious Rewiring Checklist"
+    },
     "faq": [
       {
         "q": "Can you actually rewire your subconscious mind, or is that a myth?",
@@ -390,6 +406,10 @@ export const ARTICLES: BlogArticle[] = [
       "Lasting change works at the subconscious and somatic level, not through willpower. Roughly 95 percent of daily behaviour runs on automatic patterns, so affirmations rarely override a body that has learned a contradicting belief.",
       "A growth mindset in business is specific: treating outcomes as information, separating identity from results, and widening what feels tolerable. These are trainable skills, not fixed traits."
     ],
+    "leadMagnet": {
+      "hook": "Want to keep this? Get the growth-ceiling checklist above to keep next to your goals.",
+      "resourceLabel": "The Mindset & Business Checklist"
+    },
     "faq": [
       {
         "q": "What is the role of mindset in business success?",
@@ -484,6 +504,10 @@ export const ARTICLES: BlogArticle[] = [
       "The nervous system gates plasticity. A regulated, safe state (parasympathetic) supports learning and change, while chronic stress and threat (sympathetic activation) reinforce old survival patterns and block new ones.",
       "Lasting development works at the level of identity and belief, not just behaviour. The subconscious runs roughly 95% of daily cognition, so durable change comes from updating the underlying patterns, not willpower alone."
     ],
+    "leadMagnet": {
+      "hook": "Want to keep this? Get the five principles above as a quick-reference checklist.",
+      "resourceLabel": "The Neuroplasticity Checklist"
+    },
     "faq": [
       {
         "q": "What are the key principles of neuroplasticity in personal development?",
@@ -577,6 +601,10 @@ export const ARTICLES: BlogArticle[] = [
       "Confidence follows action, it does not precede it. Acting before you feel ready is how the subconscious gathers evidence that action is survivable.",
       "Insight alone rarely breaks the loop because the pattern lives in the subconscious and body, which is why somatic and subconscious work outperforms willpower."
     ],
+    "leadMagnet": {
+      "hook": "Want to keep this? Get the steps above as a checklist for the next time you're stuck in your head.",
+      "resourceLabel": "The Take-Action Checklist"
+    },
     "faq": [
       {
         "q": "How do I stop overthinking and take action?",
