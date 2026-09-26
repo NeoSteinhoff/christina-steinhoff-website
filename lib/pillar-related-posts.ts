@@ -51,6 +51,18 @@ export const RELATED_POSTS: Record<string, RelatedPost[]> = {
       category: "Mindset",
     },
   ],
+  "conscious-coaching-dubai": [
+    {
+      slug: "the-hidden-cost-of-always-being-the-strong-one",
+      title: "The Hidden Cost of Always Being the Strong One",
+      category: "Relationships",
+    },
+    {
+      slug: "why-do-high-achieving-women-still-feel-like-impostors",
+      title: "Why Do High-Achieving Women Still Feel Like Impostors?",
+      category: "Confidence",
+    },
+  ],
   "group-workshop": [
     {
       slug: "how-to-develop-self-awareness-for-better-decision-making",

@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { CALENDLY } from "@/lib/constants";
+import { APPLY_URL } from "@/lib/constants";
 
 export default function NotFound() {
   return (
@@ -30,7 +30,7 @@ export default function NotFound() {
              className="px-8 py-4 bg-[#c9a86c] text-[#060606] text-[11px] tracking-[0.2em] uppercase font-medium rounded-full hover:bg-[#d4b880] transition-colors">
             Back to Home
           </a>
-          <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
+          <a href={APPLY_URL}
              className="px-8 py-4 border border-white/10 text-white/50 text-[11px] tracking-[0.2em] uppercase rounded-full hover:border-[#c9a86c]/40 hover:text-[#c9a86c] transition-all">
             Book a Call
           </a>

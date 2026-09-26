@@ -92,6 +92,13 @@ export function NewsletterSection() {
           </p>
         )}
         <p className="text-[#1c160e]/25 text-xs mt-4">No spam. Unsubscribe anytime.</p>
+        <p className="text-[#1c160e]/40 text-sm font-light mt-6">
+          Not sure where to start?{" "}
+          <a href="/quiz" className="text-[#a8884e] underline underline-offset-4 hover:text-[#c9a86c]">
+            Take the 2-minute quiz
+          </a>{" "}
+          — what&apos;s really running your success?
+        </p>
       </div>
     </section>
   );

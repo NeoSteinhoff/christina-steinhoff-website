@@ -1,5 +1,5 @@
 "use client";
-import { SITE, SOCIAL, CALENDLY } from "@/lib/constants";
+import { SITE, SOCIAL, APPLY_URL } from "@/lib/constants";
 import { track } from "@/lib/track";
 
 export function Footer() {
@@ -31,7 +31,7 @@ export function Footer() {
                 WhatsApp
               </a>
             </div>
-            <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
+            <a href={APPLY_URL}
                className="inline-flex items-center gap-1.5 text-[#c9a86c]/60 text-xs tracking-widest uppercase hover:text-[#c9a86c] transition-colors">
               <span className="w-1.5 h-1.5 rounded-full bg-[#c9a86c]/50 animate-pulse" />
               Book a call
@@ -47,7 +47,7 @@ export function Footer() {
                 ["Executive Coach in Dubai", "/executive-coaching-dubai"],
                 ["Emotional Healing Coaching", "/emotional-healing-dubai"],
                 ["Women's Coach in Dubai", "/group-workshop"],
-                ["Conscious Relationships", "/#services"],
+                ["Conscious Relationships", "/conscious-coaching-dubai"],
                 ["Bespoke Retreat", "/#services"],
               ].map(([label, href]) => (
                 <li key={label}>

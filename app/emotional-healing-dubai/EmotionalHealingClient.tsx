@@ -8,7 +8,7 @@ import { FAQAccordion, FAQItem } from "@/components/ui/FAQAccordion";
 import { GoldButton } from "@/components/ui/GoldButton";
 import { ScopeNote } from "@/components/ui/ScopeNote";
 import { RelatedReading } from "@/components/sections/RelatedReading";
-import { CALENDLY, SITE } from "@/lib/constants";
+import { APPLY_URL, SITE } from "@/lib/constants";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -95,7 +95,7 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
               transition={{ duration: 0.6, delay: 0.5, ease: EASE }}
               className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4"
             >
-              <GoldButton href={CALENDLY}>Book a discovery call</GoldButton>
+              <GoldButton href={APPLY_URL} external={false}>Book a discovery call</GoldButton>
               <a
                 href={SITE.whatsapp}
                 target="_blank"
@@ -371,7 +371,7 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
             transition={{ delay: 0.25 }}
             className="flex justify-center"
           >
-            <GoldButton href={CALENDLY}>Book a discovery call</GoldButton>
+            <GoldButton href={APPLY_URL} external={false}>Book a discovery call</GoldButton>
           </motion.div>
           <motion.p
             initial={{ opacity: 0 }}

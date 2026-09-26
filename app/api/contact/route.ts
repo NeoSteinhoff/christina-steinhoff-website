@@ -3,7 +3,7 @@ import { SITE } from "@/lib/constants";
 export const runtime = "nodejs";
 
 type Payload = {
-  type?: "enquiry" | "newsletter" | "referral";
+  type?: "enquiry" | "newsletter" | "referral" | "application" | "quiz";
   firstName?: string;
   lastName?: string;
   email?: string;
@@ -18,6 +18,13 @@ type Payload = {
   refereeName?: string;
   refereeContact?: string;
   note?: string;
+  // application type — the 3-question mentorship qualifier at /apply
+  currentRole?: string;
+  whatIsntWorking?: string;
+  readyToInvest?: string;
+  // quiz type — "What's Really Running Your Success?" result capture
+  resultKey?: string;
+  resultName?: string;
 };
 
 const TOPICS: Record<string, string> = {
@@ -57,12 +64,55 @@ export async function POST(request: Request) {
   const email = (body.email || "").trim();
   const isNewsletter = body.type === "newsletter";
   const isReferral = body.type === "referral";
+  const isApplication = body.type === "application";
+  const isQuiz = body.type === "quiz";
 
   let subject: string;
   let text: string;
   let html: string;
 
-  if (isReferral) {
+  if (isApplication) {
+    const firstName = (body.firstName || "").trim();
+    const lastName = (body.lastName || "").trim();
+    const currentRole = (body.currentRole || "").trim();
+    const whatIsntWorking = (body.whatIsntWorking || "").trim();
+    const readyToInvest = (body.readyToInvest || "").trim();
+
+    if (!firstName || !email || !currentRole || !whatIsntWorking || !readyToInvest || !valid(email)) {
+      return Response.json({ ok: false, code: "invalid" }, { status: 422 });
+    }
+
+    const name = `${firstName} ${lastName}`.trim();
+    subject = `[APPLICATION] 90-Day Private Mentorship — ${name}`;
+    text = `New mentorship application\n\nName: ${name}\nEmail: ${email}\n\nCurrent role: ${currentRole}\n\nWhat isn't working: ${whatIsntWorking}\n\nReady to invest in the next 90 days: ${readyToInvest}`;
+    html = `
+      <div style="font-family:system-ui,sans-serif;line-height:1.6;color:#1c160e">
+        <h2 style="font-weight:600">New mentorship application 💛</h2>
+        <p><strong>Name:</strong> ${escapeHtml(name)}<br/>
+        <strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
+        <p><strong>Current role:</strong><br/>${escapeHtml(currentRole)}</p>
+        <p><strong>What isn't working:</strong><br/>${escapeHtml(whatIsntWorking)}</p>
+        <p><strong>Ready to invest in the next 90 days:</strong><br/>${escapeHtml(readyToInvest)}</p>
+      </div>`;
+  } else if (isQuiz) {
+    const firstName = (body.firstName || "").trim();
+    const resultName = (body.resultName || "").trim();
+    const resultKey = (body.resultKey || "").trim();
+
+    if (!firstName || !email || !valid(email)) {
+      return Response.json({ ok: false, code: "invalid" }, { status: 422 });
+    }
+
+    subject = `New quiz lead — ${resultName || resultKey || "Unknown result"} — ${firstName}`;
+    text = `New "What's Really Running Your Success?" quiz lead\n\nName: ${firstName}\nEmail: ${email}\nResult: ${resultName} (${resultKey})`;
+    html = `
+      <div style="font-family:system-ui,sans-serif;line-height:1.6;color:#1c160e">
+        <h2 style="font-weight:600">New quiz lead</h2>
+        <p><strong>Name:</strong> ${escapeHtml(firstName)}<br/>
+        <strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a><br/>
+        <strong>Result:</strong> ${escapeHtml(resultName)} (${escapeHtml(resultKey)})</p>
+      </div>`;
+  } else if (isReferral) {
     const referrerName = (body.referrerName || "").trim();
     const refereeName = (body.refereeName || "").trim();
     const refereeContact = (body.refereeContact || "").trim();

@@ -15,7 +15,9 @@ export type TrackEvent =
   | "content_upgrade_signup"
   | "referral_submitted"
   | "contact_whatsapp"
-  | "contact_email_click";
+  | "contact_email_click"
+  | "quiz_started"
+  | "quiz_completed";
 
 export function track(name: TrackEvent, params?: Record<string, string | number | boolean>) {
   if (typeof window === "undefined" || typeof window.gtag !== "function") return;

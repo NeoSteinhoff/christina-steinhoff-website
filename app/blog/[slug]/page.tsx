@@ -8,7 +8,7 @@ import { NewsletterSection } from "@/components/sections/NewsletterSection";
 import { ArticleLeadCapture } from "@/components/sections/ArticleLeadCapture";
 import { ARTICLES, getArticle } from "@/lib/blog-content";
 import { RELATED_PILLARS } from "@/lib/blog-related-pillars";
-import { SITE, CALENDLY } from "@/lib/constants";
+import { SITE, APPLY_URL } from "@/lib/constants";
 
 export function generateStaticParams() {
   return ARTICLES.map((a) => ({ slug: a.slug }));
@@ -228,9 +228,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 method. She works privately with founders and executives worldwide.
               </p>
               <a
-                href={CALENDLY}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={APPLY_URL}
                 className="mt-4 inline-flex rounded-full bg-[#c9a86c] px-5 py-2.5 text-[10px] font-medium uppercase tracking-[0.18em] text-[#0b0a08] transition-colors hover:bg-[#d8bd8a]"
               >
                 Book a discovery call

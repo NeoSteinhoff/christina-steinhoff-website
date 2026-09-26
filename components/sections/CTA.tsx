@@ -1,5 +1,5 @@
 "use client";
-import { CALENDLY, SITE } from "@/lib/constants";
+import { APPLY_URL, SITE } from "@/lib/constants";
 import { Reveal } from "@/components/ui/Reveal";
 import { GoldButton } from "@/components/ui/GoldButton";
 import { track } from "@/lib/track";
@@ -34,7 +34,7 @@ export function CTA() {
 
         <Reveal delay={0.2} blur={false}>
           <div className="mt-11 flex flex-col items-center justify-center gap-5 sm:flex-row">
-            <GoldButton href={CALENDLY}>Book a discovery call</GoldButton>
+            <GoldButton href={APPLY_URL} external={false}>Book a discovery call</GoldButton>
             <a
               href={`mailto:${SITE.email}`}
               onClick={() => track("contact_email_click")}
