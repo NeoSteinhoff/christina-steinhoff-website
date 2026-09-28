@@ -8,7 +8,7 @@ import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import { BackToTop } from "@/components/ui/BackToTop";
 
-import { SITE, CREDENTIALS, PRESS } from "@/lib/constants";
+import { SITE, SOCIAL, CREDENTIALS, PRESS } from "@/lib/constants";
 
 const GA_ID = "G-W88WM4W49F";
 const CLARITY_ID = "x4cstiql2r";
@@ -141,11 +141,7 @@ export default function RootLayout({
         credentialCategory: /Accredited/i.test(name) ? "Accreditation" : "Certification",
         name,
       })),
-      sameAs: [
-        "https://www.instagram.com/christinasteinhof/",
-        "https://www.linkedin.com/in/christina-steinhoff-thecoscoaching",
-        "https://www.facebook.com/share/1FbRkQY78X/",
-      ],
+      sameAs: [SOCIAL.instagram, SOCIAL.linkedin, SOCIAL.facebook],
       knowsAbout: [
         "Executive Coaching", "NLP", "Emotional Mastery", "Master Hypnosis",
         "Time Line Therapy", "Mindset Coaching", "Nervous System Regulation",
@@ -196,11 +192,7 @@ export default function RootLayout({
         "Master Hypnosis", "Relationship Coaching", "Burnout Coaching",
         "Mindset Coaching", "Emotional Healing Coaching", "Retreat Experience",
       ],
-      sameAs: [
-        "https://www.instagram.com/christinasteinhof/",
-        "https://www.linkedin.com/in/christina-steinhoff-thecoscoaching",
-        "https://www.facebook.com/share/1FbRkQY78X/",
-      ],
+      sameAs: [SOCIAL.instagram, SOCIAL.linkedin, SOCIAL.facebook],
     },
   ];
 

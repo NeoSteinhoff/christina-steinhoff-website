@@ -36,6 +36,79 @@ const nextConfig: NextConfig = {
         destination: "/terms",
         permanent: true,
       },
+      // Retired page-name variants that still get inbound links / Google indexing.
+      // NOTE: /conscious-coaching-dubai is deliberately NOT redirected here — it's
+      // a real rebuilt page now (see app/conscious-coaching-dubai/), not a stopgap.
+      {
+        source: "/bespoke-coach-dubai",
+        destination: "/executive-coaching-dubai",
+        permanent: true,
+      },
+      {
+        source: "/executive-coach-dubai",
+        destination: "/executive-coaching-dubai",
+        permanent: true,
+      },
+      {
+        source: "/decision-fatigue-in-senior-executives-how-executive-coaching-services-help",
+        destination: "/executive-coaching-dubai",
+        permanent: true,
+      },
+      {
+        source: "/conscious-coaching-dubai-transform-your-mindset-leadership-and-life-through-self-awareness",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/self-love-and-confidence-hacks-every-entrepreneur-should-know",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/top-traits-of-the-best-online-life-coaches-to-inspire-your-growth",
+        destination: "/life-coach-dubai",
+        permanent: true,
+      },
+      {
+        source: "/life-coach-in-dubai",
+        destination: "/life-coach-dubai",
+        permanent: true,
+      },
+      {
+        source: "/nlp-coach-dubai",
+        destination: "/life-coach-dubai",
+        permanent: true,
+      },
+      {
+        source: "/about",
+        destination: "/#about",
+        permanent: true,
+      },
+      {
+        source: "/services",
+        destination: "/#services",
+        permanent: true,
+      },
+      {
+        source: "/contact-us",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source: "/category/:slug*",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/tag/:slug*",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/feed",
+        destination: "/blog",
+        permanent: true,
+      },
     ];
   },
 };

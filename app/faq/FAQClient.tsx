@@ -4,7 +4,7 @@ import { Footer } from "@/components/sections/Footer";
 import { NewsletterSection } from "@/components/sections/NewsletterSection";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { GoldButton } from "@/components/ui/GoldButton";
-import { CALENDLY } from "@/lib/constants";
+import { APPLY_URL } from "@/lib/constants";
 import { faqs } from "./faqs";
 
 export function FAQClient() {
@@ -45,7 +45,7 @@ export function FAQClient() {
             The discovery call answers most of them — and there&apos;s no pressure to proceed.
           </p>
           <div className="mt-6 flex justify-center">
-            <GoldButton href={CALENDLY} variant="ghost">Book a discovery call</GoldButton>
+            <GoldButton href={APPLY_URL} external={false} variant="ghost">Book a discovery call</GoldButton>
           </div>
         </div>
       </div>

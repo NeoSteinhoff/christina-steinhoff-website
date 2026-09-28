@@ -7,7 +7,8 @@ import { NewsletterSection } from "@/components/sections/NewsletterSection";
 import { FAQAccordion, FAQItem } from "@/components/ui/FAQAccordion";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { GoldButton } from "@/components/ui/GoldButton";
-import { CALENDLY, SITE } from "@/lib/constants";
+import { RelatedReading } from "@/components/sections/RelatedReading";
+import { APPLY_URL, SITE } from "@/lib/constants";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -128,7 +129,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
               transition={{ duration: 0.6, delay: 0.5, ease: EASE }}
               className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4"
             >
-              <GoldButton href={CALENDLY}>Book a discovery call</GoldButton>
+              <GoldButton href={APPLY_URL} external={false}>Book a discovery call</GoldButton>
               <a
                 href={SITE.whatsapp}
                 target="_blank"
@@ -343,9 +344,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
             ))}
 
             <motion.a
-              href={CALENDLY}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={APPLY_URL}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -462,6 +461,8 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
         </div>
       </section>
 
+      <RelatedReading pillarSlug="executive-coaching-dubai" />
+
       {/* CTA */}
       <section className="bg-[#060606] py-32 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(201,168,108,0.06),transparent)]" />
@@ -494,7 +495,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
             transition={{ delay: 0.25 }}
             className="flex justify-center"
           >
-            <GoldButton href={CALENDLY}>Book a discovery call</GoldButton>
+            <GoldButton href={APPLY_URL} external={false}>Book a discovery call</GoldButton>
           </motion.div>
           <motion.p
             initial={{ opacity: 0 }}

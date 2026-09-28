@@ -1,5 +1,5 @@
 "use client";
-import { CALENDLY } from "@/lib/constants";
+import { APPLY_URL } from "@/lib/constants";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
@@ -29,6 +29,7 @@ const services: {
     title: "Conscious Relationship Coaching",
     body: "The most overlooked driver of executive performance and personal fulfilment is the quality of your closest relationships. Attachment wounds, communication breakdowns, and emotional distance don't stay in your personal life — they follow you into the boardroom, your parenting, your self-worth. This work heals the relational patterns keeping you disconnected and builds the intimacy that makes everything else in life richer.",
     outcomes: ["Attachment healing & secure bonding", "Deep intimacy restoration", "Communication & conflict mastery", "Aligned partnership or self-relationship"],
+    page: { href: "/conscious-coaching-dubai", label: "Explore conscious relationship coaching" },
   },
   {
     tag: "Immersive",
@@ -129,9 +130,7 @@ export function Services() {
 
               <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3">
                 <a
-                  href={CALENDLY}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={APPLY_URL}
                   className="inline-flex items-center gap-2 text-[#c9a86c] text-[11px] tracking-[0.25em] uppercase hover:gap-4 transition-all"
                 >
                   Book a discovery call <span>→</span>

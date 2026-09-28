@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { SITE } from "@/lib/constants";
+import { track } from "@/lib/track";
 
 export function WhatsAppButton() {
   return (
@@ -8,6 +9,7 @@ export function WhatsAppButton() {
       href={SITE.whatsapp}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => track("contact_whatsapp")}
       aria-label="Chat on WhatsApp"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}

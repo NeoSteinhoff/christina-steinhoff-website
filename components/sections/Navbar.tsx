@@ -1,5 +1,5 @@
 "use client";
-import { CALENDLY } from "@/lib/constants";
+import { APPLY_URL } from "@/lib/constants";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
@@ -86,9 +86,7 @@ export function Navbar() {
             );
           })}
           <a
-            href={CALENDLY}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={APPLY_URL}
             className="px-5 py-2 bg-[#c9a86c] text-[#060606] text-[10px] tracking-[0.2em] uppercase rounded-full hover:bg-[#d4b880] transition-colors font-medium"
           >
             Book a Call
@@ -127,9 +125,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href={CALENDLY}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={APPLY_URL}
             className="mt-2 text-center px-5 py-3 bg-[#c9a86c] text-[#060606] text-[10px] tracking-[0.2em] uppercase rounded-full font-medium"
           >
             Book a Discovery Call
