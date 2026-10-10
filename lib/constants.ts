@@ -63,12 +63,14 @@ export const PRESS = [
   },
 ] as const;
 
-// The flagship Science + Soul Fusion™ pricing structure — single source of
-// truth for the homepage Investment section. All three tiers share the same
-// methodology; they differ in duration, continuity, and level of support.
+// Accessible, self-serve entry points into Science + Soul Fusion™ — single
+// source of truth for the homepage Investment section. These sit alongside,
+// not in place of, the 90-Day Private Mentorship (/science-soul-fusion),
+// which stays the flagship, application-gated format. All three tiers share
+// the same methodology; they differ in duration, continuity, and support.
 export const PROGRAMS = {
-  eyebrow: "The Investment",
-  headline: "Three Levels of Science + Soul Fusion™",
+  eyebrow: "Start Where You Are",
+  headline: "Three Ways Into Science + Soul Fusion™",
   subtext:
     "Every programme is built on the same foundational methodology and differs in duration, continuity, and level of support.",
   tiers: [
@@ -110,6 +112,11 @@ export const PROGRAMS = {
       featured: false,
     },
   ],
+  bridge: {
+    text: "Want the deepest version of this work? The 90-Day Private Mentorship is Christina's flagship format — fully private, application only.",
+    linkLabel: "Explore the 90-Day Mentorship",
+    href: "/science-soul-fusion",
+  },
   breakthrough: {
     name: "Private Breakthrough Session",
     price: "AED 1,500",

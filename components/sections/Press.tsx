@@ -7,14 +7,14 @@ const dateFmt = new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric
 export function Press() {
   const reduce = useReducedMotion();
   return (
-    <section id="press" className="relative overflow-hidden bg-[#060606] py-24 md:py-28">
-      <div className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[640px] -translate-x-1/2 rounded-full bg-[#c9a86c]/[0.05] blur-[140px]" />
+    <section id="press" className="relative overflow-hidden bg-background py-24 md:py-28">
+      <div className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[640px] -translate-x-1/2 rounded-full bg-gold/[0.05] blur-[140px]" />
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
         <motion.span
           initial={reduce ? false : { opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-[10px] uppercase tracking-[0.4em] text-[#c9a86c]/70"
+          className="text-[10px] uppercase tracking-[0.4em] text-gold/70"
         >
           As Featured In
         </motion.span>
@@ -33,7 +33,7 @@ export function Press() {
               className="group block"
             >
               <span
-                className="text-3xl font-medium text-white transition-colors group-hover:text-[#c9a86c] md:text-4xl"
+                className="text-3xl font-medium text-white transition-colors group-hover:text-gold md:text-4xl"
                 style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
               >
                 {p.outlet}
@@ -43,7 +43,7 @@ export function Press() {
               </span>
               <span className="mt-3 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-white/40">
                 By {p.author} · {dateFmt.format(new Date(p.date))}
-                <span className="text-[#c9a86c]/70 transition-transform group-hover:translate-x-1">→</span>
+                <span className="text-gold/70 transition-transform group-hover:translate-x-1">→</span>
               </span>
             </motion.a>
           ))}

@@ -106,6 +106,25 @@ export function Investment() {
             </GoldButton>
           </div>
         </motion.div>
+
+        {/* Bridge to the flagship application-only format */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-10 flex flex-col items-center gap-3 text-center"
+        >
+          <p className="max-w-xl text-sm font-light leading-relaxed text-foreground/50">
+            {PROGRAMS.bridge.text}
+          </p>
+          <a
+            href={PROGRAMS.bridge.href}
+            className="link-underline text-[11px] uppercase tracking-[0.2em] text-gold hover:text-gold-soft transition-colors"
+          >
+            {PROGRAMS.bridge.linkLabel} →
+          </a>
+        </motion.div>
       </div>
     </section>
   );

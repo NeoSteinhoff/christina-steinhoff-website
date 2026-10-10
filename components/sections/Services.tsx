@@ -50,7 +50,7 @@ export function Services() {
   const current = services[active];
 
   return (
-    <section id="services" className="bg-[#FAF5ED] py-32">
+    <section id="services" className="bg-cream py-32">
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="mb-14">
@@ -60,8 +60,8 @@ export function Services() {
             viewport={{ once: true }}
             className="flex items-center gap-3 mb-6"
           >
-            <span className="h-px w-7 bg-[#c9a86c]/40" />
-            <span className="text-[#c9a86c]/70 text-[10px] tracking-[0.45em] uppercase">Coaching Programmes</span>
+            <span className="h-px w-7 bg-gold/40" />
+            <span className="text-gold/70 text-[10px] tracking-[0.45em] uppercase">Coaching Programmes</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -70,7 +70,7 @@ export function Services() {
             className="text-4xl md:text-6xl font-light text-[#1c160e] leading-tight max-w-xl"
             style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
-            Every programme is<br /><em className="text-[#c9a86c]">built around you</em>
+            Every programme is<br /><em className="text-gold">built around you</em>
           </motion.h2>
         </div>
 
@@ -86,11 +86,11 @@ export function Services() {
                 transition={{ delay: i * 0.07 }}
                 className={`text-left px-5 py-4 rounded-xl border transition-all duration-300 ${
                   active === i
-                    ? "border-[#c9a86c]/30 bg-[#c9a86c]/8"
+                    ? "border-[#c9a86c]/30 bg-gold/8"
                     : "border-[#1c160e]/8 bg-white/50 hover:border-[#1c160e]/15"
                 }`}
               >
-                <span className="block text-[9px] tracking-widest text-[#c9a86c]/60 uppercase mb-1">{s.tag}</span>
+                <span className="block text-[9px] tracking-widest text-gold/60 uppercase mb-1">{s.tag}</span>
                 <span className={`text-sm font-light transition-colors ${active === i ? "text-[#1c160e]" : "text-[#1c160e]/65"}`}>
                   {s.title}
                 </span>
@@ -108,7 +108,7 @@ export function Services() {
               className="rounded-2xl border border-[#1c160e]/8 bg-white p-10 flex flex-col justify-between min-h-[380px]"
             >
               <div>
-                <span className="text-[9px] tracking-widest text-[#c9a86c]/60 uppercase">{current.tag}</span>
+                <span className="text-[9px] tracking-widest text-gold/60 uppercase">{current.tag}</span>
                 <h3
                   className="text-3xl font-light text-[#1c160e] mt-2 mb-6"
                   style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
@@ -120,7 +120,7 @@ export function Services() {
                 <div className="mt-8 grid grid-cols-2 gap-3">
                   {current.outcomes.map((o) => (
                     <div key={o} className="flex items-center gap-2.5">
-                      <span className="w-1 h-1 rounded-full bg-[#c9a86c]" />
+                      <span className="w-1 h-1 rounded-full bg-gold" />
                       <span className="text-[#1c160e]/65 text-sm">{o}</span>
                     </div>
                   ))}
@@ -132,7 +132,7 @@ export function Services() {
                   href={CALENDLY}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[#c9a86c] text-[11px] tracking-[0.25em] uppercase hover:gap-4 transition-all"
+                  className="inline-flex items-center gap-2 text-gold text-[11px] tracking-[0.25em] uppercase hover:gap-4 transition-all"
                 >
                   Book a discovery call <span>→</span>
                 </a>
