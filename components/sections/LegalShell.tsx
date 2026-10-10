@@ -38,7 +38,7 @@ export function LegalShell({
           font-family: var(--font-fraunces), Georgia, serif;
           font-size: 1.4rem;
           font-weight: 500;
-          color: #1c160e;
+          color: var(--cream-text);
           margin-top: 2.25rem;
           margin-bottom: 0.5rem;
         }
@@ -46,10 +46,10 @@ export function LegalShell({
         .legal-prose li { position: relative; padding-left: 1.1rem; }
         .legal-prose li::before {
           content: ""; position: absolute; left: 0; top: 0.65rem;
-          width: 4px; height: 4px; border-radius: 999px; background: #c9a86c;
+          width: 4px; height: 4px; border-radius: 999px; background: var(--gold);
         }
-        .legal-prose a { color: #a8884e; text-decoration: underline; text-underline-offset: 3px; }
-        .legal-prose strong { color: #1c160e; font-weight: 500; }
+        .legal-prose a { color: var(--gold-deep); text-decoration: underline; text-underline-offset: 3px; }
+        .legal-prose strong { color: var(--cream-text); font-weight: 500; }
       `}</style>
     </>
   );
