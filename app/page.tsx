@@ -8,6 +8,7 @@ import { Investment } from "@/components/sections/Investment";
 import { Press } from "@/components/sections/Press";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Process } from "@/components/sections/Process";
+import { ReferralSection } from "@/components/sections/ReferralSection";
 import { CTA } from "@/components/sections/CTA";
 import { Footer } from "@/components/sections/Footer";
 import { InfiniteScrollBanner } from "@/components/ui/InfiniteScroll";
@@ -36,6 +37,7 @@ export default function Home() {
       <Investment />
       <Process />
       <Testimonials />
+      <ReferralSection />
       <CTA />
       <NewsletterSection />
       <Footer />

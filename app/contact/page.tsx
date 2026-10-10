@@ -3,8 +3,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
-import { CalendlyEmbed } from "@/components/ui/CalendlyEmbed";
-import { SITE, SOCIAL, CALENDLY } from "@/lib/constants";
+import { SITE, SOCIAL, APPLY_URL } from "@/lib/constants";
+import { track } from "@/lib/track";
+import { getEntrySource } from "@/lib/attribution";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -14,6 +15,7 @@ const inputClass =
 export default function ContactPage() {
   const [tab, setTab] = useState<"book" | "form">("book");
   const [status, setStatus] = useState<Status>("idle");
+  const [source, setSource] = useState("other");
 
   function mailtoFallback(data: Record<string, string>) {
     const subject = encodeURIComponent(`Enquiry — ${data.topic || "General"} — ${data.firstName} ${data.lastName}`);
@@ -28,6 +30,7 @@ export default function ContactPage() {
     const form = e.currentTarget;
     const fd = new FormData(form);
     const data = Object.fromEntries(fd.entries()) as Record<string, string>;
+    data.autoSource = getEntrySource();
     setStatus("loading");
     try {
       const res = await fetch("/api/contact", {
@@ -38,12 +41,14 @@ export default function ContactPage() {
       const json = await res.json().catch(() => ({}));
       if (res.ok && json.ok) {
         setStatus("success");
+        track("generate_lead", { source });
         return;
       }
       // No backend configured yet — make sure the lead still reaches Christina.
       if (json.code === "unconfigured") {
         mailtoFallback(data);
         setStatus("success");
+        track("generate_lead", { source });
         return;
       }
       setStatus("error");
@@ -88,8 +93,22 @@ export default function ContactPage() {
       </div>
 
       {tab === "book" && (
-        <div className="mx-auto max-w-4xl px-6 py-16">
-          <CalendlyEmbed />
+        <div className="mx-auto max-w-lg px-6 py-16 text-center">
+          <div className="rounded-2xl border border-[#1c160e]/8 bg-white p-10">
+            <h2 className="mb-3 text-2xl font-light text-[#1c160e]" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
+              Start with a short application
+            </h2>
+            <p className="mb-7 text-sm font-light leading-relaxed text-[#1c160e]/55">
+              Christina reviews every application personally before booking, so the call is worth
+              both of your time. Three questions — two minutes — then pick a slot.
+            </p>
+            <a
+              href={APPLY_URL}
+              className="inline-flex rounded-full bg-[#0b0a08] px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#1a1410]"
+            >
+              Apply for a discovery call
+            </a>
+          </div>
           <p className="mt-6 text-center text-sm font-light text-[#1c160e]/55">
             Prefer to write first?{" "}
             <button onClick={() => setTab("form")} className="text-[#a8884e] underline underline-offset-4 hover:text-[#c9a86c]">
@@ -161,12 +180,10 @@ export default function ContactPage() {
                 Book a complimentary 30-minute discovery call.
               </p>
               <a
-                href={CALENDLY}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={APPLY_URL}
                 className="inline-flex rounded-full bg-[#c9a86c] px-6 py-3 text-[10px] font-medium uppercase tracking-[0.2em] text-[#0b0a08] transition-colors hover:bg-[#d8bd8a]"
               >
-                Book now
+                Apply now
               </a>
             </div>
           </div>
@@ -214,6 +231,22 @@ export default function ContactPage() {
                     <option value="other">General enquiry</option>
                   </select>
                 </div>
+
+                <div>
+                  <label className="mb-2 block text-[10px] uppercase tracking-[0.18em] text-[#1c160e]/45">How did you hear about us?</label>
+                  <select name="source" value={source} onChange={(e) => setSource(e.target.value)} className={inputClass}>
+                    <option value="referral">Referred by a client</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="google">Google search</option>
+                    <option value="press">Press or an article</option>
+                    <option value="blog">The blog</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                {source === "referral" && (
+                  <Field label="Who referred you?" name="referredBy" placeholder="Their name" />
+                )}
 
                 <div>
                   <label className="mb-2 block text-[10px] uppercase tracking-[0.18em] text-[#1c160e]/45">Message</label>

@@ -11,10 +11,16 @@ export const SITE = {
 };
 
 export const SOCIAL = {
-  instagram: "https://www.instagram.com/christinasteinhof/",
+  // Canonical handle per the brand card — Christina is consolidating onto this
+  // spelling (the old "christinasteinhof" / duplicate accounts are being retired).
+  instagram: "https://www.instagram.com/christinasteinhoff/",
   facebook: "https://www.facebook.com/share/1FbRkQY78X/",
-  linkedin: "https://www.linkedin.com/in/christina-steinhoff-thecoscoaching",
+  linkedin: "https://www.linkedin.com/in/christinasteinhoff",
 };
+
+// The primary conversion action across the whole site now runs through a short
+// qualifying application (see /apply) before Calendly, not a bare booking link.
+export const APPLY_URL = "/apply";
 
 // No hardcoded month — Calendly defaults to the current month.
 export const CALENDLY = "https://calendly.com/consultwithc/consultingwithchris";

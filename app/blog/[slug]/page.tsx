@@ -5,9 +5,10 @@ import Link from "next/link";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { NewsletterSection } from "@/components/sections/NewsletterSection";
+import { ArticleLeadCapture } from "@/components/sections/ArticleLeadCapture";
 import { ARTICLES, getArticle } from "@/lib/blog-content";
 import { RELATED_PILLARS } from "@/lib/blog-related-pillars";
-import { SITE, CALENDLY } from "@/lib/constants";
+import { SITE, APPLY_URL } from "@/lib/constants";
 
 export function generateStaticParams() {
   return ARTICLES.map((a) => ({ slug: a.slug }));
@@ -33,7 +34,7 @@ export async function generateMetadata({
       url,
       publishedTime: a.date,
       authors: ["Christina Steinhoff"],
-      // og:image inherits the site's generated PNG card (SVGs don't render on most platforms)
+      // og:image resolves automatically to this route's opengraph-image.tsx (per-article card)
     },
     twitter: { card: "summary_large_image", title: a.metaTitle, description: a.metaDescription },
   };
@@ -174,6 +175,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </section>
         ))}
 
+        {a.leadMagnet && (
+          <ArticleLeadCapture leadMagnet={a.leadMagnet} slug={a.slug} keyTakeaways={a.keyTakeaways} />
+        )}
+
         {/* Related services — contextual internal links to the relevant pillar page */}
         {RELATED_PILLARS[a.slug] && RELATED_PILLARS[a.slug].length > 0 && (
           <div className="mb-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#1c160e]/10 pt-6 text-sm">
@@ -223,9 +228,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 method. She works privately with founders and executives worldwide.
               </p>
               <a
-                href={CALENDLY}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={APPLY_URL}
                 className="mt-4 inline-flex rounded-full bg-[#c9a86c] px-5 py-2.5 text-[10px] font-medium uppercase tracking-[0.18em] text-[#0b0a08] transition-colors hover:bg-[#d8bd8a]"
               >
                 Book a discovery call

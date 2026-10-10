@@ -1,5 +1,5 @@
 "use client";
-import { CALENDLY } from "@/lib/constants";
+import { APPLY_URL } from "@/lib/constants";
 import { motion } from "framer-motion";
 
 
@@ -55,9 +55,7 @@ export function Process() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
-              href={CALENDLY}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={APPLY_URL}
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-ink text-white text-[10px] tracking-[0.2em] uppercase rounded-full hover:bg-[#1a1410] transition-colors"
             >
               Book a discovery call

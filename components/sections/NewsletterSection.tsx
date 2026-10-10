@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { SITE } from "@/lib/constants";
+import { track } from "@/lib/track";
+import { getEntrySource } from "@/lib/attribution";
 
 export function NewsletterSection() {
   const [email, setEmail] = useState("");
@@ -17,16 +19,18 @@ export function NewsletterSection() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "newsletter", email }),
+        body: JSON.stringify({ type: "newsletter", email, autoSource: getEntrySource() }),
       });
       const json = await res.json().catch(() => ({}));
       if (res.ok && json.ok) {
         setSubmitted(true);
+        track("newsletter_signup");
       } else if (json.code === "unconfigured") {
         window.location.href = `mailto:${SITE.email}?subject=${encodeURIComponent(
           "Newsletter signup"
         )}&body=${encodeURIComponent(`Please subscribe: ${email}`)}`;
         setSubmitted(true);
+        track("newsletter_signup");
       } else {
         setError(true);
       }
@@ -88,6 +92,13 @@ export function NewsletterSection() {
           </p>
         )}
         <p className="text-cream-text/25 text-xs mt-4">No spam. Unsubscribe anytime.</p>
+        <p className="text-cream-text/40 text-sm font-light mt-6">
+          Not sure where to start?{" "}
+          <a href="/quiz" className="text-gold-deep underline underline-offset-4 hover:text-gold">
+            Take the 2-minute quiz
+          </a>{" "}
+          — what&apos;s really running your success?
+        </p>
       </div>
     </section>
   );

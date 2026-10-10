@@ -6,6 +6,7 @@ import { Footer } from "@/components/sections/Footer";
 import { NewsletterSection } from "@/components/sections/NewsletterSection";
 import { FAQAccordion, FAQItem } from "@/components/ui/FAQAccordion";
 import { GoldButton } from "@/components/ui/GoldButton";
+import { RelatedReading } from "@/components/sections/RelatedReading";
 import { CALENDLY, SITE } from "@/lib/constants";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -271,7 +272,7 @@ export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
         </div>
       </section>
 
-      {/* The UnleashHER Method */}
+      {/* Inside the workshop — powered by Science + Soul Fusion, not a separate method */}
       <section className="bg-[#060606] py-28 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_60%,rgba(201,168,108,0.05),transparent)]" />
         <div className="relative z-10 max-w-6xl mx-auto">
@@ -283,7 +284,7 @@ export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
               className="flex items-center justify-center gap-4 mb-6"
             >
               <span className="h-px w-7 bg-[#c9a86c]/30" />
-              <span className="text-[#c9a86c]/60 text-[10px] tracking-[0.45em] uppercase">The UnleashHER Method™</span>
+              <span className="text-[#c9a86c]/60 text-[10px] tracking-[0.45em] uppercase">Powered by Science + Soul Fusion™</span>
               <span className="h-px w-7 bg-[#c9a86c]/30" />
             </motion.div>
             <motion.h2
@@ -443,6 +444,8 @@ export function WorkshopClient({ faqs }: { faqs: FAQItem[] }) {
           <FAQAccordion items={faqs} />
         </div>
       </section>
+
+      <RelatedReading pillarSlug="group-workshop" />
 
       {/* CTA */}
       <section className="bg-[#060606] py-32 px-6 relative overflow-hidden">

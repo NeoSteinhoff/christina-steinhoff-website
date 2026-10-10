@@ -1,5 +1,5 @@
 "use client";
-import { CALENDLY, STATS } from "@/lib/constants";
+import { APPLY_URL, STATS } from "@/lib/constants";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
@@ -75,7 +75,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.55, ease: EASE }}
             className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4"
           >
-            <GoldButton href={CALENDLY}>Book a discovery call</GoldButton>
+            <GoldButton href={APPLY_URL} external={false}>Book a discovery call</GoldButton>
             <a
               href="/#method"
               className="link-underline text-[12px] uppercase tracking-[0.2em] text-white/55 transition-colors hover:text-white"
