@@ -52,20 +52,20 @@ export function Testimonials() {
   const go = (n: number) => setI((n + testimonials.length) % testimonials.length);
 
   return (
-    <section id="testimonials" className="relative overflow-hidden bg-[#060606] py-28 md:py-40">
-      <div className="pointer-events-none absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-[#c9a86c]/[0.05] blur-[150px]" />
+    <section id="testimonials" className="relative overflow-hidden bg-background py-28 md:py-40">
+      <div className="pointer-events-none absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-gold/[0.05] blur-[150px]" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-6">
         <div className="mb-12 flex items-end justify-between gap-6">
           <div>
-            <span className="text-[10px] uppercase tracking-[0.4em] text-[#c9a86c]/70">In their words</span>
+            <span className="text-[10px] uppercase tracking-[0.4em] text-gold/70">In their words</span>
             <h2
               className="mt-4 text-4xl font-light leading-[1.05] text-white md:text-6xl"
               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
               Not what they achieved.
               <br />
-              <em className="font-medium text-[#c9a86c]">Who they became.</em>
+              <em className="font-medium text-gold">Who they became.</em>
             </h2>
           </div>
           <span className="hidden shrink-0 font-display text-sm tabular-nums text-white/35 md:block">
@@ -83,7 +83,7 @@ export function Testimonials() {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
               <span
-                className="block text-6xl leading-none text-[#c9a86c]/30"
+                className="block text-6xl leading-none text-gold/30"
                 style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
                 aria-hidden
               >
@@ -101,7 +101,7 @@ export function Testimonials() {
                 <span className="text-sm font-light text-white/55">
                   {t.role} · {t.place}
                 </span>
-                <span className="rounded-full border border-[#c9a86c]/25 px-3 py-0.5 text-[10px] uppercase tracking-[0.18em] text-[#c9a86c]/70">
+                <span className="rounded-full border border-gold/25 px-3 py-0.5 text-[10px] uppercase tracking-[0.18em] text-gold/70">
                   {t.arc}
                 </span>
               </figcaption>
@@ -114,7 +114,7 @@ export function Testimonials() {
           <button
             onClick={() => go(i - 1)}
             aria-label="Previous testimonial"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-white/60 transition-colors hover:border-[#c9a86c]/50 hover:text-[#c9a86c]"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-white/60 transition-colors hover:border-gold/50 hover:text-gold"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
               <path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
@@ -123,7 +123,7 @@ export function Testimonials() {
           <button
             onClick={() => go(i + 1)}
             aria-label="Next testimonial"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-white/60 transition-colors hover:border-[#c9a86c]/50 hover:text-[#c9a86c]"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-white/60 transition-colors hover:border-gold/50 hover:text-gold"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
               <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
@@ -138,7 +138,7 @@ export function Testimonials() {
                 aria-label={`Show ${tt.name}'s story`}
                 aria-current={idx === i}
                 className={`rounded-full px-3.5 py-2 text-xs transition-colors ${
-                  idx === i ? "bg-[#c9a86c]/12 text-[#c9a86c]" : "text-white/40 hover:text-white/70"
+                  idx === i ? "bg-gold/12 text-gold" : "text-white/40 hover:text-white/70"
                 }`}
               >
                 {tt.name}

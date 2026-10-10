@@ -51,7 +51,7 @@ export function Services() {
   const current = services[active];
 
   return (
-    <section id="services" className="bg-[#FAF5ED] py-32">
+    <section id="services" className="bg-cream py-32">
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="mb-14">
@@ -61,17 +61,17 @@ export function Services() {
             viewport={{ once: true }}
             className="flex items-center gap-3 mb-6"
           >
-            <span className="h-px w-7 bg-[#c9a86c]/40" />
-            <span className="text-[#c9a86c]/70 text-[10px] tracking-[0.45em] uppercase">Coaching Programmes</span>
+            <span className="h-px w-7 bg-gold/40" />
+            <span className="text-gold/70 text-[10px] tracking-[0.45em] uppercase">Coaching Programmes</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-light text-[#1c160e] leading-tight max-w-xl"
+            className="text-4xl md:text-6xl font-light text-cream-text leading-tight max-w-xl"
             style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
-            Every programme is<br /><em className="text-[#c9a86c]">built around you</em>
+            Every programme is<br /><em className="text-gold">built around you</em>
           </motion.h2>
         </div>
 
@@ -87,12 +87,12 @@ export function Services() {
                 transition={{ delay: i * 0.07 }}
                 className={`text-left px-5 py-4 rounded-xl border transition-all duration-300 ${
                   active === i
-                    ? "border-[#c9a86c]/30 bg-[#c9a86c]/8"
-                    : "border-[#1c160e]/8 bg-white/50 hover:border-[#1c160e]/15"
+                    ? "border-gold/30 bg-gold/8"
+                    : "border-cream-text/8 bg-white/50 hover:border-cream-text/15"
                 }`}
               >
-                <span className="block text-[9px] tracking-widest text-[#c9a86c]/60 uppercase mb-1">{s.tag}</span>
-                <span className={`text-sm font-light transition-colors ${active === i ? "text-[#1c160e]" : "text-[#1c160e]/65"}`}>
+                <span className="block text-[9px] tracking-widest text-gold/60 uppercase mb-1">{s.tag}</span>
+                <span className={`text-sm font-light transition-colors ${active === i ? "text-cream-text" : "text-cream-text/65"}`}>
                   {s.title}
                 </span>
               </motion.button>
@@ -106,23 +106,23 @@ export function Services() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.25 }}
-              className="rounded-2xl border border-[#1c160e]/8 bg-white p-10 flex flex-col justify-between min-h-[380px]"
+              className="rounded-2xl border border-cream-text/8 bg-white p-10 flex flex-col justify-between min-h-[380px]"
             >
               <div>
-                <span className="text-[9px] tracking-widest text-[#c9a86c]/60 uppercase">{current.tag}</span>
+                <span className="text-[9px] tracking-widest text-gold/60 uppercase">{current.tag}</span>
                 <h3
-                  className="text-3xl font-light text-[#1c160e] mt-2 mb-6"
+                  className="text-3xl font-light text-cream-text mt-2 mb-6"
                   style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
                 >
                   {current.title}
                 </h3>
-                <p className="text-[#1c160e]/70 font-light leading-relaxed text-base">{current.body}</p>
+                <p className="text-cream-text/70 font-light leading-relaxed text-base">{current.body}</p>
 
                 <div className="mt-8 grid grid-cols-2 gap-3">
                   {current.outcomes.map((o) => (
                     <div key={o} className="flex items-center gap-2.5">
-                      <span className="w-1 h-1 rounded-full bg-[#c9a86c]" />
-                      <span className="text-[#1c160e]/65 text-sm">{o}</span>
+                      <span className="w-1 h-1 rounded-full bg-gold" />
+                      <span className="text-cream-text/65 text-sm">{o}</span>
                     </div>
                   ))}
                 </div>
@@ -131,14 +131,14 @@ export function Services() {
               <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3">
                 <a
                   href={APPLY_URL}
-                  className="inline-flex items-center gap-2 text-[#c9a86c] text-[11px] tracking-[0.25em] uppercase hover:gap-4 transition-all"
+                  className="inline-flex items-center gap-2 text-gold text-[11px] tracking-[0.25em] uppercase hover:gap-4 transition-all"
                 >
                   Book a discovery call <span>→</span>
                 </a>
                 {current.page && (
                   <a
                     href={current.page.href}
-                    className="inline-flex items-center gap-2 text-[#1c160e]/55 hover:text-[#1c160e] text-[11px] tracking-[0.25em] uppercase transition-colors"
+                    className="inline-flex items-center gap-2 text-cream-text/55 hover:text-cream-text text-[11px] tracking-[0.25em] uppercase transition-colors"
                   >
                     {current.page.label} <span>→</span>
                   </a>

@@ -4,6 +4,7 @@ import { About } from "@/components/sections/About";
 import { Method } from "@/components/sections/Method";
 import { Outcomes } from "@/components/sections/Outcomes";
 import { Services } from "@/components/sections/Services";
+import { Investment } from "@/components/sections/Investment";
 import { Press } from "@/components/sections/Press";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Process } from "@/components/sections/Process";
@@ -24,7 +25,7 @@ const bannerItems = [
 
 export default function Home() {
   return (
-    <main id="main" className="bg-[#060606]">
+    <main id="main" className="bg-background">
       <Navbar />
       <Hero />
       <InfiniteScrollBanner items={bannerItems} />
@@ -33,6 +34,7 @@ export default function Home() {
       <Outcomes />
       <Press />
       <Services />
+      <Investment />
       <Process />
       <Testimonials />
       <ReferralSection />

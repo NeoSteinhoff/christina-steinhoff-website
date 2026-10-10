@@ -57,12 +57,12 @@ const whoFor = [
 
 export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
   return (
-    <div className="bg-[#f7f1e7] min-h-screen">
+    <div className="bg-cream min-h-screen">
       <Navbar />
 
       {/* Hero */}
-      <section className="relative min-h-[88vh] overflow-hidden bg-[#060606] px-6 pb-24 pt-40 flex items-center">
-        <div className="pointer-events-none absolute -top-1/4 left-0 h-[700px] w-[700px] rounded-full bg-[#c9a86c]/[0.07] blur-[160px]" />
+      <section className="relative min-h-[88vh] overflow-hidden bg-background px-6 pb-24 pt-40 flex items-center">
+        <div className="pointer-events-none absolute -top-1/4 left-0 h-[700px] w-[700px] rounded-full bg-gold/[0.07] blur-[160px]" />
         <div className="relative z-10 mx-auto grid w-full max-w-6xl items-end gap-10 md:grid-cols-12">
           <div className="md:col-span-7">
             <motion.div
@@ -71,7 +71,7 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
               transition={{ duration: 0.6, ease: EASE }}
               className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-[#c9a86c]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-gold" />
               <span className="text-[10px] uppercase tracking-[0.28em] text-white/60">Life Coaching · Dubai &amp; Worldwide</span>
             </motion.div>
 
@@ -84,7 +84,7 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
               <span className="block text-[clamp(2.6rem,6vw,5.5rem)] font-[420] leading-[1.0] text-white/90">
                 Private life coaching
               </span>
-              <span className="block text-[clamp(3rem,8vw,7.5rem)] font-[680] leading-[0.92] text-[#c9a86c]">
+              <span className="block text-[clamp(3rem,8vw,7.5rem)] font-[680] leading-[0.92] text-gold">
                 in the heart of Dubai.
               </span>
             </motion.h1>
@@ -138,7 +138,7 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
       </section>
 
       {/* Direct answer — what is a life coach */}
-      <section className="bg-[#f7f1e7] py-24 px-6">
+      <section className="bg-cream py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -146,15 +146,15 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
             viewport={{ once: true }}
             className="flex items-center justify-center gap-4 mb-6"
           >
-            <span className="h-px w-7 bg-[#c9a86c]/40" />
-            <span className="text-[#c9a86c]/70 text-[10px] tracking-[0.45em] uppercase">What A Life Coach Actually Does</span>
-            <span className="h-px w-7 bg-[#c9a86c]/40" />
+            <span className="h-px w-7 bg-gold/40" />
+            <span className="text-gold/70 text-[10px] tracking-[0.45em] uppercase">What A Life Coach Actually Does</span>
+            <span className="h-px w-7 bg-gold/40" />
           </motion.div>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl font-light leading-relaxed text-[#1c160e]/85"
+            className="text-xl md:text-2xl font-light leading-relaxed text-cream-text/85"
             style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
             A life coach helps you identify the beliefs, habits, and subconscious patterns keeping
@@ -167,7 +167,7 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-6 text-[#1c160e]/65 font-light leading-relaxed text-base"
+            className="mt-6 text-cream-text/65 font-light leading-relaxed text-base"
           >
             Unlike a therapist, a life coach isn&apos;t treating a diagnosis or processing clinical
             trauma — a good coach is forward-looking, working with your present-day patterns so
@@ -177,7 +177,7 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
       </section>
 
       {/* Struggles */}
-      <section className="bg-[#060606] py-28 px-6 relative overflow-hidden">
+      <section className="bg-background py-28 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_40%,rgba(201,168,108,0.05),transparent)]" />
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-14 items-start">
@@ -188,8 +188,8 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
                 viewport={{ once: true }}
                 className="flex items-center gap-3 mb-6"
               >
-                <span className="h-px w-7 bg-[#c9a86c]/30" />
-                <span className="text-[#c9a86c]/60 text-[10px] tracking-[0.45em] uppercase">Sound Familiar?</span>
+                <span className="h-px w-7 bg-gold/30" />
+                <span className="text-gold/60 text-[10px] tracking-[0.45em] uppercase">Sound Familiar?</span>
               </motion.div>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
@@ -200,7 +200,7 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
               >
                 Life looks fine
                 <br />
-                <em className="text-[#c9a86c]">from the outside</em>
+                <em className="text-gold">from the outside</em>
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
@@ -225,7 +225,7 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
                   transition={{ delay: i * 0.07 }}
                   className="flex items-center gap-4 rounded-xl border border-white/8 bg-white/[0.03] px-6 py-4"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#c9a86c] shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
                   <span className="text-white/75 text-base font-light">{s}</span>
                 </motion.div>
               ))}
@@ -235,7 +235,7 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
       </section>
 
       {/* Method bridges */}
-      <section className="bg-[#f7f1e7] py-28 px-6">
+      <section className="bg-cream py-28 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -243,25 +243,25 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
             viewport={{ once: true }}
             className="flex items-center justify-center gap-4 mb-6"
           >
-            <span className="h-px w-7 bg-[#c9a86c]/40" />
-            <span className="text-[#c9a86c]/70 text-[10px] tracking-[0.45em] uppercase">Science + Soul Fusion™</span>
-            <span className="h-px w-7 bg-[#c9a86c]/40" />
+            <span className="h-px w-7 bg-gold/40" />
+            <span className="text-gold/70 text-[10px] tracking-[0.45em] uppercase">Science + Soul Fusion™</span>
+            <span className="h-px w-7 bg-gold/40" />
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-light text-[#1c160e] mb-6"
+            className="text-4xl md:text-5xl font-light text-cream-text mb-6"
             style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
-            Change that reaches <em className="text-[#c9a86c]">the root</em>
+            Change that reaches <em className="text-gold">the root</em>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
-            className="text-[#1c160e]/70 font-light leading-relaxed text-base max-w-2xl mx-auto mb-14"
+            className="text-cream-text/70 font-light leading-relaxed text-base max-w-2xl mx-auto mb-14"
           >
             Most life coaching stays at the level of goals and habits — useful, but shallow.
             Christina&apos;s method combines NLP-based coaching, NLP, and clinical
@@ -277,16 +277,16 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="rounded-2xl border border-[#1c160e]/8 bg-white px-4 py-6 flex flex-col items-center gap-1.5"
+                className="rounded-2xl border border-cream-text/8 bg-white px-4 py-6 flex flex-col items-center gap-1.5"
               >
-                <span className="text-[#1c160e]/70 text-sm font-light">{a}</span>
+                <span className="text-cream-text/70 text-sm font-light">{a}</span>
                 <span
-                  className="text-[#c9a86c] text-xl leading-none font-light"
+                  className="text-gold text-xl leading-none font-light"
                   style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
                 >
                   →
                 </span>
-                <span className="text-[#1c160e] text-sm font-medium">{b}</span>
+                <span className="text-cream-text text-sm font-medium">{b}</span>
               </motion.div>
             ))}
           </div>
@@ -294,7 +294,7 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
       </section>
 
       {/* Credentials / why Christina */}
-      <section className="bg-[#060606] py-28 px-6 relative overflow-hidden">
+      <section className="bg-background py-28 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_0%,rgba(201,168,108,0.06),transparent)]" />
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-14 items-center">
@@ -305,8 +305,8 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
                 viewport={{ once: true }}
                 className="flex items-center gap-3 mb-6"
               >
-                <span className="h-px w-7 bg-[#c9a86c]/30" />
-                <span className="text-[#c9a86c]/60 text-[10px] tracking-[0.45em] uppercase">Why Christina</span>
+                <span className="h-px w-7 bg-gold/30" />
+                <span className="text-gold/60 text-[10px] tracking-[0.45em] uppercase">Why Christina</span>
               </motion.div>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
@@ -317,7 +317,7 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
               >
                 Credentialed.
                 <br />
-                <em className="text-[#c9a86c]">Not generic.</em>
+                <em className="text-gold">Not generic.</em>
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
@@ -337,7 +337,7 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
               <ul className="grid gap-3.5">
                 {credentials.map((c) => (
                   <li key={c} className="flex items-center gap-3">
-                    <span className="text-[#c9a86c] text-xs">✦</span>
+                    <span className="text-gold text-xs">✦</span>
                     <span className="text-white/80 text-base font-light">{c}</span>
                   </li>
                 ))}
@@ -348,7 +348,7 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
       </section>
 
       {/* Outcomes + who it's for */}
-      <section className="bg-[#f7f1e7] py-28 px-6">
+      <section className="bg-cream py-28 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14">
           <div>
             <motion.div
@@ -357,8 +357,8 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
               viewport={{ once: true }}
               className="flex items-center gap-3 mb-6"
             >
-              <span className="h-px w-7 bg-[#c9a86c]/40" />
-              <span className="text-[#c9a86c]/70 text-[10px] tracking-[0.45em] uppercase">What Changes</span>
+              <span className="h-px w-7 bg-gold/40" />
+              <span className="text-gold/70 text-[10px] tracking-[0.45em] uppercase">What Changes</span>
             </motion.div>
             <div className="grid gap-3">
               {outcomes.map((o, i) => (
@@ -370,8 +370,8 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
                   transition={{ delay: i * 0.05 }}
                   className="flex items-start gap-3"
                 >
-                  <span className="mt-2 w-1 h-1 rounded-full bg-[#c9a86c] shrink-0" />
-                  <span className="text-[#1c160e]/75 text-base font-light leading-relaxed">{o}</span>
+                  <span className="mt-2 w-1 h-1 rounded-full bg-gold shrink-0" />
+                  <span className="text-cream-text/75 text-base font-light leading-relaxed">{o}</span>
                 </motion.div>
               ))}
             </div>
@@ -383,8 +383,8 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
               viewport={{ once: true }}
               className="flex items-center gap-3 mb-6"
             >
-              <span className="h-px w-7 bg-[#c9a86c]/40" />
-              <span className="text-[#c9a86c]/70 text-[10px] tracking-[0.45em] uppercase">Who This Is For</span>
+              <span className="h-px w-7 bg-gold/40" />
+              <span className="text-gold/70 text-[10px] tracking-[0.45em] uppercase">Who This Is For</span>
             </motion.div>
             <div className="flex flex-wrap gap-2.5 mb-8">
               {whoFor.map((w, i) => (
@@ -394,7 +394,7 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="px-4 py-2 rounded-full border border-[#1c160e]/10 bg-white text-[#1c160e]/70 text-sm font-light"
+                  className="px-4 py-2 rounded-full border border-cream-text/10 bg-white text-cream-text/70 text-sm font-light"
                 >
                   {w}
                 </motion.span>
@@ -406,7 +406,7 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#060606] py-28 px-6">
+      <section className="bg-background py-28 px-6">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-14">
             <motion.div
@@ -415,9 +415,9 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
               viewport={{ once: true }}
               className="flex items-center justify-center gap-4 mb-6"
             >
-              <span className="h-px w-7 bg-[#c9a86c]/40" />
-              <span className="text-[#c9a86c]/70 text-[10px] tracking-[0.45em] uppercase">Life Coaching FAQ</span>
-              <span className="h-px w-7 bg-[#c9a86c]/40" />
+              <span className="h-px w-7 bg-gold/40" />
+              <span className="text-gold/70 text-[10px] tracking-[0.45em] uppercase">Life Coaching FAQ</span>
+              <span className="h-px w-7 bg-gold/40" />
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -426,7 +426,7 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
               className="text-4xl md:text-5xl font-light text-white"
               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
-              Questions people <em className="text-[#c9a86c]">ask</em>
+              Questions people <em className="text-gold">ask</em>
             </motion.h2>
           </div>
           <div className="[&_div]:bg-white/[0.03] [&_div]:border-white/8">
@@ -438,26 +438,26 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
       <RelatedReading pillarSlug="life-coach-dubai" />
 
       {/* CTA */}
-      <section className="bg-[#f7f1e7] py-32 px-6 relative overflow-hidden">
+      <section className="bg-cream py-32 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(201,168,108,0.08),transparent)]" />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-light text-[#1c160e] leading-tight mb-7"
+            className="text-4xl md:text-6xl font-light text-cream-text leading-tight mb-7"
             style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
             The version of you
             <br />
-            <em className="text-[#c9a86c]">waiting to emerge</em>
+            <em className="text-gold">waiting to emerge</em>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
-            className="text-[#1c160e]/65 text-base font-light max-w-md mx-auto leading-relaxed mb-10"
+            className="text-cream-text/65 text-base font-light max-w-md mx-auto leading-relaxed mb-10"
           >
             Begin with a complimentary 30-minute discovery call. No pressure, no pitch — just
             clarity on what&apos;s actually in the way.
@@ -476,14 +476,14 @@ export function LifeCoachClient({ faqs }: { faqs: FAQItem[] }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="mt-10 text-[#1c160e]/55 text-sm font-light"
+            className="mt-10 text-cream-text/55 text-sm font-light"
           >
             Leading a team, not just yourself?{" "}
-            <a href="/executive-coaching-dubai" className="text-[#a8884e] hover:text-[#c9a86c] underline underline-offset-4 transition-colors">
+            <a href="/executive-coaching-dubai" className="text-gold-deep hover:text-gold underline underline-offset-4 transition-colors">
               Explore executive coaching
             </a>{" "}
             · Working through something heavier?{" "}
-            <a href="/emotional-healing-dubai" className="text-[#a8884e] hover:text-[#c9a86c] underline underline-offset-4 transition-colors">
+            <a href="/emotional-healing-dubai" className="text-gold-deep hover:text-gold underline underline-offset-4 transition-colors">
               Explore emotional healing coaching
             </a>
           </motion.p>

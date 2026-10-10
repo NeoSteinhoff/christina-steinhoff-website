@@ -13,7 +13,7 @@ const stats = [
 export function About() {
   const reduce = useReducedMotion();
   return (
-    <section id="about" className="relative overflow-hidden bg-[#f7f1e7] py-28 md:py-36">
+    <section id="about" className="relative overflow-hidden bg-cream py-28 md:py-36">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid items-center gap-16 md:grid-cols-2 lg:gap-24">
           {/* Portrait + stats */}
@@ -38,12 +38,12 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.25, duration: 0.7 }}
-              className="absolute -bottom-7 left-5 right-5 flex justify-between rounded-2xl bg-[#0b0a08] px-7 py-5"
+              className="absolute -bottom-7 left-5 right-5 flex justify-between rounded-2xl bg-ink px-7 py-5"
             >
               {stats.map((s) => (
                 <div key={s.label} className="text-center">
                   <p
-                    className="font-display text-2xl font-medium text-[#c9a86c]"
+                    className="font-display text-2xl font-medium text-gold"
                     style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
                   >
                     {s.n}
@@ -56,17 +56,17 @@ export function About() {
 
           {/* Copy */}
           <div className="pt-10 md:pt-0">
-            <span className="text-[10px] uppercase tracking-[0.4em] text-[#a8884e]">Meet Christina</span>
+            <span className="text-[10px] uppercase tracking-[0.4em] text-gold-deep">Meet Christina</span>
             <h2
-              className="mt-5 text-[clamp(2.1rem,4vw,3.4rem)] font-light leading-[1.08] text-[#1c160e]"
+              className="mt-5 text-[clamp(2.1rem,4vw,3.4rem)] font-light leading-[1.08] text-cream-text"
               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
               The most successful people
               <br />
-              <em className="font-medium text-[#a8884e]">still feel stuck inside.</em>
+              <em className="font-medium text-gold-deep">still feel stuck inside.</em>
             </h2>
 
-            <Reveal className="mt-7 space-y-4 text-[15px] font-light leading-relaxed text-[#1c160e]/75" blur={false}>
+            <Reveal className="mt-7 space-y-4 text-[15px] font-light leading-relaxed text-cream-text/75" blur={false}>
               <p>
                 Christina works with executives, founders, and high-achieving women who look
                 unstoppable on paper and feel hollow underneath it — running on empty, disconnected
@@ -74,7 +74,7 @@ export function About() {
                 &ldquo;everything.&rdquo;
               </p>
               <p>
-                Her <strong className="font-medium text-[#1c160e]">Science + Soul Fusion™</strong>{" "}
+                Her <strong className="font-medium text-cream-text">Science + Soul Fusion™</strong>{" "}
                 method works at three levels at once — conscious, subconscious, and spiritual —
                 so it reaches the root, not the symptom. The outcome isn&apos;t a motivational high.
                 It&apos;s a durable change in how you lead, decide, relate, and feel about your own life.
@@ -88,8 +88,8 @@ export function About() {
             <div className="mt-9 grid gap-2.5 sm:grid-cols-2">
               {CREDENTIALS.map((c) => (
                 <div key={c} className="flex items-start gap-2.5">
-                  <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-[#c9a86c]" />
-                  <span className="text-[13px] font-light leading-snug text-[#1c160e]/75">{c}</span>
+                  <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-gold" />
+                  <span className="text-[13px] font-light leading-snug text-cream-text/75">{c}</span>
                 </div>
               ))}
             </div>

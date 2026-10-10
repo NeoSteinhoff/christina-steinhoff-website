@@ -25,11 +25,11 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[100dvh] overflow-hidden bg-[#060606] pt-28 pb-16 md:pt-24"
+      className="relative min-h-[100dvh] overflow-hidden bg-background pt-28 pb-16 md:pt-24"
     >
       {/* ambient depth */}
-      <div className="pointer-events-none absolute -top-1/4 left-1/2 h-[800px] w-[800px] -translate-x-1/2 rounded-full bg-[#c9a86c]/[0.07] blur-[160px]" />
-      <div className="pointer-events-none absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-[#a8884e]/[0.05] blur-[140px]" />
+      <div className="pointer-events-none absolute -top-1/4 left-1/2 h-[800px] w-[800px] -translate-x-1/2 rounded-full bg-gold/[0.07] blur-[160px]" />
+      <div className="pointer-events-none absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-gold-deep/[0.05] blur-[140px]" />
 
       <div className="relative z-10 mx-auto grid min-h-[calc(100dvh-9rem)] max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-12 lg:gap-8">
         {/* Text column */}
@@ -40,7 +40,7 @@ export function Hero() {
             transition={{ duration: 0.7, ease: EASE }}
             className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-[#c9a86c]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
             <span className="text-[10px] uppercase tracking-[0.28em] text-white/60">
               Executive &amp; Emotional Mastery Coach · Dubai
             </span>
@@ -53,7 +53,7 @@ export function Hero() {
               </span>
             </Line>
             <Line delay={0.16}>
-              <span className="block text-[clamp(2.7rem,7vw,6.5rem)] font-[680] leading-[1.0] text-[#c9a86c]">
+              <span className="block text-[clamp(2.7rem,7vw,6.5rem)] font-[680] leading-[1.0] text-gold">
                 high-achieving women &amp; leaders.
               </span>
             </Line>
@@ -123,9 +123,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.75, ease: EASE }}
-            className="absolute -bottom-5 left-4 rounded-2xl border border-white/10 bg-[#0c0b0a]/90 px-5 py-3 backdrop-blur-xl"
+            className="absolute -bottom-5 left-4 rounded-2xl border border-white/10 bg-ink/90 px-5 py-3 backdrop-blur-xl"
           >
-            <p className="text-[10px] uppercase tracking-[0.2em] text-[#c9a86c]/80">The method</p>
+            <p className="text-[10px] uppercase tracking-[0.2em] text-gold/80">The method</p>
             <p className="font-display text-lg font-medium text-white">Science + Soul Fusion™</p>
           </motion.div>
         </motion.div>
@@ -139,7 +139,7 @@ export function Hero() {
         className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 md:block"
         aria-hidden
       >
-        <span className="block h-9 w-px origin-top bg-gradient-to-b from-[#c9a86c]/60 to-transparent" />
+        <span className="block h-9 w-px origin-top bg-gradient-to-b from-gold/60 to-transparent" />
       </motion.div>
     </section>
   );

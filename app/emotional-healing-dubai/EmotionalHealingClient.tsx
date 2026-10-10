@@ -46,12 +46,12 @@ const modalities = [
 
 export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
   return (
-    <div className="bg-[#f7f1e7] min-h-screen">
+    <div className="bg-cream min-h-screen">
       <Navbar />
 
       {/* Hero */}
-      <section className="relative min-h-[80vh] overflow-hidden bg-[#060606] px-6 pb-20 pt-40 flex items-center">
-        <div className="pointer-events-none absolute -top-1/4 right-0 h-[700px] w-[700px] rounded-full bg-[#c9a86c]/[0.07] blur-[160px]" />
+      <section className="relative min-h-[80vh] overflow-hidden bg-background px-6 pb-20 pt-40 flex items-center">
+        <div className="pointer-events-none absolute -top-1/4 right-0 h-[700px] w-[700px] rounded-full bg-gold/[0.07] blur-[160px]" />
         <div className="relative z-10 mx-auto grid w-full max-w-6xl items-end gap-10 md:grid-cols-12">
           <div className="md:col-span-7">
             <motion.div
@@ -60,7 +60,7 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
               transition={{ duration: 0.6, ease: EASE }}
               className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-[#c9a86c]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-gold" />
               <span className="text-[10px] uppercase tracking-[0.28em] text-white/60">Emotional Healing Coaching · Dubai</span>
             </motion.div>
 
@@ -73,7 +73,7 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
               <span className="block text-[clamp(2.6rem,6vw,5.5rem)] font-[420] leading-[1.0] text-white/90">
                 Emotional healing,
               </span>
-              <span className="block text-[clamp(3rem,7.5vw,7rem)] font-[680] leading-[0.92] text-[#c9a86c]">
+              <span className="block text-[clamp(3rem,7.5vw,7rem)] font-[680] leading-[0.92] text-gold">
                 coaching in Dubai.
               </span>
             </motion.h1>
@@ -127,14 +127,14 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
       </section>
 
       {/* Coaching, not clinical treatment — prominent, right after the hero */}
-      <section className="bg-[#f7f1e7] py-16 px-6 border-b border-[#1c160e]/8">
+      <section className="bg-cream py-16 px-6 border-b border-cream-text/8">
         <div className="max-w-3xl mx-auto">
           <ScopeNote tone="cream" className="text-sm" />
         </div>
       </section>
 
       {/* Direct answer */}
-      <section className="bg-[#f7f1e7] py-20 px-6">
+      <section className="bg-cream py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -142,15 +142,15 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
             viewport={{ once: true }}
             className="flex items-center justify-center gap-4 mb-6"
           >
-            <span className="h-px w-7 bg-[#c9a86c]/40" />
-            <span className="text-[#c9a86c]/70 text-[10px] tracking-[0.45em] uppercase">What Emotional Healing Coaching Is</span>
-            <span className="h-px w-7 bg-[#c9a86c]/40" />
+            <span className="h-px w-7 bg-gold/40" />
+            <span className="text-gold/70 text-[10px] tracking-[0.45em] uppercase">What Emotional Healing Coaching Is</span>
+            <span className="h-px w-7 bg-gold/40" />
           </motion.div>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl font-light leading-relaxed text-[#1c160e]/85"
+            className="text-xl md:text-2xl font-light leading-relaxed text-cream-text/85"
             style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
             Emotional healing coaching helps you process and release stress, emotional patterns,
@@ -163,7 +163,7 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-6 text-[#1c160e]/65 font-light leading-relaxed text-base"
+            className="mt-6 text-cream-text/65 font-light leading-relaxed text-base"
           >
             It is not a diagnosis, a treatment, or a replacement for licensed mental health care.
             It's coaching for people who are functioning, not in acute crisis, and ready to work
@@ -174,7 +174,7 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
       </section>
 
       {/* Patterns */}
-      <section className="bg-[#060606] py-28 px-6 relative overflow-hidden">
+      <section className="bg-background py-28 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_40%,rgba(201,168,108,0.05),transparent)]" />
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-14 items-start">
@@ -185,8 +185,8 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
                 viewport={{ once: true }}
                 className="flex items-center gap-3 mb-6"
               >
-                <span className="h-px w-7 bg-[#c9a86c]/30" />
-                <span className="text-[#c9a86c]/60 text-[10px] tracking-[0.45em] uppercase">Recognise This?</span>
+                <span className="h-px w-7 bg-gold/30" />
+                <span className="text-gold/60 text-[10px] tracking-[0.45em] uppercase">Recognise This?</span>
               </motion.div>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
@@ -197,7 +197,7 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
               >
                 Patterns that
                 <br />
-                <em className="text-[#c9a86c]">outlast willpower</em>
+                <em className="text-gold">outlast willpower</em>
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
@@ -221,7 +221,7 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
                   transition={{ delay: i * 0.07 }}
                   className="flex items-center gap-4 rounded-xl border border-white/8 bg-white/[0.03] px-6 py-4"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#c9a86c] shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
                   <span className="text-white/75 text-base font-light">{s}</span>
                 </motion.div>
               ))}
@@ -231,7 +231,7 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
       </section>
 
       {/* Modalities */}
-      <section className="bg-[#f7f1e7] py-28 px-6">
+      <section className="bg-cream py-28 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="mb-14 text-center">
             <motion.div
@@ -240,18 +240,18 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
               viewport={{ once: true }}
               className="flex items-center justify-center gap-4 mb-6"
             >
-              <span className="h-px w-7 bg-[#c9a86c]/40" />
-              <span className="text-[#c9a86c]/70 text-[10px] tracking-[0.45em] uppercase">The Method</span>
-              <span className="h-px w-7 bg-[#c9a86c]/40" />
+              <span className="h-px w-7 bg-gold/40" />
+              <span className="text-gold/70 text-[10px] tracking-[0.45em] uppercase">The Method</span>
+              <span className="h-px w-7 bg-gold/40" />
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-light text-[#1c160e]"
+              className="text-4xl md:text-5xl font-light text-cream-text"
               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
-              Four ways in, <em className="text-[#c9a86c]">one goal</em>
+              Four ways in, <em className="text-gold">one goal</em>
             </motion.h2>
           </div>
 
@@ -263,18 +263,18 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="rounded-2xl border border-[#1c160e]/8 bg-white p-7"
+                className="rounded-2xl border border-cream-text/8 bg-white p-7"
               >
                 <span
-                  className="text-[32px] font-light leading-none text-[#c9a86c]/25 block mb-3"
+                  className="text-[32px] font-light leading-none text-gold/25 block mb-3"
                   style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
                 >
                   {m.n}
                 </span>
-                <h3 className="text-xl font-light text-[#1c160e] mb-2.5" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
+                <h3 className="text-xl font-light text-cream-text mb-2.5" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
                   {m.title}
                 </h3>
-                <p className="text-[#1c160e]/70 text-[15px] font-light leading-relaxed">{m.body}</p>
+                <p className="text-cream-text/70 text-[15px] font-light leading-relaxed">{m.body}</p>
               </motion.div>
             ))}
           </div>
@@ -282,7 +282,7 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
       </section>
 
       {/* When to seek licensed support instead */}
-      <section className="bg-[#060606] py-24 px-6">
+      <section className="bg-background py-24 px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -290,8 +290,8 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
             viewport={{ once: true }}
             className="flex items-center gap-3 mb-6"
           >
-            <span className="h-px w-7 bg-[#c9a86c]/30" />
-            <span className="text-[#c9a86c]/60 text-[10px] tracking-[0.45em] uppercase">When To Seek Licensed Support Instead</span>
+            <span className="h-px w-7 bg-gold/30" />
+            <span className="text-gold/60 text-[10px] tracking-[0.45em] uppercase">When To Seek Licensed Support Instead</span>
           </motion.div>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -310,7 +310,7 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#f7f1e7] py-28 px-6">
+      <section className="bg-cream py-28 px-6">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-14">
             <motion.div
@@ -319,18 +319,18 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
               viewport={{ once: true }}
               className="flex items-center justify-center gap-4 mb-6"
             >
-              <span className="h-px w-7 bg-[#c9a86c]/40" />
-              <span className="text-[#c9a86c]/70 text-[10px] tracking-[0.45em] uppercase">Emotional Healing FAQ</span>
-              <span className="h-px w-7 bg-[#c9a86c]/40" />
+              <span className="h-px w-7 bg-gold/40" />
+              <span className="text-gold/70 text-[10px] tracking-[0.45em] uppercase">Emotional Healing FAQ</span>
+              <span className="h-px w-7 bg-gold/40" />
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-light text-[#1c160e]"
+              className="text-4xl md:text-5xl font-light text-cream-text"
               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
-              Questions worth <em className="text-[#c9a86c]">asking</em>
+              Questions worth <em className="text-gold">asking</em>
             </motion.h2>
           </div>
           <FAQAccordion items={faqs} />
@@ -340,7 +340,7 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
       <RelatedReading pillarSlug="emotional-healing-dubai" />
 
       {/* CTA */}
-      <section className="bg-[#060606] py-32 px-6 relative overflow-hidden">
+      <section className="bg-background py-32 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(201,168,108,0.06),transparent)]" />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <motion.h2
@@ -352,7 +352,7 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
           >
             Some patterns need
             <br />
-            <em className="text-[#c9a86c]">more than time</em>
+            <em className="text-gold">more than time</em>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 14 }}
@@ -381,11 +381,11 @@ export function EmotionalHealingClient({ faqs }: { faqs: FAQItem[] }) {
             className="mt-10 text-white/55 text-sm font-light"
           >
             Looking for something broader?{" "}
-            <a href="/life-coach-dubai" className="text-[#c9a86c]/80 hover:text-[#c9a86c] underline underline-offset-4 transition-colors">
+            <a href="/life-coach-dubai" className="text-gold/80 hover:text-gold underline underline-offset-4 transition-colors">
               Explore life coaching
             </a>{" "}
             · Leading a team?{" "}
-            <a href="/executive-coaching-dubai" className="text-[#c9a86c]/80 hover:text-[#c9a86c] underline underline-offset-4 transition-colors">
+            <a href="/executive-coaching-dubai" className="text-gold/80 hover:text-gold underline underline-offset-4 transition-colors">
               Explore executive coaching
             </a>
           </motion.p>

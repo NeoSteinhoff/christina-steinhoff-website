@@ -24,7 +24,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section className="bg-[#FAF5ED] py-32">
+    <section className="bg-cream py-32">
       <div className="max-w-5xl mx-auto px-6">
         <div className="grid md:grid-cols-[1fr_1.6fr] gap-16 items-start">
 
@@ -36,18 +36,18 @@ export function Process() {
               viewport={{ once: true }}
               className="flex items-center gap-3 mb-6"
             >
-              <span className="h-px w-7 bg-[#c9a86c]/40" />
-              <span className="text-[#c9a86c]/70 text-[10px] tracking-[0.45em] uppercase">Process</span>
+              <span className="h-px w-7 bg-gold/40" />
+              <span className="text-gold/70 text-[10px] tracking-[0.45em] uppercase">Process</span>
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-light text-[#1c160e] leading-tight mb-10 md:sticky md:top-32"
+              className="text-4xl md:text-5xl font-light text-cream-text leading-tight mb-10 md:sticky md:top-32"
               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
               How we<br />
-              <em className="text-[#c9a86c]">work together</em>
+              <em className="text-gold">work together</em>
             </motion.h2>
 
             <motion.a
@@ -56,7 +56,7 @@ export function Process() {
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
               href={APPLY_URL}
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#0b0a08] text-white text-[10px] tracking-[0.2em] uppercase rounded-full hover:bg-[#1a1410] transition-colors"
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-ink text-white text-[10px] tracking-[0.2em] uppercase rounded-full hover:bg-[#1a1410] transition-colors"
             >
               Book a discovery call
             </motion.a>
@@ -64,7 +64,7 @@ export function Process() {
 
           {/* Steps */}
           <div className="relative">
-            <div className="absolute left-[26px] top-8 bottom-8 w-px bg-gradient-to-b from-[#c9a86c]/30 via-[#c9a86c]/10 to-transparent" />
+            <div className="absolute left-[26px] top-8 bottom-8 w-px bg-gradient-to-b from-gold/30 via-gold/10 to-transparent" />
 
             {steps.map((s, i) => (
               <motion.div
@@ -75,15 +75,15 @@ export function Process() {
                 transition={{ delay: i * 0.15 }}
                 className="relative flex gap-7 pb-12 last:pb-0"
               >
-                <div className="relative z-10 w-[52px] h-[52px] rounded-full border border-[#c9a86c]/20 bg-[#FAF5ED] flex items-center justify-center shrink-0">
-                  <span className="text-[#c9a86c] text-xs font-light">{s.n}</span>
+                <div className="relative z-10 w-[52px] h-[52px] rounded-full border border-gold/20 bg-cream flex items-center justify-center shrink-0">
+                  <span className="text-gold text-xs font-light">{s.n}</span>
                 </div>
                 <div className="pt-3">
-                  <h3 className="text-[#1c160e] text-xl font-light mb-2.5"
+                  <h3 className="text-cream-text text-xl font-light mb-2.5"
                     style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
                     {s.title}
                   </h3>
-                  <p className="text-[#1c160e]/65 font-light leading-relaxed text-base">{s.body}</p>
+                  <p className="text-cream-text/65 font-light leading-relaxed text-base">{s.body}</p>
                 </div>
               </motion.div>
             ))}

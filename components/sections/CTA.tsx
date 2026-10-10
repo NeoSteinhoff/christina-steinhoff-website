@@ -6,12 +6,12 @@ import { track } from "@/lib/track";
 
 export function CTA() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-[#060606] py-32 md:py-44">
+    <section id="contact" className="relative overflow-hidden bg-background py-32 md:py-44">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(201,168,108,0.07),transparent)]" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
         <Reveal blur={false}>
-          <span className="text-[10px] uppercase tracking-[0.4em] text-[#c9a86c]/70">Work with Christina</span>
+          <span className="text-[10px] uppercase tracking-[0.4em] text-gold/70">Work with Christina</span>
         </Reveal>
 
         <Reveal delay={0.05}>
@@ -21,7 +21,7 @@ export function CTA() {
           >
             The version of you
             <br />
-            <em className="font-medium text-[#c9a86c]">waiting to emerge</em>
+            <em className="font-medium text-gold">waiting to emerge</em>
           </h2>
         </Reveal>
 

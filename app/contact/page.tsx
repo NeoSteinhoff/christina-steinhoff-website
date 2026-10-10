@@ -10,7 +10,7 @@ import { getEntrySource } from "@/lib/attribution";
 type Status = "idle" | "loading" | "success" | "error";
 
 const inputClass =
-  "w-full rounded-xl border border-[#1c160e]/10 bg-[#f7f1e7] px-4 py-3 text-sm font-light text-[#1c160e] placeholder:text-[#1c160e]/30 transition-colors focus:border-[#c9a86c]/50 focus:outline-none focus:ring-2 focus:ring-[#c9a86c]/15";
+  "w-full rounded-xl border border-cream-text/10 bg-cream px-4 py-3 text-sm font-light text-cream-text placeholder:text-cream-text/30 transition-colors focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/15";
 
 export default function ContactPage() {
   const [tab, setTab] = useState<"book" | "form">("book");
@@ -58,19 +58,19 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f7f1e7]">
+    <div className="min-h-screen bg-cream">
       <Navbar />
 
       {/* Hero */}
-      <div className="relative overflow-hidden bg-[#060606] px-6 pb-20 pt-36">
-        <div className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-[#c9a86c]/[0.06] blur-[140px]" />
+      <div className="relative overflow-hidden bg-background px-6 pb-20 pt-36">
+        <div className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-gold/[0.06] blur-[140px]" />
         <div className="relative z-10 mx-auto max-w-3xl text-center">
-          <span className="text-[10px] uppercase tracking-[0.4em] text-[#c9a86c]/70">Get in touch</span>
+          <span className="text-[10px] uppercase tracking-[0.4em] text-gold/70">Get in touch</span>
           <h1
             className="mt-5 text-[clamp(2.6rem,6vw,4.5rem)] font-light leading-[1.02] text-white"
             style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
-            Start the <em className="font-medium text-[#c9a86c]">conversation</em>
+            Start the <em className="font-medium text-gold">conversation</em>
           </h1>
           <p className="mx-auto mt-5 max-w-md text-sm font-light leading-relaxed text-white/60">
             Book a complimentary discovery call, or send a message and Christina will reply personally.
@@ -82,7 +82,7 @@ export default function ContactPage() {
                 key={t}
                 onClick={() => setTab(t)}
                 className={`rounded-full px-6 py-2.5 text-[10px] uppercase tracking-[0.22em] transition-all ${
-                  tab === t ? "bg-[#c9a86c] font-medium text-[#0b0a08]" : "text-white/50 hover:text-white/80"
+                  tab === t ? "bg-gold font-medium text-ink" : "text-white/50 hover:text-white/80"
                 }`}
               >
                 {t === "book" ? "Book a call" : "Send a message"}
@@ -94,24 +94,24 @@ export default function ContactPage() {
 
       {tab === "book" && (
         <div className="mx-auto max-w-lg px-6 py-16 text-center">
-          <div className="rounded-2xl border border-[#1c160e]/8 bg-white p-10">
-            <h2 className="mb-3 text-2xl font-light text-[#1c160e]" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
+          <div className="rounded-2xl border border-cream-text/8 bg-white p-10">
+            <h2 className="mb-3 text-2xl font-light text-cream-text" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
               Start with a short application
             </h2>
-            <p className="mb-7 text-sm font-light leading-relaxed text-[#1c160e]/55">
+            <p className="mb-7 text-sm font-light leading-relaxed text-cream-text/55">
               Christina reviews every application personally before booking, so the call is worth
               both of your time. Three questions — two minutes — then pick a slot.
             </p>
             <a
               href={APPLY_URL}
-              className="inline-flex rounded-full bg-[#0b0a08] px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#1a1410]"
+              className="inline-flex rounded-full bg-ink px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#1a1410]"
             >
               Apply for a discovery call
             </a>
           </div>
-          <p className="mt-6 text-center text-sm font-light text-[#1c160e]/55">
+          <p className="mt-6 text-center text-sm font-light text-cream-text/55">
             Prefer to write first?{" "}
-            <button onClick={() => setTab("form")} className="text-[#a8884e] underline underline-offset-4 hover:text-[#c9a86c]">
+            <button onClick={() => setTab("form")} className="text-gold-deep underline underline-offset-4 hover:text-gold">
               Send a message instead
             </button>
           </p>
@@ -122,7 +122,7 @@ export default function ContactPage() {
         <div className="mx-auto grid max-w-5xl gap-14 px-6 py-16 md:grid-cols-[1fr_1.4fr]">
           {/* Contact details */}
           <div>
-            <h2 className="mb-8 text-2xl font-light text-[#1c160e]" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
+            <h2 className="mb-8 text-2xl font-light text-cream-text" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
               Contact details
             </h2>
             <div className="mb-10 space-y-5">
@@ -152,8 +152,8 @@ export default function ContactPage() {
               />
             </div>
 
-            <div className="border-t border-[#1c160e]/10 pt-8">
-              <p className="mb-4 text-[10px] uppercase tracking-[0.22em] text-[#1c160e]/45">Follow Christina</p>
+            <div className="border-t border-cream-text/10 pt-8">
+              <p className="mb-4 text-[10px] uppercase tracking-[0.22em] text-cream-text/45">Follow Christina</p>
               <div className="flex gap-3">
                 {[
                   { href: SOCIAL.instagram, label: "Instagram", d: "M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85s.01-3.58.07-4.85C2.38 3.93 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16Zm0 3.68a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32Zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.4-11.84a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88Z" },
@@ -166,7 +166,7 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-[#1c160e]/12 text-[#1c160e]/45 transition-all hover:border-[#c9a86c]/50 hover:text-[#a8884e]"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-cream-text/12 text-cream-text/45 transition-all hover:border-gold/50 hover:text-gold-deep"
                   >
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d={d} /></svg>
                   </a>
@@ -174,14 +174,14 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="mt-10 rounded-2xl bg-[#0b0a08] p-6">
+            <div className="mt-10 rounded-2xl bg-ink p-6">
               <p className="mb-2 text-[10px] uppercase tracking-[0.22em] text-white/50">Prefer to talk?</p>
               <p className="mb-4 font-light text-white" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
                 Book a complimentary 30-minute discovery call.
               </p>
               <a
                 href={APPLY_URL}
-                className="inline-flex rounded-full bg-[#c9a86c] px-6 py-3 text-[10px] font-medium uppercase tracking-[0.2em] text-[#0b0a08] transition-colors hover:bg-[#d8bd8a]"
+                className="inline-flex rounded-full bg-gold px-6 py-3 text-[10px] font-medium uppercase tracking-[0.2em] text-ink transition-colors hover:bg-gold-soft"
               >
                 Apply now
               </a>
@@ -190,7 +190,7 @@ export default function ContactPage() {
 
           {/* Form */}
           <div>
-            <h2 className="mb-8 text-2xl font-light text-[#1c160e]" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
+            <h2 className="mb-8 text-2xl font-light text-cream-text" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
               Send a message
             </h2>
 
@@ -198,18 +198,18 @@ export default function ContactPage() {
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="rounded-2xl border border-[#c9a86c]/25 bg-white p-12 text-center"
+                className="rounded-2xl border border-gold/25 bg-white p-12 text-center"
               >
-                <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#c9a86c]/12 text-[#a8884e]">
+                <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-gold/12 text-gold-deep">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="m5 13 4 4L19 7" /></svg>
                 </div>
-                <h3 className="mb-2 text-xl font-light text-[#1c160e]" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
+                <h3 className="mb-2 text-xl font-light text-cream-text" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
                   Message received
                 </h3>
-                <p className="text-sm font-light text-[#1c160e]/55">Christina will be in touch within one business day.</p>
+                <p className="text-sm font-light text-cream-text/55">Christina will be in touch within one business day.</p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5 rounded-2xl border border-[#1c160e]/8 bg-white p-8">
+              <form onSubmit={handleSubmit} className="space-y-5 rounded-2xl border border-cream-text/8 bg-white p-8">
                 {/* honeypot */}
                 <input type="text" name="company" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
 
@@ -220,7 +220,7 @@ export default function ContactPage() {
                 <Field label="Email" name="email" type="email" placeholder="you@company.com" autoComplete="email" required />
 
                 <div>
-                  <label className="mb-2 block text-[10px] uppercase tracking-[0.18em] text-[#1c160e]/45">What brings you here?</label>
+                  <label className="mb-2 block text-[10px] uppercase tracking-[0.18em] text-cream-text/45">What brings you here?</label>
                   <select name="topic" defaultValue="personal" className={inputClass}>
                     <option value="personal">Personal Life Mentorship</option>
                     <option value="executive">Executive Coaching</option>
@@ -233,7 +233,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-[10px] uppercase tracking-[0.18em] text-[#1c160e]/45">How did you hear about us?</label>
+                  <label className="mb-2 block text-[10px] uppercase tracking-[0.18em] text-cream-text/45">How did you hear about us?</label>
                   <select name="source" value={source} onChange={(e) => setSource(e.target.value)} className={inputClass}>
                     <option value="referral">Referred by a client</option>
                     <option value="instagram">Instagram</option>
@@ -249,7 +249,7 @@ export default function ContactPage() {
                 )}
 
                 <div>
-                  <label className="mb-2 block text-[10px] uppercase tracking-[0.18em] text-[#1c160e]/45">Message</label>
+                  <label className="mb-2 block text-[10px] uppercase tracking-[0.18em] text-cream-text/45">Message</label>
                   <textarea
                     name="message"
                     required
@@ -269,13 +269,13 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full rounded-full bg-[#0b0a08] py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#1a1410] disabled:opacity-50"
+                  className="w-full rounded-full bg-ink py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#1a1410] disabled:opacity-50"
                 >
                   {status === "loading" ? "Sending…" : "Send message"}
                 </button>
-                <p className="text-center text-xs font-light text-[#1c160e]/40">
+                <p className="text-center text-xs font-light text-cream-text/40">
                   Or email directly at{" "}
-                  <a href={`mailto:${SITE.email}`} className="underline underline-offset-2 hover:text-[#a8884e]">{SITE.email}</a>
+                  <a href={`mailto:${SITE.email}`} className="underline underline-offset-2 hover:text-gold-deep">{SITE.email}</a>
                 </p>
               </form>
             )}
@@ -305,9 +305,9 @@ function Field({
 }) {
   return (
     <div>
-      <label className="mb-2 block text-[10px] uppercase tracking-[0.18em] text-[#1c160e]/45">
+      <label className="mb-2 block text-[10px] uppercase tracking-[0.18em] text-cream-text/45">
         {label}
-        {required && <span className="text-[#c9a86c]"> *</span>}
+        {required && <span className="text-gold"> *</span>}
       </label>
       <input
         name={name}
@@ -336,14 +336,14 @@ function ContactRow({
 }) {
   const inner = (
     <>
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#c9a86c]/10 text-[#a8884e] transition-colors group-hover:bg-[#c9a86c]/20">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold-deep transition-colors group-hover:bg-gold/20">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
           {icon}
         </svg>
       </span>
       <span>
-        <span className="mb-0.5 block text-[10px] uppercase tracking-[0.18em] text-[#1c160e]/45">{label}</span>
-        <span className="block text-sm font-light text-[#1c160e]">{value}</span>
+        <span className="mb-0.5 block text-[10px] uppercase tracking-[0.18em] text-cream-text/45">{label}</span>
+        <span className="block text-sm font-light text-cream-text">{value}</span>
       </span>
     </>
   );

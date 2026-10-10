@@ -14,8 +14,8 @@ export function LegalShell({
 }) {
   return (
     <>
-      <header className="relative overflow-hidden bg-[#060606] px-6 pb-16 pt-36">
-        <div className="pointer-events-none absolute left-1/2 top-0 h-[300px] w-[500px] -translate-x-1/2 rounded-full bg-[#c9a86c]/[0.05] blur-[140px]" />
+      <header className="relative overflow-hidden bg-background px-6 pb-16 pt-36">
+        <div className="pointer-events-none absolute left-1/2 top-0 h-[300px] w-[500px] -translate-x-1/2 rounded-full bg-gold/[0.05] blur-[140px]" />
         <div className="relative z-10 mx-auto max-w-2xl">
           <h1
             className="text-[clamp(2.4rem,5vw,3.5rem)] font-light text-white"
@@ -28,7 +28,7 @@ export function LegalShell({
       </header>
 
       <div className="mx-auto max-w-2xl px-6 py-16">
-        <div className="legal-prose space-y-5 text-[15px] font-light leading-relaxed text-[#1c160e]/80">
+        <div className="legal-prose space-y-5 text-[15px] font-light leading-relaxed text-cream-text/80">
           {children}
         </div>
       </div>
@@ -38,7 +38,7 @@ export function LegalShell({
           font-family: var(--font-fraunces), Georgia, serif;
           font-size: 1.4rem;
           font-weight: 500;
-          color: #1c160e;
+          color: var(--cream-text);
           margin-top: 2.25rem;
           margin-bottom: 0.5rem;
         }
@@ -46,10 +46,10 @@ export function LegalShell({
         .legal-prose li { position: relative; padding-left: 1.1rem; }
         .legal-prose li::before {
           content: ""; position: absolute; left: 0; top: 0.65rem;
-          width: 4px; height: 4px; border-radius: 999px; background: #c9a86c;
+          width: 4px; height: 4px; border-radius: 999px; background: var(--gold);
         }
-        .legal-prose a { color: #a8884e; text-decoration: underline; text-underline-offset: 3px; }
-        .legal-prose strong { color: #1c160e; font-weight: 500; }
+        .legal-prose a { color: var(--gold-deep); text-decoration: underline; text-underline-offset: 3px; }
+        .legal-prose strong { color: var(--cream-text); font-weight: 500; }
       `}</style>
     </>
   );

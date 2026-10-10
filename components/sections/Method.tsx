@@ -14,21 +14,21 @@ const soul = ["Purpose", "Values", "Intuition", "Authentic leadership"];
 export function Method() {
   const reduce = useReducedMotion();
   return (
-    <section id="method" className="relative overflow-hidden bg-[#060606] py-28 md:py-40">
-      <div className="pointer-events-none absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-[#a8884e]/[0.06] blur-[150px]" />
+    <section id="method" className="relative overflow-hidden bg-background py-28 md:py-40">
+      <div className="pointer-events-none absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-gold-deep/[0.06] blur-[150px]" />
 
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         {/* Lead — asymmetric, no centered eyebrow */}
         <div className="grid gap-10 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-7">
-            <span className="text-[10px] uppercase tracking-[0.4em] text-[#c9a86c]/70">The method</span>
+            <span className="text-[10px] uppercase tracking-[0.4em] text-gold/70">The method</span>
             <h2
               className="mt-5 text-[clamp(2.4rem,5vw,4.25rem)] font-light leading-[1.02] text-white"
               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
               Why most coaching
               <br />
-              <em className="font-medium text-[#c9a86c]">doesn&apos;t last</em>
+              <em className="font-medium text-gold">doesn&apos;t last</em>
             </h2>
           </div>
           <Reveal direction="left" className="md:col-span-5 md:pt-16">
@@ -49,11 +49,11 @@ export function Method() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="rounded-2xl border border-white/8 bg-white/[0.02] p-8"
           >
-            <span className="text-[10px] uppercase tracking-[0.4em] text-[#c9a86c]/70">Science</span>
+            <span className="text-[10px] uppercase tracking-[0.4em] text-gold/70">Science</span>
             <ul className="mt-5 space-y-3.5">
               {science.map((s) => (
                 <li key={s} className="flex items-center gap-3">
-                  <span className="h-1 w-1 shrink-0 rounded-full bg-[#c9a86c]" />
+                  <span className="h-1 w-1 shrink-0 rounded-full bg-gold" />
                   <span className="text-base font-light text-white/75">{s}</span>
                 </li>
               ))}
@@ -61,7 +61,7 @@ export function Method() {
           </motion.div>
 
           <span
-            className="mx-auto hidden font-display text-3xl font-light text-[#c9a86c]/40 md:block"
+            className="mx-auto hidden font-display text-3xl font-light text-gold/40 md:block"
             style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             aria-hidden
           >
@@ -75,11 +75,11 @@ export function Method() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="rounded-2xl border border-white/8 bg-white/[0.02] p-8"
           >
-            <span className="text-[10px] uppercase tracking-[0.4em] text-[#c9a86c]/70">Soul</span>
+            <span className="text-[10px] uppercase tracking-[0.4em] text-gold/70">Soul</span>
             <ul className="mt-5 space-y-3.5">
               {soul.map((s) => (
                 <li key={s} className="flex items-center gap-3">
-                  <span className="h-1 w-1 shrink-0 rounded-full bg-[#c9a86c]" />
+                  <span className="h-1 w-1 shrink-0 rounded-full bg-gold" />
                   <span className="text-base font-light text-white/75">{s}</span>
                 </li>
               ))}
@@ -90,7 +90,7 @@ export function Method() {
         <Reveal className="mt-10 text-center" blur={false}>
           <a
             href="/emotional-healing-dubai"
-            className="link-underline text-sm font-light text-[#c9a86c]/80 hover:text-[#c9a86c] transition-colors"
+            className="link-underline text-sm font-light text-gold/80 hover:text-gold transition-colors"
           >
             More on emotional healing coaching →
           </a>
@@ -102,7 +102,7 @@ export function Method() {
             style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
             &ldquo;The goal isn&apos;t a better version of you.{" "}
-            <span className="not-italic text-[#c9a86c]">It&apos;s the real one.&rdquo;</span>
+            <span className="not-italic text-gold">It&apos;s the real one.&rdquo;</span>
           </p>
         </Reveal>
       </div>
