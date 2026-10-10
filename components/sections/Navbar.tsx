@@ -10,6 +10,7 @@ const links = [
   { label: "About", href: "/#about" },
   { label: "Method", href: "/#method" },
   { label: "Services", href: "/#services" },
+  { label: "Programs", href: "/#investment" },
   { label: "Executive", href: "/executive-coaching-dubai" },
   { label: "Workshops", href: "/group-workshop" },
   { label: "Blog", href: "/blog" },
@@ -29,7 +30,7 @@ export function Navbar() {
   }, [scrollY]);
 
   useEffect(() => {
-    const sectionIds = ["about", "method", "services", "testimonials", "contact"];
+    const sectionIds = ["about", "method", "services", "investment", "testimonials", "contact"];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -52,13 +53,13 @@ export function Navbar() {
       transition={{ duration: 0.6 }}
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled ? "bg-[#060606]/90 backdrop-blur-md border-b border-white/5" : "bg-transparent"
+        scrolled ? "bg-background/90 backdrop-blur-md border-b border-white/5" : "bg-transparent"
       )}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a
           href="/"
-          className="text-[#c9a86c] font-light tracking-[0.2em] text-xs uppercase"
+          className="text-gold font-light tracking-[0.2em] text-xs uppercase"
           style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
         >
           Christina Steinhoff
@@ -75,12 +76,12 @@ export function Navbar() {
                 href={link.href}
                 className={cn(
                   "text-[10px] tracking-[0.3em] uppercase transition-colors relative",
-                  isActive ? "text-[#c9a86c]" : "text-white/65 hover:text-white/75"
+                  isActive ? "text-gold" : "text-white/65 hover:text-white/75"
                 )}
               >
                 {link.label}
                 {isActive && (
-                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#c9a86c]" />
+                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-gold" />
                 )}
               </a>
             );
@@ -89,7 +90,7 @@ export function Navbar() {
             href={CALENDLY}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2 bg-[#c9a86c] text-[#060606] text-[10px] tracking-[0.2em] uppercase rounded-full hover:bg-[#d4b880] transition-colors font-medium"
+            className="px-5 py-2 bg-gold text-background text-[10px] tracking-[0.2em] uppercase rounded-full hover:bg-[#d4b880] transition-colors font-medium"
           >
             Book a Call
           </a>
@@ -114,7 +115,7 @@ export function Navbar() {
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-[#060606]/96 backdrop-blur border-t border-white/5 px-6 py-6 flex flex-col gap-4"
+          className="md:hidden bg-background/96 backdrop-blur border-t border-white/5 px-6 py-6 flex flex-col gap-4"
         >
           {[...links, ...mobileOnlyLinks].map((link) => (
             <a
@@ -130,7 +131,7 @@ export function Navbar() {
             href={CALENDLY}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 text-center px-5 py-3 bg-[#c9a86c] text-[#060606] text-[10px] tracking-[0.2em] uppercase rounded-full font-medium"
+            className="mt-2 text-center px-5 py-3 bg-gold text-background text-[10px] tracking-[0.2em] uppercase rounded-full font-medium"
           >
             Book a Discovery Call
           </a>

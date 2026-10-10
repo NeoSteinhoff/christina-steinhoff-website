@@ -6,7 +6,7 @@
   --gold: #c9a86c;
   --gold-soft: #d8bd8a;
   --gold-deep: #a8884e;
-  --cream: #f7f1e7;
+  --cream: #faf6ee;
   --cream-text: #1c160e;
   --ink: #0b0a08;
 }
@@ -16,7 +16,10 @@
   --color-foreground: var(--foreground);
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
+  --color-gold-deep: var(--gold-deep);
   --color-cream: var(--cream);
+  --color-cream-text: var(--cream-text);
+  --color-ink: var(--ink);
   --font-sans: var(--font-jakarta);
   --font-display: var(--font-fraunces);
 }

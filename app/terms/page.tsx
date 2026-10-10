@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen bg-[#f7f1e7]">
+    <div className="min-h-screen bg-cream">
       <Navbar />
       <LegalShell title="Terms of Service" updated="June 2026">
         <p>
@@ -39,7 +39,9 @@ export default function TermsPage() {
         <p>
           Discovery calls are complimentary. Paid programmes are agreed in writing before they begin,
           including scope, fees, and any rescheduling or cancellation terms. Those agreement terms take
-          precedence over this page where they differ.
+          precedence over this page where they differ. Payments may be processed through a third-party
+          payment provider; your payment details are handled by that provider and are not stored on
+          this site.
         </p>
 
         <h2>Intellectual property</h2>

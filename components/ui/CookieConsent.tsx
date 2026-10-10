@@ -52,7 +52,7 @@ export function CookieConsent({ gaId, clarityId }: { gaId: string; clarityId: st
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 24 }}
             transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
-            className="fixed bottom-4 left-4 right-4 z-[120] mx-auto max-w-md rounded-2xl border border-white/10 bg-[#0c0b0a]/95 p-5 backdrop-blur-xl"
+            className="fixed bottom-4 left-4 right-4 z-[120] mx-auto max-w-md rounded-2xl border border-white/10 bg-ink/95 p-5 backdrop-blur-xl"
             role="dialog"
             aria-label="Cookie consent"
           >
@@ -62,7 +62,7 @@ export function CookieConsent({ gaId, clarityId }: { gaId: string; clarityId: st
             <div className="mt-4 flex items-center gap-3">
               <button
                 onClick={() => decide("granted")}
-                className="rounded-full bg-[#c9a86c] px-5 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#0b0a08] transition-colors hover:bg-[#d8bd8a]"
+                className="rounded-full bg-gold px-5 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-ink transition-colors hover:bg-gold-soft"
               >
                 Accept
               </button>

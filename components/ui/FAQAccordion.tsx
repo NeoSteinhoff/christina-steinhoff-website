@@ -16,7 +16,7 @@ export function FAQAccordion({ items }: { items: FAQItem[] }) {
             className="w-full text-left px-8 py-6 flex items-center justify-between gap-4"
           >
             <span
-              className="text-[#1c160e] font-light text-[17px] leading-snug"
+              className="text-cream-text font-light text-[17px] leading-snug"
               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
               {faq.q}
@@ -24,7 +24,7 @@ export function FAQAccordion({ items }: { items: FAQItem[] }) {
             <motion.span
               animate={{ rotate: open === i ? 45 : 0 }}
               transition={{ duration: 0.2 }}
-              className="text-[#c9a86c] text-2xl leading-none shrink-0"
+              className="text-gold text-2xl leading-none shrink-0"
             >
               +
             </motion.span>
@@ -37,7 +37,7 @@ export function FAQAccordion({ items }: { items: FAQItem[] }) {
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.25 }}
               >
-                <p className="px-8 pb-7 text-[#1c160e]/70 text-base font-light leading-relaxed">
+                <p className="px-8 pb-7 text-cream-text/70 text-base font-light leading-relaxed">
                   {faq.a}
                 </p>
               </motion.div>
