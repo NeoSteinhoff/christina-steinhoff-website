@@ -80,12 +80,12 @@ const outcomes = [
 
 export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
   return (
-    <div className="bg-[cream] min-h-screen">
+    <div className="bg-cream min-h-screen">
       <Navbar />
 
       {/* Hero — editorial, left-aligned (distinct from the homepage & workshop heroes) */}
-      <section className="relative min-h-[88vh] overflow-hidden bg-[background] px-6 pb-24 pt-40 flex items-center">
-        <div className="pointer-events-none absolute -top-1/4 right-0 h-[700px] w-[700px] rounded-full bg-[gold]/[0.07] blur-[160px]" />
+      <section className="relative min-h-[88vh] overflow-hidden bg-background px-6 pb-24 pt-40 flex items-center">
+        <div className="pointer-events-none absolute -top-1/4 right-0 h-[700px] w-[700px] rounded-full bg-gold/[0.07] blur-[160px]" />
         <div className="relative z-10 mx-auto grid w-full max-w-6xl items-end gap-10 md:grid-cols-12">
           <div className="md:col-span-7">
             <motion.div
@@ -94,7 +94,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
               transition={{ duration: 0.6, ease: EASE }}
               className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-[gold]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-gold" />
               <span className="text-[10px] uppercase tracking-[0.28em] text-white/60">Executive Coaching · Dubai &amp; UAE</span>
             </motion.div>
 
@@ -107,7 +107,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
               <span className="block text-[clamp(2.6rem,6vw,5.5rem)] font-[420] leading-[1.0] text-white/90">
                 Lead with clarity.
               </span>
-              <span className="block text-[clamp(3rem,8vw,8rem)] font-[680] leading-[0.92] text-[gold]">
+              <span className="block text-[clamp(3rem,8vw,8rem)] font-[680] leading-[0.92] text-gold">
                 Carry less.
               </span>
             </motion.h1>
@@ -161,7 +161,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
       </section>
 
       {/* The hidden weight */}
-      <section className="bg-[cream] py-28 px-6">
+      <section className="bg-cream py-28 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-14 items-start">
             <div>
@@ -171,26 +171,26 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
                 viewport={{ once: true }}
                 className="flex items-center gap-3 mb-6"
               >
-                <span className="h-px w-7 bg-[gold]/40" />
-                <span className="text-[gold]/70 text-[10px] tracking-[0.45em] uppercase">The Reality</span>
+                <span className="h-px w-7 bg-gold/40" />
+                <span className="text-gold/70 text-[10px] tracking-[0.45em] uppercase">The Reality</span>
               </motion.div>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-5xl font-light text-[cream-text] leading-tight mb-6"
+                className="text-4xl md:text-5xl font-light text-cream-text leading-tight mb-6"
                 style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
               >
                 The hidden weight
                 <br />
-                <em className="text-[gold]">of leadership</em>
+                <em className="text-gold">of leadership</em>
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.15 }}
-                className="text-[cream-text]/75 font-light leading-relaxed text-base"
+                className="text-cream-text/75 font-light leading-relaxed text-base"
               >
                 Dubai attracts ambitious leaders from around the world — and asks everything of them.
                 Behind rapid growth, high expectations, and constant performance pressure, many
@@ -208,10 +208,10 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.07 }}
-                  className="flex items-center gap-4 bg-white rounded-xl border border-[cream-text]/8 px-6 py-4"
+                  className="flex items-center gap-4 bg-white rounded-xl border border-cream-text/8 px-6 py-4"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[gold] shrink-0" />
-                  <span className="text-[cream-text]/75 text-base font-light">{s}</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
+                  <span className="text-cream-text/75 text-base font-light">{s}</span>
                 </motion.div>
               ))}
             </div>
@@ -220,7 +220,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
       </section>
 
       {/* Method bridges */}
-      <section className="bg-[background] py-28 px-6 overflow-hidden relative">
+      <section className="bg-background py-28 px-6 overflow-hidden relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_60%,rgba(201,168,108,0.05),transparent)]" />
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           <motion.div
@@ -229,9 +229,9 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
             viewport={{ once: true }}
             className="flex items-center justify-center gap-4 mb-6"
           >
-            <span className="h-px w-7 bg-[gold]/30" />
-            <span className="text-[gold]/60 text-[10px] tracking-[0.45em] uppercase">Science + Soul Fusion™</span>
-            <span className="h-px w-7 bg-[gold]/30" />
+            <span className="h-px w-7 bg-gold/30" />
+            <span className="text-gold/60 text-[10px] tracking-[0.45em] uppercase">Science + Soul Fusion™</span>
+            <span className="h-px w-7 bg-gold/30" />
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -240,7 +240,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
             className="text-4xl md:text-5xl font-light text-white mb-6"
             style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
-            Leadership from the <em className="text-[gold]">inside out</em>
+            Leadership from the <em className="text-gold">inside out</em>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -268,7 +268,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
               >
                 <span className="text-white/70 text-sm font-light">{a}</span>
                 <span
-                  className="text-[gold] text-xl leading-none font-light"
+                  className="text-gold text-xl leading-none font-light"
                   style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
                 >
                   +
@@ -286,13 +286,13 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
             style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
             "The goal is not to work harder —{" "}
-            <span className="text-[gold] not-italic">it&apos;s to lead from a different place."</span>
+            <span className="text-gold not-italic">it&apos;s to lead from a different place."</span>
           </motion.p>
         </div>
       </section>
 
       {/* Focus areas */}
-      <section className="bg-[cream] py-28 px-6">
+      <section className="bg-cream py-28 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="mb-14">
             <motion.div
@@ -301,19 +301,19 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
               viewport={{ once: true }}
               className="flex items-center gap-3 mb-6"
             >
-              <span className="h-px w-7 bg-[gold]/40" />
-              <span className="text-[gold]/70 text-[10px] tracking-[0.45em] uppercase">What We Work On</span>
+              <span className="h-px w-7 bg-gold/40" />
+              <span className="text-gold/70 text-[10px] tracking-[0.45em] uppercase">What We Work On</span>
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-light text-[cream-text] leading-tight max-w-2xl"
+              className="text-4xl md:text-5xl font-light text-cream-text leading-tight max-w-2xl"
               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
               Five dimensions of
               <br />
-              <em className="text-[gold]">executive transformation</em>
+              <em className="text-gold">executive transformation</em>
             </motion.h2>
           </div>
 
@@ -325,21 +325,21 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="rounded-2xl border border-[cream-text]/8 bg-white p-8"
+                className="rounded-2xl border border-cream-text/8 bg-white p-8"
               >
                 <span
-                  className="text-[36px] font-light leading-none text-[gold]/25 block mb-4"
+                  className="text-[36px] font-light leading-none text-gold/25 block mb-4"
                   style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
                 >
                   {f.n}
                 </span>
                 <h3
-                  className="text-2xl font-light text-[cream-text] mb-3"
+                  className="text-2xl font-light text-cream-text mb-3"
                   style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
                 >
                   {f.title}
                 </h3>
-                <p className="text-[cream-text]/70 text-base font-light leading-relaxed">{f.body}</p>
+                <p className="text-cream-text/70 text-base font-light leading-relaxed">{f.body}</p>
               </motion.div>
             ))}
 
@@ -349,16 +349,16 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="rounded-2xl border border-[gold]/30 bg-[background] p-8 flex flex-col justify-between group"
+              className="rounded-2xl border border-gold/30 bg-background p-8 flex flex-col justify-between group"
             >
               <p
                 className="text-2xl font-light text-white leading-snug"
                 style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
               >
-                Every programme is <em className="text-[gold]">bespoke</em> — built around your
+                Every programme is <em className="text-gold">bespoke</em> — built around your
                 goals, challenges, and stage of growth.
               </p>
-              <span className="mt-6 inline-flex items-center gap-2 text-[gold] text-[11px] tracking-[0.25em] uppercase group-hover:gap-4 transition-all">
+              <span className="mt-6 inline-flex items-center gap-2 text-gold text-[11px] tracking-[0.25em] uppercase group-hover:gap-4 transition-all">
                 Start with a discovery call <span>→</span>
               </span>
             </motion.a>
@@ -367,7 +367,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
       </section>
 
       {/* Who it's for + outcomes */}
-      <section className="bg-[background] py-28 px-6 relative overflow-hidden">
+      <section className="bg-background py-28 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_100%,rgba(201,168,108,0.05),transparent)]" />
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-14">
@@ -378,8 +378,8 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
                 viewport={{ once: true }}
                 className="flex items-center gap-3 mb-6"
               >
-                <span className="h-px w-7 bg-[gold]/30" />
-                <span className="text-[gold]/60 text-[10px] tracking-[0.45em] uppercase">Who It&apos;s For</span>
+                <span className="h-px w-7 bg-gold/30" />
+                <span className="text-gold/60 text-[10px] tracking-[0.45em] uppercase">Who It&apos;s For</span>
               </motion.div>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
@@ -390,7 +390,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
               >
                 Built for leaders who
                 <br />
-                <em className="text-[gold]">hold the weight</em>
+                <em className="text-gold">hold the weight</em>
               </motion.h2>
               <div className="flex flex-wrap gap-2.5">
                 {whoFor.map((w, i) => (
@@ -415,14 +415,14 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
                 viewport={{ once: true }}
                 className="flex items-center gap-3 mb-6"
               >
-                <span className="h-px w-7 bg-[gold]/30" />
-                <span className="text-[gold]/60 text-[10px] tracking-[0.45em] uppercase">What Changes</span>
+                <span className="h-px w-7 bg-gold/30" />
+                <span className="text-gold/60 text-[10px] tracking-[0.45em] uppercase">What Changes</span>
               </motion.div>
               <SpotlightCard>
                 <ul className="grid gap-3.5">
                   {outcomes.map((o) => (
                     <li key={o} className="flex items-center gap-3">
-                      <span className="text-[gold] text-xs">✦</span>
+                      <span className="text-gold text-xs">✦</span>
                       <span className="text-white/70 text-base font-light">{o}</span>
                     </li>
                   ))}
@@ -434,7 +434,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[cream] py-28 px-6">
+      <section className="bg-cream py-28 px-6">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-14">
             <motion.div
@@ -443,18 +443,18 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
               viewport={{ once: true }}
               className="flex items-center justify-center gap-4 mb-6"
             >
-              <span className="h-px w-7 bg-[gold]/40" />
-              <span className="text-[gold]/70 text-[10px] tracking-[0.45em] uppercase">Executive Coaching FAQ</span>
-              <span className="h-px w-7 bg-[gold]/40" />
+              <span className="h-px w-7 bg-gold/40" />
+              <span className="text-gold/70 text-[10px] tracking-[0.45em] uppercase">Executive Coaching FAQ</span>
+              <span className="h-px w-7 bg-gold/40" />
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-light text-[cream-text]"
+              className="text-4xl md:text-5xl font-light text-cream-text"
               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
-              Questions leaders <em className="text-[gold]">ask</em>
+              Questions leaders <em className="text-gold">ask</em>
             </motion.h2>
           </div>
           <FAQAccordion items={faqs} />
@@ -464,7 +464,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
       <RelatedReading pillarSlug="executive-coaching-dubai" />
 
       {/* CTA */}
-      <section className="bg-[background] py-32 px-6 relative overflow-hidden">
+      <section className="bg-background py-32 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(201,168,108,0.06),transparent)]" />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <motion.h2
@@ -476,7 +476,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
           >
             Leadership shouldn&apos;t cost you
             <br />
-            <em className="text-[gold]">your wellbeing</em>
+            <em className="text-gold">your wellbeing</em>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 14 }}
@@ -505,7 +505,7 @@ export function ExecutiveClient({ faqs }: { faqs: FAQItem[] }) {
             className="mt-10 text-white/55 text-sm font-light"
           >
             Leading a team rather than yourself?{" "}
-            <a href="/group-workshop" className="text-[gold]/80 hover:text-[gold] underline underline-offset-4 transition-colors">
+            <a href="/group-workshop" className="text-gold/80 hover:text-gold underline underline-offset-4 transition-colors">
               Explore group workshops & leadership programmes
             </a>
           </motion.p>
