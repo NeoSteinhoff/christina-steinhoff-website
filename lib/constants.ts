@@ -69,11 +69,10 @@ export const PRESS = [
   },
 ] as const;
 
-// Accessible, self-serve entry points into Science + Soul Fusion™ — single
-// source of truth for the homepage Investment section. These sit alongside,
-// not in place of, the 90-Day Private Mentorship (/science-soul-fusion),
-// which stays the flagship, application-gated format. All three tiers share
-// the same methodology; they differ in duration, continuity, and support.
+// The three Science + Soul Fusion™ tiers — single source of truth, shared by
+// the homepage Investment teaser and the full /science-soul-fusion page. All
+// three share the same methodology; they differ in duration, continuity, and
+// level of support.
 export const PROGRAMS = {
   eyebrow: "Start Where You Are",
   headline: "Three Ways Into Science + Soul Fusion™",
@@ -119,8 +118,8 @@ export const PROGRAMS = {
     },
   ],
   bridge: {
-    text: "Want the deepest version of this work? The 90-Day Private Mentorship is Christina's flagship format — fully private, application only.",
-    linkLabel: "Explore the 90-Day Mentorship",
+    text: "Want the full story — the method, the four pillars behind it, and what to expect at each level?",
+    linkLabel: "Explore Science + Soul Fusion™ in full",
     href: "/science-soul-fusion",
   },
   breakthrough: {
