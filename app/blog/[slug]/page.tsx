@@ -97,16 +97,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   };
 
   return (
-    <div className="min-h-screen bg-[#f7f1e7]">
+    <div className="min-h-screen bg-cream">
       <Navbar />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Header */}
-      <header className="relative overflow-hidden bg-[#060606] px-6 pb-16 pt-36">
-        <div className="pointer-events-none absolute left-1/2 top-0 h-[360px] w-[600px] -translate-x-1/2 rounded-full bg-[#c9a86c]/[0.06] blur-[140px]" />
+      <header className="relative overflow-hidden bg-background px-6 pb-16 pt-36">
+        <div className="pointer-events-none absolute left-1/2 top-0 h-[360px] w-[600px] -translate-x-1/2 rounded-full bg-gold/[0.06] blur-[140px]" />
         <div className="relative z-10 mx-auto max-w-3xl">
-          <div className="mb-6 flex items-center gap-3 text-[10px] uppercase tracking-[0.22em] text-[#c9a86c]/75">
-            <Link href="/blog" className="hover:text-[#c9a86c]">Journal</Link>
+          <div className="mb-6 flex items-center gap-3 text-[10px] uppercase tracking-[0.22em] text-gold/75">
+            <Link href="/blog" className="hover:text-gold">Journal</Link>
             <span className="text-white/25">/</span>
             <span className="text-white/45">{a.category}</span>
           </div>
@@ -137,12 +137,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       {/* Body */}
       <article className="mx-auto max-w-2xl px-6 py-16">
         {/* Key takeaways */}
-        <aside className="mb-12 rounded-2xl border border-[#1c160e]/10 bg-white p-7">
-          <p className="mb-4 text-[10px] uppercase tracking-[0.22em] text-[#a8884e]">Key takeaways</p>
+        <aside className="mb-12 rounded-2xl border border-cream-text/10 bg-white p-7">
+          <p className="mb-4 text-[10px] uppercase tracking-[0.22em] text-gold-deep">Key takeaways</p>
           <ul className="space-y-3">
             {a.keyTakeaways.map((k) => (
-              <li key={k} className="flex gap-3 text-[15px] font-light leading-relaxed text-[#1c160e]/80">
-                <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#c9a86c]" />
+              <li key={k} className="flex gap-3 text-[15px] font-light leading-relaxed text-cream-text/80">
+                <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-gold" />
                 {k}
               </li>
             ))}
@@ -152,21 +152,21 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         {a.sections.map((s) => (
           <section key={s.heading} className="mb-10">
             <h2
-              className="mb-4 text-2xl font-medium text-[#1c160e] md:text-[1.7rem]"
+              className="mb-4 text-2xl font-medium text-cream-text md:text-[1.7rem]"
               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
               {s.heading}
             </h2>
             {s.paragraphs.map((p, i) => (
-              <p key={i} className="mb-4 text-[1.05rem] font-light leading-[1.75] text-[#1c160e]/80">
+              <p key={i} className="mb-4 text-[1.05rem] font-light leading-[1.75] text-cream-text/80">
                 {p}
               </p>
             ))}
             {s.bullets && (
               <ul className="mb-4 space-y-2.5">
                 {s.bullets.map((b) => (
-                  <li key={b} className="flex gap-3 text-[1.05rem] font-light leading-[1.7] text-[#1c160e]/80">
-                    <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-[#c9a86c]" />
+                  <li key={b} className="flex gap-3 text-[1.05rem] font-light leading-[1.7] text-cream-text/80">
+                    <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-gold" />
                     {b}
                   </li>
                 ))}
@@ -181,12 +181,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
         {/* Related services — contextual internal links to the relevant pillar page */}
         {RELATED_PILLARS[a.slug] && RELATED_PILLARS[a.slug].length > 0 && (
-          <div className="mb-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#1c160e]/10 pt-6 text-sm">
+          <div className="mb-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-cream-text/10 pt-6 text-sm">
             {RELATED_PILLARS[a.slug].map((r) => (
               <Link
                 key={r.href}
                 href={r.href}
-                className="font-medium text-[#a8884e] underline underline-offset-4 hover:text-[#c9a86c] transition-colors"
+                className="font-medium text-gold-deep underline underline-offset-4 hover:text-gold transition-colors"
               >
                 {r.label} →
               </Link>
@@ -195,24 +195,24 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         )}
 
         {/* FAQ */}
-        <section className="mt-14 border-t border-[#1c160e]/10 pt-12">
-          <h2 className="mb-6 text-2xl font-medium text-[#1c160e]" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
+        <section className="mt-14 border-t border-cream-text/10 pt-12">
+          <h2 className="mb-6 text-2xl font-medium text-cream-text" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
             Frequently asked
           </h2>
           <div className="space-y-6">
             {a.faq.map((f) => (
               <div key={f.q}>
-                <h3 className="mb-1.5 text-base font-medium text-[#1c160e]">{f.q}</h3>
-                <p className="text-[15px] font-light leading-relaxed text-[#1c160e]/75">{f.a}</p>
+                <h3 className="mb-1.5 text-base font-medium text-cream-text">{f.q}</h3>
+                <p className="text-[15px] font-light leading-relaxed text-cream-text/75">{f.a}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Author + CTA */}
-        <section className="mt-14 rounded-2xl bg-[#0b0a08] p-8">
+        <section className="mt-14 rounded-2xl bg-ink p-8">
           <div className="flex items-start gap-5">
-            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border border-[#c9a86c]/30 bg-[#f7f1e7]">
+            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border border-gold/30 bg-cream">
               <Image
                 src="/images/christina-avatar.jpg"
                 alt="Christina Steinhoff"
@@ -229,7 +229,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               </p>
               <a
                 href={APPLY_URL}
-                className="mt-4 inline-flex rounded-full bg-[#c9a86c] px-5 py-2.5 text-[10px] font-medium uppercase tracking-[0.18em] text-[#0b0a08] transition-colors hover:bg-[#d8bd8a]"
+                className="mt-4 inline-flex rounded-full bg-gold px-5 py-2.5 text-[10px] font-medium uppercase tracking-[0.18em] text-ink transition-colors hover:bg-gold-soft"
               >
                 Book a discovery call
               </a>
@@ -240,7 +240,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
       {/* Related */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <h2 className="mb-8 text-xl font-light text-[#1c160e]" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
+        <h2 className="mb-8 text-xl font-light text-cream-text" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
           Keep reading
         </h2>
         <div className="grid gap-6 md:grid-cols-3">
@@ -249,8 +249,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-xl bg-[#e8dfd3]">
                 <Image src={r.image} alt={r.title} fill sizes="320px" className="object-cover transition-transform duration-500 group-hover:scale-105" />
               </div>
-              <span className="text-[10px] uppercase tracking-[0.18em] text-[#a8884e]">{r.category}</span>
-              <h3 className="mt-1.5 text-lg font-light leading-snug text-[#1c160e] group-hover:text-[#a8884e]" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
+              <span className="text-[10px] uppercase tracking-[0.18em] text-gold-deep">{r.category}</span>
+              <h3 className="mt-1.5 text-lg font-light leading-snug text-cream-text group-hover:text-gold-deep" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
                 {r.title}
               </h3>
             </Link>
