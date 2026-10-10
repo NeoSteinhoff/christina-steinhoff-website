@@ -12,7 +12,7 @@ export function ScopeNote({ tone = "dark", className }: { tone?: "dark" | "cream
   const styles =
     tone === "dark"
       ? "border-white/10 bg-white/[0.02] text-white/50"
-      : "border-[#1c160e]/10 bg-[#1c160e]/[0.02] text-[#1c160e]/55";
+      : "border-cream-text/10 bg-cream-text/[0.02] text-cream-text/55";
 
   return (
     <p className={cn("rounded-xl border px-5 py-4 text-xs font-light leading-relaxed", styles, className)}>

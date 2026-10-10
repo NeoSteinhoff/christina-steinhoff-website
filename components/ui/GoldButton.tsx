@@ -23,15 +23,15 @@ export function GoldButton({
     "group inline-flex items-center gap-3 rounded-full pl-7 pr-2.5 py-2.5 text-[11px] font-medium uppercase tracking-[0.18em] transition-[transform,background-color,color] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.97]";
 
   const variants = {
-    solid: "bg-[#c9a86c] text-[#0b0a08] hover:bg-[#d8bd8a]",
-    outline: "border border-white/15 text-white hover:border-[#c9a86c]/50 hover:text-[#d8bd8a]",
-    ghost: "border border-[#1c160e]/15 text-[#1c160e] hover:border-[#c9a86c]/60",
+    solid: "bg-gold text-ink hover:bg-gold-soft",
+    outline: "border border-white/15 text-white hover:border-gold/50 hover:text-gold-soft",
+    ghost: "border border-cream-text/15 text-cream-text hover:border-gold/60",
   } as const;
 
   const iconBg = {
-    solid: "bg-[#0b0a08]/12 text-[#0b0a08]",
+    solid: "bg-ink/12 text-ink",
     outline: "bg-white/10 text-current",
-    ghost: "bg-[#1c160e]/8 text-current",
+    ghost: "bg-cream-text/8 text-current",
   } as const;
 
   return (

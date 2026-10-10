@@ -17,7 +17,7 @@ export function InfiniteScrollBanner({ items }: { items: string[] }) {
             >
               {item}
             </span>
-            <span className="text-[#c9a86c]/40">✦</span>
+            <span className="text-gold/40">✦</span>
           </span>
         ))}
       </div>
