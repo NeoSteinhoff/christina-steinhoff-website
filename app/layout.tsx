@@ -207,8 +207,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[#060606]">
-        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[999] focus:px-4 focus:py-2 focus:bg-[#c9a86c] focus:text-[#060606] focus:text-sm focus:rounded-full">
+      <body className="min-h-full flex flex-col bg-background">
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[999] focus:px-4 focus:py-2 focus:bg-gold focus:text-background focus:text-sm focus:rounded-full">
           Skip to content
         </a>
         <SmoothScroll />

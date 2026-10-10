@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-[#f7f1e7]">
+    <div className="min-h-screen bg-cream">
       <Navbar />
       <LegalShell title="Privacy Policy" updated="June 2026">
         <p>
