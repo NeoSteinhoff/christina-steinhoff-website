@@ -49,6 +49,7 @@ export function Footer() {
                 ["Women's Coach in Dubai", "/group-workshop"],
                 ["Conscious Relationships", "/conscious-coaching-dubai"],
                 ["Bespoke Retreat", "/#services"],
+                ["Corporate Workshops", "/corporate-workshops"],
               ].map(([label, href]) => (
                 <li key={label}>
                   <a href={href} className="text-white/60 hover:text-gold text-sm font-light transition-colors">

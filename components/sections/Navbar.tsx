@@ -13,6 +13,7 @@ const links = [
   { label: "Programs", href: "/#investment" },
   { label: "Executive", href: "/executive-coaching-dubai" },
   { label: "Workshops", href: "/group-workshop" },
+  { label: "Corporate", href: "/corporate-workshops" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
@@ -66,7 +67,7 @@ export function Navbar() {
         </a>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden xl:flex items-center gap-6">
           {links.map((link) => {
             const sectionId = link.href.startsWith("/#") ? link.href.slice(2) : link.href;
             const isActive = activeSection === sectionId;
@@ -88,7 +89,7 @@ export function Navbar() {
           })}
           <a
             href={APPLY_URL}
-            className="px-5 py-2 bg-gold text-background text-[10px] tracking-[0.2em] uppercase rounded-full hover:bg-[#d4b880] transition-colors font-medium"
+            className="shrink-0 whitespace-nowrap px-5 py-2 bg-gold text-background text-[10px] tracking-[0.2em] uppercase rounded-full hover:bg-[#d4b880] transition-colors font-medium"
           >
             Book a Call
           </a>
@@ -97,7 +98,7 @@ export function Navbar() {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-white/50 hover:text-white p-1"
+          className="xl:hidden text-white/50 hover:text-white p-1"
           aria-label="Menu"
         >
           <div className="flex flex-col gap-[5px] w-5">
@@ -113,7 +114,7 @@ export function Navbar() {
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-background/96 backdrop-blur border-t border-white/5 px-6 py-6 flex flex-col gap-4"
+          className="xl:hidden bg-background/96 backdrop-blur border-t border-white/5 px-6 py-6 flex flex-col gap-4"
         >
           {[...links, ...mobileOnlyLinks].map((link) => (
             <a

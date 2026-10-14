@@ -44,6 +44,13 @@ const services: {
     outcomes: ["Confidence & self-worth", "Emotional resilience", "Business & leadership clarity", "Community of ambitious women"],
     page: { href: "/group-workshop", label: "Explore the workshop" },
   },
+  {
+    tag: "Corporate",
+    title: "Calm Under Pressure",
+    body: "A 90-day corporate programme for organisations, built on Science + Soul Fusion™. Employees learn nervous-system regulation and communication tools they can use mid-workday; HR and leadership get a measured, evidence-based view of what's actually driving the pressure — without ever seeing an individual's personal results.",
+    outcomes: ["Nervous-system regulation", "Team communication tools", "Aggregated organisational indicators", "90-day continuation plan"],
+    page: { href: "/corporate-workshops/calm-under-pressure", label: "Explore the programme" },
+  },
 ];
 
 export function Services() {
