@@ -44,6 +44,13 @@ const services: {
     outcomes: ["Confidence & self-worth", "Emotional resilience", "Business & leadership clarity", "Community of ambitious women"],
     page: { href: "/group-workshop", label: "Explore the workshop" },
   },
+  {
+    tag: "Corporate",
+    title: "Corporate Leadership Workshops",
+    body: "Customised corporate events, leadership workshops and team-building days for organisations in Dubai and the UAE, built around communication, connection, confidence and the limiting beliefs beneath them. Stress-management and burnout-awareness sessions are co-facilitated with Yulia Sidova. Coaching and education, not therapy.",
+    outcomes: ["Communication & connection", "Confidence & limiting beliefs", "Stress management & burnout awareness", "Customised to your brief"],
+    page: { href: "/corporate-leadership-workshops-dubai", label: "Explore corporate workshops" },
+  },
 ];
 
 export function Services() {
