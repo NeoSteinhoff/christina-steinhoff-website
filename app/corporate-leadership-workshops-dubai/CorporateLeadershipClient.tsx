@@ -8,135 +8,131 @@ import { NewsletterSection } from "@/components/sections/NewsletterSection";
 import { FAQAccordion, FAQItem } from "@/components/ui/FAQAccordion";
 import { GoldButton } from "@/components/ui/GoldButton";
 import { ScopeNote } from "@/components/ui/ScopeNote";
-import { CALENDLY, SITE, STATS } from "@/lib/constants";
+import { CALENDLY, CTA_LABEL, SITE, STATS } from "@/lib/constants";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 const stats = [
-  { n: "90", label: "Days · one full programme arc" },
-  { n: "30", label: "Employees · per core cohort" },
-  { n: "3", label: "Levels · employees, HR, leadership" },
+  { n: "4", label: "Core themes · communication, connection, confidence, limiting beliefs" },
+  { n: "3", label: "Formats · corporate event, leadership workshop, team day" },
+  { n: "4", label: "Stages · from your brief to what happens next" },
 ];
 
 const signals = [
-  "Pressure has become the team's default state, not an occasional spike.",
-  "Focus and decision-making quality drop during demanding stretches.",
-  "Communication gets sharper — or goes quiet — the moment things get hard.",
-  "People are present but running on empty: exhausted, checked out, disconnected.",
-  "Managers are absorbing pressure without the tools to regulate it, let alone model it.",
-  "Wellbeing initiatives exist, but nothing is actually measured or followed through.",
-  "HR is carrying the ask for ongoing, practical support largely alone.",
+  "Meetings where the same few people speak and everyone else stays politely quiet.",
+  "Capable individuals working in silos, or cross-cultural misreads that go unspoken.",
+  "New or newly promoted leaders second-guessing themselves, and strong people holding back ideas.",
+  "“That’s just how I am” and “I’m not a natural presenter” stories repeated across the team.",
+  "Workload peaks, with early signs of overload: cynicism, exhaustion, a shorter fuse.",
+  "A training or team day that felt good at the time but changed little afterwards.",
+  "Managers promoted for technical skill who were never supported with the human side of leading.",
 ];
 
-const levels = [
+const formats = [
   {
-    level: "Level 01",
-    name: "Employees",
-    body: "Practical group sessions where participants learn to recognise their own pressure patterns, then build simple nervous-system regulation, presence, and communication tools they can use mid-workday.",
-    badge: null as string | null,
+    label: "Conferences · town halls · wellbeing weeks",
+    name: "Corporate Event",
+    body: "A talk with an interactive session for a conference, town hall, wellbeing week or leadership summit. Participants leave with practical tools for communication, connection and confidence, and a clearer view of the beliefs that hold people back.",
   },
   {
-    level: "Level 02",
-    name: "Human Resources",
-    body: "Structured follow-up that tracks participation and clears real-world barriers to engagement — without HR ever accessing an individual employee's personal information.",
-    badge: null as string | null,
+    label: "For leadership teams & managers",
+    name: "Leadership Workshop",
+    body: "A single session or a short series on communication, confidence and limiting beliefs. Participants examine the automatic patterns behind how they lead under pressure, and practise alternatives with each other.",
   },
   {
-    level: "Level 03",
-    name: "Business Owner or Senior Leadership",
-    body: "Focused sessions connecting the programme to what's actually happening at the organisational level — aggregated indicators, leadership patterns, and the practices that shape a calmer working culture.",
-    badge: "Strategic Oversight",
+    label: "On-site or offsite",
+    name: "Team-Building Event",
+    body: "A facilitated, conversation-based alternative to an activity-only day. Teams work on trust, listening and connection through guided exercises and reflection, followed by a debrief. It can also sit alongside an activity day if you want both.",
   },
 ];
 
-const timeline = [
+const stages = [
   {
-    stage: "Before the Programme",
-    title: "Assessment & Design",
-    pillar: "Where awareness begins",
-    employees:
-      "A confidential baseline survey — no sessions yet, just an honest read on how pressure is actually showing up day to day.",
-    hr: "A scoping meeting to define the organisation's challenges, objectives, and the programme's boundaries together.",
+    stage: "Stage 01",
+    title: "Brief",
+    tag: "Listening first",
+    participants:
+      "Participants may answer a few short, anonymous questions about what is working — and what is hard — in how the team communicates.",
+    hr: "A discovery call on goals, audience, group size, timing and constraints, including anything that is off-limits.",
     leadership:
-      "Alignment on what “better” looks like for this organisation specifically, and the indicators that will track it.",
+      "Agreement on what “better” looks like in observable behaviours, and on what the sponsor will — and will not — see.",
   },
   {
-    stage: "Month One",
-    title: "Settle & Understand",
-    pillar: "Pillar 01 · Awareness & Pattern Recognition",
-    employees:
-      "Session 1 — naming the pattern: how each person's nervous system actually responds under pressure. Session 2 — grounding and presence tools that work inside a live, demanding workday.",
-    hr: "Early attendance check-ins and a first read on where friction or hesitation is showing up across the cohort.",
-    leadership:
-      "A short briefing on early themes — what's surfacing, in aggregate, with no individual names attached.",
+    stage: "Stage 02",
+    title: "Design",
+    tag: "Built from your brief",
+    participants:
+      "Their input shapes the content, so the examples and exercises feel like their own workplace, not a template.",
+    hr: "A written proposal naming the themes chosen from the four, the format, length, group size, venue, language, and whether a stress and burnout module with Yulia is included.",
+    leadership: "Sign-off on the proposal, with optional short conversations with leaders beforehand.",
   },
   {
-    stage: "Month Two",
-    title: "Build Skills",
-    pillar: "Pillars 02–03 · Subconscious Transformation & Emotional Mastery",
-    employees:
-      "Session 3 — tools to hold focus and manage energy through demanding stretches of the day. Session 4 — emotional awareness and clearer communication when pressure or disagreement shows up.",
-    hr: "A review of attendance and engagement, troubleshooting anything getting in the way, and simple reminder tools for the wider team.",
-    leadership:
-      "A progress review against the agreed indicators, and a conversation about which leadership behaviours or working practices could better support the team.",
+    stage: "Stage 03",
+    title: "Deliver",
+    tag: "In the room",
+    participants:
+      "An interactive, conversation-based session with practical tools and reflection. No one is asked to share anything personal.",
+    hr: "Logistics are handled with your team, and HR or L&D are welcome to attend.",
+    leadership: "Leaders take part as participants, or in a dedicated leaders’ block, as agreed in the brief.",
   },
   {
-    stage: "Month Three",
-    title: "Integrate & Continue",
-    pillar: "Pillar 04 · Integration & Conscious Creation",
-    employees:
-      "Session 5 — turning the tools into habits: what sticks once the formal sessions end. Session 6 — a closing session and the final confidential survey.",
-    hr: "A final handover: what changed, what to keep reinforcing, and how to keep measuring it going forward.",
+    stage: "Stage 04",
+    title: "Embed",
+    tag: "After the day",
+    participants:
+      "Short practice tasks and, where agreed, a follow-up circle to keep the tools in use.",
+    hr: "An anonymised summary of themes and session feedback.",
     leadership:
-      "A closing report connecting the three months to organisational indicators, plus a 90-day continuation plan so the change outlasts the programme.",
+      "A debrief, plus suggestions for reinforcing the practice in meeting norms and everyday habits.",
   },
 ];
 
 const includes = [
-  { n: "90", label: "A full 90-day programme arc." },
-  { n: "30", label: "Up to 30 employees per core cohort." },
-  { n: "6", label: "Six live employee sessions across three months." },
-  { n: "90", label: "A 90-day continuation plan after completion." },
+  { n: "4", label: "Core themes: communication, connection, confidence and limiting beliefs." },
+  { n: "3", label: "Formats: corporate event, leadership workshop and team-building event." },
+  { n: "4", label: "Stages, from your brief to what happens after the day." },
+  { n: "1", label: "Named point of contact from first call to follow-up." },
 ];
 
 const checklist = [
-  "An assessment and preparation meeting before launch.",
-  "A confidential employee survey, before and after the programme.",
-  "Employee sessions of 75–90 minutes.",
-  "Three follow-up touchpoints with Human Resources.",
-  "Three meetings with the business owner or senior leadership.",
-  "Short tools, exercises, and recordings between sessions.",
-  "One Science + Soul Fusion™ point of contact throughout.",
-  "A closing report with aggregated results and recommendations.",
+  "A discovery call and a written, tailored proposal.",
+  "An agenda built from the four themes to match your brief.",
+  "Live facilitation by Christina, with Yulia Sidova for stress-management and burnout modules.",
+  "Practical tools and exercises participants keep.",
+  "Short pre-session questions and post-session feedback, reported in anonymised aggregate.",
+  "A defined step to keep the practice going after the day.",
+  "A leadership debrief.",
+  "One point of contact throughout.",
 ];
 
 const notIncluded = [
-  "Individual, one-on-one employee sessions (available separately by request).",
-  "Medical or psychological treatment, consultation, or diagnosis.",
-  "Any sharing of an individual employee's personal information with management.",
-  "Additional cohorts beyond the agreed participant count.",
+  "Therapy, counselling, or psychological or medical treatment, assessment or diagnosis.",
+  "Identifying or screening individuals — for example, anyone who may be burned out — for the employer.",
+  "Individual one-to-one coaching (available separately, by request).",
+  "Crisis or emergency support.",
+  "Guaranteed outcomes, or anything outside the agreed brief.",
 ];
 
 const boundaries = [
-  "Survey participation is confidential, individual by individual.",
-  "Leadership receives aggregated indicators and themes only — never individual results.",
-  "No diagnosis is made, and no medical or psychological treatment is provided.",
-  "Personal details are never shared without explicit consent, except where required by law.",
-  "Where a need sits outside the programme's scope, the employee is encouraged to reach out to an appropriately licensed professional.",
+  "Feedback is collected anonymously and shared only in aggregate.",
+  "No individual disclosures go to HR or management.",
+  "Participation and sharing are always voluntary.",
+  "Where someone needs clinical support, they are signposted to an appropriately licensed professional — and to emergency services in an emergency.",
+  "Personal details are never shared without consent, except where required by law.",
 ];
 
 const indicators = [
-  "Self-reported shifts in workplace pressure, before and after.",
-  "How consistently employees use the tools introduced.",
-  "Attendance and participation across the cohort.",
-  "The team's perception of communication and support.",
-  "Participant ratings of each session's usefulness.",
-  "The measurable change between the initial and closing survey.",
+  "Participants’ self-rated confidence in speaking up, before and after.",
+  "How clearly the team rates its own communication (short pulse questions).",
+  "Felt connection and trust within the team (pulse questions).",
+  "Participant ratings of how useful each session was.",
+  "How many participants report using the tools at a 30-day check-in, where follow-up is included.",
+  "Leadership’s own observations of changes in meetings and conversations, noted in the debrief.",
 ];
 
-export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
+export function CorporateLeadershipClient({ faqs }: { faqs: FAQItem[] }) {
   const [activeStage, setActiveStage] = useState(0);
-  const stage = timeline[activeStage];
+  const stage = stages[activeStage];
 
   return (
     <div className="bg-cream min-h-screen">
@@ -155,7 +151,7 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
             >
               <span className="h-1.5 w-1.5 rounded-full bg-gold" />
               <span className="text-[10px] uppercase tracking-[0.28em] text-white/60">
-                Corporate Workshops · A 90-Day Programme
+                Corporate Leadership Workshops · Dubai &amp; UAE
               </span>
             </motion.div>
 
@@ -163,10 +159,11 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
-              className="text-[clamp(2.8rem,6.4vw,5.4rem)] font-light leading-[1.0] text-white"
+              className="text-[clamp(2.4rem,5.4vw,4.4rem)] font-light leading-[1.04] text-white"
               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
-              Calm Under <em className="font-medium text-gold">Pressure.</em>
+              Skills are the visible part of leadership.{" "}
+              <em className="font-medium text-gold">We work on the rest.</em>
             </motion.h1>
 
             <motion.p
@@ -175,7 +172,7 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
               transition={{ duration: 0.7, delay: 0.3, ease: EASE }}
               className="mt-6 text-sm uppercase tracking-[0.2em] text-gold/80"
             >
-              A Science + Soul Fusion™ programme for teams
+              Corporate events · Leadership workshops · Team-building days
             </motion.p>
 
             <motion.p
@@ -184,10 +181,10 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
               transition={{ duration: 0.7, delay: 0.4, ease: EASE }}
               className="measure mt-7 text-lg font-light leading-relaxed text-white/65"
             >
-              A 90-day organisational programme built on Christina&apos;s Science + Soul Fusion™
-              method — NLP, nervous-system regulation, and pattern-level change — adapted for
-              teams. Employees learn tools they can use mid-workday; leadership gets a clearer,
-              evidence-based picture of what&apos;s actually driving the pressure.
+              Most teams already know what good communication looks like. What changes under
+              pressure is the automatic response: the pause before speaking up, the story about how
+              it will land, the habit of going quiet or sharp. These workshops are designed to help
+              your people notice those patterns and practise something different.
             </motion.p>
 
             <motion.p
@@ -196,8 +193,10 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
               transition={{ duration: 0.7, delay: 0.48, ease: EASE }}
               className="measure mt-4 text-[15px] font-light leading-relaxed text-white/50"
             >
-              Delivered across Dubai and the UAE, in person or online, for organisations ready to
-              treat workplace pressure as a pattern to understand — not just a symptom to manage.
+              Customised to your brief and led by Christina Steinhoff using Science + Soul
+              Fusion™, around communication, connection, confidence and limiting beliefs — with
+              stress-management and burnout-awareness sessions co-facilitated with Yulia Sidova.
+              Coaching and education, not therapy.
             </motion.p>
 
             <motion.div
@@ -206,7 +205,7 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
               transition={{ duration: 0.6, delay: 0.58, ease: EASE }}
               className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4"
             >
-              <GoldButton href={CALENDLY}>Book an Assessment Call</GoldButton>
+              <GoldButton href={CALENDLY}>{CTA_LABEL}</GoldButton>
               <a
                 href={SITE.whatsapp}
                 target="_blank"
@@ -216,6 +215,7 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
                 Ask on WhatsApp
               </a>
             </motion.div>
+            <p className="mt-4 text-xs font-light text-white/40">A tailored proposal follows the call.</p>
           </div>
 
           <motion.div
@@ -227,7 +227,7 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
             <div className="relative aspect-[850/1040] w-full overflow-hidden rounded-2xl border border-white/10">
               <Image
                 src="/images/christina-executive.webp"
-                alt="Christina Steinhoff, creator of Calm Under Pressure"
+                alt="Christina Steinhoff, leadership workshop facilitator in Dubai"
                 fill
                 sizes="(max-width: 1024px) 90vw, 35vw"
                 className="object-cover"
@@ -255,7 +255,9 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
               >
                 {s.n}
               </span>
-              <span className="mt-2 block text-[12px] font-light text-cream-text/60">{s.label}</span>
+              <span className="mx-auto mt-2 block max-w-[16rem] text-[12px] font-light text-cream-text/60">
+                {s.label}
+              </span>
             </motion.div>
           ))}
         </div>
@@ -272,13 +274,14 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mt-5 text-[clamp(2rem,4vw,3rem)] font-light leading-[1.1] text-cream-text"
+              className="mt-5 text-[clamp(1.9rem,3.8vw,2.9rem)] font-light leading-[1.1] text-cream-text"
               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
-              When pressure becomes <em className="font-medium text-gold-deep">the pattern, not the exception.</em>
+              Knowing what good looks like is rarely the problem.{" "}
+              <em className="font-medium text-gold-deep">Doing it in the moment is.</em>
             </motion.h2>
             <p className="mt-6 max-w-md text-[15px] font-light leading-relaxed text-cream-text/65">
-              Calm Under Pressure may be the right next step if your organisation is noticing:
+              These workshops may be the right next step if you are noticing:
             </p>
 
             <motion.div
@@ -292,9 +295,9 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
                 className="text-base font-light italic leading-relaxed text-cream-text/80"
                 style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
               >
-                &ldquo;Calm Under Pressure doesn&apos;t start with a ready-made solution. It starts
-                with understanding how pressure actually moves through your people — then building
-                the pattern-level tools to change it.&rdquo;
+                &ldquo;Teams rarely lack knowledge of what good communication looks like. What gets
+                in the way is the moment itself — the pause before speaking up, and the story about
+                what others will think.&rdquo;
               </p>
             </motion.div>
           </div>
@@ -316,11 +319,11 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
         </div>
       </section>
 
-      {/* The Structure */}
+      {/* Formats */}
       <section className="bg-white py-24 px-6 md:py-32">
         <div className="mx-auto max-w-6xl">
           <div className="mb-14 text-center">
-            <span className="text-[10px] uppercase tracking-[0.4em] text-gold-deep">The Structure</span>
+            <span className="text-[10px] uppercase tracking-[0.4em] text-gold-deep">Formats</span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -328,46 +331,66 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
               className="mx-auto mt-5 max-w-xl text-[clamp(1.9rem,3.6vw,2.8rem)] font-light leading-[1.1] text-cream-text"
               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
-              Three levels, <em className="font-medium text-gold-deep">one pattern of change.</em>
+              Three formats, <em className="font-medium text-gold-deep">built around your brief.</em>
             </motion.h2>
+            <p className="mx-auto mt-5 max-w-xl text-[15px] font-light leading-relaxed text-cream-text/65">
+              Each one works on the same four themes — communication, connection, confidence and the
+              limiting beliefs beneath them — and is customised to your organisation.
+            </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {levels.map((l, i) => (
+            {formats.map((f, i) => (
               <motion.div
-                key={l.name}
+                key={f.name}
                 initial={{ opacity: 0, y: 22 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-10% 0px" }}
                 transition={{ duration: 0.6, delay: i * 0.08, ease: EASE }}
-                className={`relative flex flex-col rounded-2xl bg-cream p-8 ${
-                  l.badge ? "ring-1 ring-gold" : "ring-1 ring-cream-text/10"
-                }`}
+                className="flex flex-col rounded-2xl bg-cream p-8 ring-1 ring-cream-text/10"
               >
-                {l.badge && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold px-3.5 py-1 text-[9px] font-semibold uppercase tracking-[0.2em] text-ink">
-                    {l.badge}
-                  </span>
-                )}
-                <span className="text-[9px] uppercase tracking-[0.35em] text-gold-deep/80">{l.level}</span>
+                <span className="text-[9px] uppercase tracking-[0.3em] text-gold-deep/80">{f.label}</span>
                 <h3
                   className="mt-2 text-2xl font-light text-cream-text"
                   style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
                 >
-                  {l.name}
+                  {f.name}
                 </h3>
-                <p className="mt-4 text-[14.5px] font-light leading-relaxed text-cream-text/70">{l.body}</p>
+                <p className="mt-4 text-[14.5px] font-light leading-relaxed text-cream-text/70">{f.body}</p>
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ ease: EASE }}
+            className="mt-6 rounded-2xl border border-gold/20 bg-gold/[0.06] px-8 py-7 md:px-10"
+          >
+            <span className="text-[10px] uppercase tracking-[0.35em] text-gold-deep">In every format</span>
+            <h3
+              className="mt-3 text-xl font-light text-cream-text"
+              style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+            >
+              Stress management &amp; burnout awareness
+            </h3>
+            <p className="mt-3 max-w-3xl text-[14.5px] font-light leading-relaxed text-cream-text/70">
+              Add a stress-management and burnout-awareness module to any workshop, co-facilitated
+              with Yulia Sidova. It focuses on practical stress-management skills and early signs of
+              overload. The WHO describes burn-out as an occupational phenomenon resulting from
+              chronic workplace stress that has not been successfully managed — so the work is
+              about how people and teams work, not about diagnosing individuals.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* The 90 Days — interactive timeline */}
+      {/* How it works — interactive stages */}
       <section className="bg-cream py-24 px-6 md:py-32">
         <div className="mx-auto max-w-6xl">
           <div className="mb-14 text-center">
-            <span className="text-[10px] uppercase tracking-[0.4em] text-gold-deep">The 90 Days</span>
+            <span className="text-[10px] uppercase tracking-[0.4em] text-gold-deep">How It Works</span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -375,12 +398,15 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
               className="mt-5 text-[clamp(1.9rem,3.6vw,2.8rem)] font-light text-cream-text"
               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
-              How the programme <em className="font-medium text-gold-deep">works.</em>
+              How your workshop <em className="font-medium text-gold-deep">is built.</em>
             </motion.h2>
+            <p className="mx-auto mt-5 max-w-xl text-[15px] font-light leading-relaxed text-cream-text/65">
+              &ldquo;Customised&rdquo; should mean something you can see. This is what happens at each stage.
+            </p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-2.5 mb-10">
-            {timeline.map((t, i) => (
+            {stages.map((t, i) => (
               <button
                 key={t.stage}
                 onClick={() => setActiveStage(i)}
@@ -407,7 +433,7 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
               transition={{ duration: 0.3 }}
               className="rounded-2xl border border-cream-text/10 bg-white p-8 md:p-10"
             >
-              <span className="text-[10px] uppercase tracking-[0.35em] text-gold/70">{stage.pillar}</span>
+              <span className="text-[10px] uppercase tracking-[0.35em] text-gold/70">{stage.tag}</span>
               <h3
                 className="mt-2 text-2xl font-light text-cream-text"
                 style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
@@ -417,16 +443,16 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
 
               <div className="mt-8 grid gap-6 md:grid-cols-3">
                 <div>
-                  <span className="text-[10px] uppercase tracking-[0.3em] text-gold-deep/70">With Employees</span>
-                  <p className="mt-3 text-[14px] font-light leading-relaxed text-cream-text/70">{stage.employees}</p>
+                  <span className="text-[10px] uppercase tracking-[0.3em] text-gold-deep/70">Participants</span>
+                  <p className="mt-3 text-[14px] font-light leading-relaxed text-cream-text/70">{stage.participants}</p>
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase tracking-[0.3em] text-gold-deep/70">With Human Resources</span>
+                  <span className="text-[10px] uppercase tracking-[0.3em] text-gold-deep/70">HR &amp; L&amp;D</span>
                   <p className="mt-3 text-[14px] font-light leading-relaxed text-cream-text/70">{stage.hr}</p>
                 </div>
                 <div>
                   <span className="text-[10px] uppercase tracking-[0.3em] text-gold-deep/70">
-                    With the Business Owner / Senior Leadership
+                    Leadership &amp; sponsor
                   </span>
                   <p className="mt-3 text-[14px] font-light leading-relaxed text-cream-text/70">{stage.leadership}</p>
                 </div>
@@ -436,7 +462,7 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
         </div>
       </section>
 
-      {/* What the programme includes */}
+      {/* What it includes + scope */}
       <section className="bg-white py-24 px-6 md:py-32">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-6 md:grid-cols-2">
@@ -447,7 +473,7 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
               transition={{ ease: EASE }}
               className="rounded-2xl border border-gold/20 bg-gold/[0.06] p-8 md:p-10"
             >
-              <span className="text-[10px] uppercase tracking-[0.4em] text-gold-deep">The Programme</span>
+              <span className="text-[10px] uppercase tracking-[0.4em] text-gold-deep">The Workshops</span>
               <h2
                 className="mt-4 text-3xl font-light leading-tight text-cream-text"
                 style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
@@ -468,10 +494,10 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
                 ))}
               </div>
               <p className="mt-8 text-[13.5px] font-light leading-relaxed text-cream-text/60">
-                Every cohort is adapted to your organisation&apos;s size, working environment, and team needs.
+                Every workshop is customised to your organisation&apos;s goals, team and working environment.
               </p>
               <GoldButton href={CALENDLY} variant="ghost" className="mt-6">
-                Book an Assessment Call
+                {CTA_LABEL}
               </GoldButton>
             </motion.div>
 
@@ -493,7 +519,6 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
             </motion.div>
           </div>
 
-          {/* Scope + confidentiality */}
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             <motion.div
               initial={{ opacity: 0, y: 18 }}
@@ -506,7 +531,7 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
                 className="mt-4 text-xl font-light text-cream-text"
                 style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
               >
-                What the core package does not include
+                What the workshops do not include
               </h3>
               <ul className="mt-6 space-y-3.5">
                 {notIncluded.map((n) => (
@@ -516,6 +541,11 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
                   </li>
                 ))}
               </ul>
+              <p className="mt-6 border-t border-cream-text/10 pt-5 text-[13px] font-light leading-relaxed text-cream-text/55">
+                These workshops are coaching and professional-development programmes. They are not
+                psychotherapy, counselling or medical services, and they do not replace support from a
+                licensed professional.
+              </p>
             </motion.div>
 
             <motion.div
@@ -530,7 +560,7 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
                 className="mt-4 text-xl font-light text-cream-text"
                 style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
               >
-                Privacy & professional boundaries
+                Privacy &amp; professional boundaries
               </h3>
               <ul className="mt-6 space-y-3.5">
                 {boundaries.map((b) => (
@@ -557,7 +587,7 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
               className="mt-5 text-[clamp(1.9rem,3.6vw,2.8rem)] font-light text-cream-text"
               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
-              What the organisation <em className="font-medium text-gold-deep">can measure.</em>
+              What we agree to <em className="font-medium text-gold-deep">look at together.</em>
             </motion.h2>
           </div>
 
@@ -583,13 +613,13 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
           </div>
 
           <p className="mt-12 text-center text-[13px] font-light leading-relaxed text-cream-text/50">
-            These indicators measure the participant experience. They are not a clinical or
-            medical assessment, and they don&apos;t guarantee a specific business outcome.
+            These indicators capture participant feedback and observation. They are not a clinical
+            assessment, and they don&apos;t guarantee a specific business outcome.
           </p>
         </div>
       </section>
 
-      {/* Led by Christina */}
+      {/* Led by */}
       <section className="bg-white py-24 px-6 md:py-32">
         <div className="mx-auto grid max-w-6xl items-center gap-14 md:grid-cols-2">
           <motion.div
@@ -609,7 +639,7 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
           </motion.div>
 
           <div>
-            <span className="text-[10px] uppercase tracking-[0.4em] text-gold-deep">Your Guide</span>
+            <span className="text-[10px] uppercase tracking-[0.4em] text-gold-deep">Your Facilitators</span>
             <h2
               className="mt-5 text-[clamp(1.9rem,3.6vw,2.8rem)] font-light leading-[1.1] text-cream-text"
               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
@@ -617,13 +647,19 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
               Led by <em className="font-medium text-gold-deep">Christina Steinhoff.</em>
             </h2>
             <p className="mt-6 max-w-md text-[15px] font-light leading-relaxed text-cream-text/70">
-              Christina Steinhoff brings Science + Soul Fusion™ — her private coaching methodology
-              built on NLP, master hypnosis, and Time Line Therapy® — into the workplace. Calm
-              Under Pressure is delivered in partnership with HR and leadership, so the programme
-              reflects how your organisation actually works, not a generic template.
+              Christina is an Executive &amp; Emotional Mastery Coach based in Dubai and the creator of
+              Science + Soul Fusion™ — her coaching methodology built on NLP, master hypnosis and Time
+              Line Therapy®. Her work to date has been with private and executive clients; these
+              workshops bring the same approach to teams, in a form designed for the group room.
+            </p>
+            <p className="mt-4 max-w-md text-[15px] font-light leading-relaxed text-cream-text/70">
+              Stress-management and burnout-awareness sessions are co-facilitated with Yulia Sidova.
             </p>
             <p className="mt-6 text-[11px] uppercase tracking-[0.2em] text-cream-text/40">
               {STATS.years} {STATS.yearsLabel} · {STATS.clients} {STATS.clientsLabel} · {STATS.continents} {STATS.continentsLabel}
+            </p>
+            <p className="mt-3 max-w-md text-[12px] font-light leading-relaxed text-cream-text/50">
+              Coaching and education — not psychotherapy or medical treatment.
             </p>
             <div className="mt-8">
               <GoldButton href="/#about" variant="ghost" external={false}>
@@ -643,13 +679,27 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
               className="mt-5 text-4xl font-light text-cream-text md:text-5xl"
               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
             >
-              Find answers to <em className="text-gold-deep">common questions.</em>
+              Before you <em className="text-gold-deep">get in touch.</em>
             </h2>
           </div>
           <FAQAccordion items={faqs} />
           <div className="mt-8">
             <ScopeNote tone="cream" />
           </div>
+          <p className="mt-6 text-center text-[12px] font-light text-cream-text/50">
+            Related:{" "}
+            <a href="/executive-coaching-dubai" className="text-gold-deep underline underline-offset-4">
+              Executive coaching in Dubai
+            </a>
+            {" · "}
+            <a href="/science-soul-fusion" className="text-gold-deep underline underline-offset-4">
+              Science + Soul Fusion™
+            </a>
+            {" · "}
+            <a href="/faq" className="text-gold-deep underline underline-offset-4">
+              All FAQs
+            </a>
+          </p>
         </div>
       </section>
 
@@ -657,7 +707,7 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
       <section className="relative overflow-hidden bg-background py-28 px-6 md:py-36">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(201,168,108,0.08),transparent)]" />
         <div className="relative z-10 mx-auto max-w-2xl text-center">
-          <span className="text-[10px] uppercase tracking-[0.4em] text-gold/70">Begin With An Honest Read</span>
+          <span className="text-[10px] uppercase tracking-[0.4em] text-gold/70">Start With A Conversation</span>
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -665,14 +715,13 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
             className="mb-7 mt-5 text-3xl font-light leading-tight text-white md:text-5xl"
             style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
           >
-            Is Calm Under Pressure <em className="text-gold">right for your team?</em>
+            Tell us what you want your people <em className="text-gold">to do differently.</em>
           </motion.h2>
           <p className="mx-auto mb-10 max-w-md text-base font-light leading-relaxed text-white/60">
-            Book a confidential assessment call to find out whether this is the right next step
-            for your organisation.
+            Book a discovery call. We&apos;ll listen to your brief, and a tailored proposal follows.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-5">
-            <GoldButton href={CALENDLY}>Book an Assessment Call</GoldButton>
+            <GoldButton href={CALENDLY}>{CTA_LABEL}</GoldButton>
             <a
               href={SITE.whatsapp}
               target="_blank"
@@ -683,7 +732,7 @@ export function CalmUnderPressureClient({ faqs }: { faqs: FAQItem[] }) {
             </a>
           </div>
           <p className="mt-10 text-xs font-light text-white/40">
-            This programme is coaching, not medical treatment or psychological consultation.
+            These workshops are coaching, not medical treatment or psychological consultation.
           </p>
         </div>
       </section>

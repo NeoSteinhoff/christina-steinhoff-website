@@ -13,7 +13,7 @@ const links = [
   { label: "Programs", href: "/#investment" },
   { label: "Executive", href: "/executive-coaching-dubai" },
   { label: "Workshops", href: "/group-workshop" },
-  { label: "Corporate", href: "/corporate-workshops" },
+  { label: "Corporate", href: "/corporate-leadership-workshops-dubai" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];

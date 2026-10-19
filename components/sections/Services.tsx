@@ -46,10 +46,10 @@ const services: {
   },
   {
     tag: "Corporate",
-    title: "Calm Under Pressure",
-    body: "A 90-day corporate programme for organisations, built on Science + Soul Fusion™. Employees learn nervous-system regulation and communication tools they can use mid-workday; HR and leadership get a measured, evidence-based view of what's actually driving the pressure — without ever seeing an individual's personal results.",
-    outcomes: ["Nervous-system regulation", "Team communication tools", "Aggregated organisational indicators", "90-day continuation plan"],
-    page: { href: "/corporate-workshops/calm-under-pressure", label: "Explore the programme" },
+    title: "Corporate Leadership Workshops",
+    body: "Customised corporate events, leadership workshops and team-building days for organisations in Dubai and the UAE, built around communication, connection, confidence and the limiting beliefs beneath them. Stress-management and burnout-awareness sessions are co-facilitated with Yulia Sidova. Coaching and education, not therapy.",
+    outcomes: ["Communication & connection", "Confidence & limiting beliefs", "Stress management & burnout awareness", "Customised to your brief"],
+    page: { href: "/corporate-leadership-workshops-dubai", label: "Explore corporate workshops" },
   },
 ];
 
