@@ -3,6 +3,7 @@ import { APPLY_URL, SITE } from "@/lib/constants";
 import { Reveal } from "@/components/ui/Reveal";
 import { GoldButton } from "@/components/ui/GoldButton";
 import { track } from "@/lib/track";
+import { metaPixelAndRelay } from "@/lib/meta-pixel";
 
 export function CTA() {
   return (
@@ -37,7 +38,10 @@ export function CTA() {
             <GoldButton href={APPLY_URL} external={false}>Book a discovery call</GoldButton>
             <a
               href={`mailto:${SITE.email}`}
-              onClick={() => track("contact_email_click")}
+              onClick={() => {
+                track("contact_email_click");
+                metaPixelAndRelay("Contact");
+              }}
               className="link-underline text-[12px] uppercase tracking-[0.2em] text-white/50 transition-colors hover:text-white"
             >
               {SITE.email}

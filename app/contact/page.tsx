@@ -5,6 +5,7 @@ import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { SITE, SOCIAL, APPLY_URL } from "@/lib/constants";
 import { track } from "@/lib/track";
+import { metaPixel, newMetaEventId } from "@/lib/meta-pixel";
 import { getEntrySource } from "@/lib/attribution";
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -32,16 +33,18 @@ export default function ContactPage() {
     const data = Object.fromEntries(fd.entries()) as Record<string, string>;
     data.autoSource = getEntrySource();
     setStatus("loading");
+    const metaEventId = newMetaEventId();
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, metaEventId, metaEventName: "Lead" }),
       });
       const json = await res.json().catch(() => ({}));
       if (res.ok && json.ok) {
         setStatus("success");
         track("generate_lead", { source });
+        metaPixel("Lead", metaEventId, { content_name: "contact_form", topic: data.topic || "other" });
         return;
       }
       // No backend configured yet — make sure the lead still reaches Christina.
@@ -49,6 +52,7 @@ export default function ContactPage() {
         mailtoFallback(data);
         setStatus("success");
         track("generate_lead", { source });
+        metaPixel("Lead", metaEventId, { content_name: "contact_form", topic: data.topic || "other" });
         return;
       }
       setStatus("error");

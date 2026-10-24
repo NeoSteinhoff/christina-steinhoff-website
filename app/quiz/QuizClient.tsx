@@ -7,6 +7,7 @@ import { GoldButton } from "@/components/ui/GoldButton";
 import { ScopeNote } from "@/components/ui/ScopeNote";
 import { APPLY_URL, SITE } from "@/lib/constants";
 import { track } from "@/lib/track";
+import { metaPixelAndRelay, metaPixel, newMetaEventId } from "@/lib/meta-pixel";
 import { getEntrySource } from "@/lib/attribution";
 import { QUIZ_TITLE, QUIZ_SUBTITLE, QUIZ_DISCLAIMER, QUIZ_QUESTIONS, scoreQuiz, getResult, type ResultKey } from "@/lib/quiz-content";
 
@@ -30,6 +31,7 @@ export function QuizClient() {
   function start() {
     setStage("questions");
     track("quiz_started");
+    metaPixelAndRelay("QuizStarted");
   }
 
   function choose(optionIndex: number) {
@@ -51,6 +53,7 @@ export function QuizClient() {
     const email = String(fd.get("email") || "").trim();
     setLeadStatus("loading");
     const result = getResult(resultKey);
+    const metaEventId = newMetaEventId();
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -62,12 +65,15 @@ export function QuizClient() {
           resultKey,
           resultName: result.name,
           autoSource: getEntrySource(),
+          metaEventId,
+          metaEventName: "Lead",
         }),
       });
       const json = await res.json().catch(() => ({}));
       if ((res.ok && json.ok) || json.code === "unconfigured") {
         setLeadStatus("done");
         track("quiz_completed", { result: resultKey });
+        metaPixel("Lead", metaEventId, { content_name: "quiz_result", result: resultKey });
         setStage("result");
         return;
       }

@@ -6,6 +6,7 @@ import { Footer } from "@/components/sections/Footer";
 import { CalendlyEmbed } from "@/components/ui/CalendlyEmbed";
 import { SITE } from "@/lib/constants";
 import { track } from "@/lib/track";
+import { metaPixel, newMetaEventId } from "@/lib/meta-pixel";
 import { getEntrySource } from "@/lib/attribution";
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -22,16 +23,24 @@ export function ApplyClient() {
     const fd = new FormData(form);
     const data = Object.fromEntries(fd.entries()) as Record<string, string>;
     setStatus("loading");
+    const metaEventId = newMetaEventId();
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "application", ...data, autoSource: getEntrySource() }),
+        body: JSON.stringify({
+          type: "application",
+          ...data,
+          autoSource: getEntrySource(),
+          metaEventId,
+          metaEventName: "SubmitApplication",
+        }),
       });
       const json = await res.json().catch(() => ({}));
       if (res.ok && json.ok) {
         setStatus("success");
         track("generate_lead", { source: "apply" });
+        metaPixel("SubmitApplication", metaEventId, { content_name: "mentorship_application" });
         return;
       }
       if (json.code === "unconfigured") {
@@ -42,6 +51,7 @@ export function ApplyClient() {
         window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
         setStatus("success");
         track("generate_lead", { source: "apply" });
+        metaPixel("SubmitApplication", metaEventId, { content_name: "mentorship_application" });
         return;
       }
       setStatus("error");

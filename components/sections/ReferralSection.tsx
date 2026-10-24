@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
 import { SITE } from "@/lib/constants";
 import { track } from "@/lib/track";
+import { metaPixelAndRelay, metaPixel, newMetaEventId } from "@/lib/meta-pixel";
 
 const SHARE_URL = `${SITE.url}?ref=client_share`;
 const SHARE_MESSAGE = `A coach I worked with, Christina Steinhoff in Dubai, does exceptional work on leadership and emotional mastery. Thought of you — worth a look: ${SHARE_URL}`;
@@ -29,6 +30,7 @@ export function ReferralSection() {
     try {
       await navigator.share({ title: "Christina Steinhoff", text: SHARE_MESSAGE, url: SHARE_URL });
       track("referral_submitted", { channel: "native_share" });
+      metaPixelAndRelay("Lead", { channel: "native_share" });
     } catch {
       // user cancelled — not an error
     }
@@ -40,16 +42,18 @@ export function ReferralSection() {
     const fd = new FormData(form);
     const data = Object.fromEntries(fd.entries()) as Record<string, string>;
     setStatus("loading");
+    const metaEventId = newMetaEventId();
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "referral", ...data }),
+        body: JSON.stringify({ type: "referral", ...data, metaEventId, metaEventName: "Lead" }),
       });
       const json = await res.json().catch(() => ({}));
       if (res.ok && json.ok) {
         setStatus("success");
         track("referral_submitted", { channel: "form" });
+        metaPixel("Lead", metaEventId, { channel: "form" });
         return;
       }
       // No backend configured yet — make sure the referral still reaches Christina.
@@ -61,6 +65,7 @@ export function ReferralSection() {
         window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
         setStatus("success");
         track("referral_submitted", { channel: "form" });
+        metaPixel("Lead", metaEventId, { channel: "form" });
         return;
       }
       setStatus("error");
@@ -112,14 +117,20 @@ export function ReferralSection() {
                   href={`https://wa.me/?text=${encodeURIComponent(SHARE_MESSAGE)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => track("referral_submitted", { channel: "whatsapp_share" })}
+                  onClick={() => {
+                    track("referral_submitted", { channel: "whatsapp_share" });
+                    metaPixelAndRelay("Lead", { channel: "whatsapp_share" });
+                  }}
                   className="rounded-full bg-[#c9a86c] px-6 py-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[#0b0a08] transition-colors hover:bg-[#d8bd8a]"
                 >
                   Share on WhatsApp
                 </a>
                 <a
                   href={`mailto:?subject=${encodeURIComponent("Thought you'd want to know about Christina Steinhoff")}&body=${encodeURIComponent(SHARE_MESSAGE)}`}
-                  onClick={() => track("referral_submitted", { channel: "email_share" })}
+                  onClick={() => {
+                    track("referral_submitted", { channel: "email_share" });
+                    metaPixelAndRelay("Lead", { channel: "email_share" });
+                  }}
                   className="rounded-full border border-white/15 px-6 py-3 text-[11px] font-medium uppercase tracking-[0.18em] text-white transition-colors hover:border-[#c9a86c]/50 hover:text-[#d8bd8a]"
                 >
                   Share by email

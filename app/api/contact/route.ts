@@ -1,6 +1,12 @@
 import { SITE } from "@/lib/constants";
+import { sendMetaCapiEvent, readMetaCookies, clientIpFrom } from "@/lib/meta-capi";
 
 export const runtime = "nodejs";
+
+// Allowlisted Meta event names this route is willing to relay — same posture
+// as app/api/meta-capi/route.ts: this is a public endpoint and must not
+// become an arbitrary event-injection relay.
+const ALLOWED_META_EVENTS = new Set(["Lead", "Subscribe", "SubmitApplication"]);
 
 type Payload = {
   type?: "enquiry" | "newsletter" | "referral" | "application" | "quiz";
@@ -25,6 +31,10 @@ type Payload = {
   // quiz type — "What's Really Running Your Success?" result capture
   resultKey?: string;
   resultName?: string;
+  // Meta Conversions API — shared with the matching browser Pixel event for
+  // dedup (see lib/meta-pixel.ts); only fired on confirmed delivery below.
+  metaEventId?: string;
+  metaEventName?: string;
 };
 
 const TOPICS: Record<string, string> = {
@@ -62,6 +72,23 @@ export async function POST(request: Request) {
   if (body.company) return Response.json({ ok: true, channel: "noop" });
 
   const email = (body.email || "").trim();
+
+  async function fireMetaCapi() {
+    const eventName = body.metaEventId && body.metaEventName;
+    if (!eventName || !ALLOWED_META_EVENTS.has(body.metaEventName!)) return;
+    const { fbp, fbc } = readMetaCookies(request.headers.get("cookie"));
+    await sendMetaCapiEvent({
+      eventName: body.metaEventName!,
+      eventId: body.metaEventId!,
+      eventSourceUrl: request.headers.get("referer") || SITE.url,
+      email: email || undefined,
+      fbp,
+      fbc,
+      clientIp: clientIpFrom(request.headers),
+      userAgent: request.headers.get("user-agent"),
+    });
+  }
+
   const isNewsletter = body.type === "newsletter";
   const isReferral = body.type === "referral";
   const isApplication = body.type === "application";
@@ -195,7 +222,10 @@ export async function POST(request: Request) {
           text,
         }),
       });
-      if (res.ok) return Response.json({ ok: true, channel: "resend" });
+      if (res.ok) {
+        await fireMetaCapi();
+        return Response.json({ ok: true, channel: "resend" });
+      }
       console.error("Resend error", res.status, await res.text());
     } catch (err) {
       console.error("Resend exception", err);
@@ -210,7 +240,10 @@ export async function POST(request: Request) {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ email, message: text, _subject: subject }),
       });
-      if (res.ok) return Response.json({ ok: true, channel: "formspree" });
+      if (res.ok) {
+        await fireMetaCapi();
+        return Response.json({ ok: true, channel: "formspree" });
+      }
       console.error("Formspree error", res.status, await res.text());
     } catch (err) {
       console.error("Formspree exception", err);

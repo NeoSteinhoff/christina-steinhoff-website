@@ -1,6 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { track } from "@/lib/track";
+import { metaPixelAndRelay } from "@/lib/meta-pixel";
 
 export function CalendlyEmbed() {
   useEffect(() => {
@@ -15,6 +16,7 @@ export function CalendlyEmbed() {
     function onMessage(event: MessageEvent) {
       if (event.data?.event === "calendly.event_scheduled") {
         track("schedule_call");
+        metaPixelAndRelay("Schedule");
       }
     }
     window.addEventListener("message", onMessage);

@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { SITE } from "@/lib/constants";
 import { track } from "@/lib/track";
+import { metaPixelAndRelay } from "@/lib/meta-pixel";
 
 export function WhatsAppButton() {
   return (
@@ -9,7 +10,10 @@ export function WhatsAppButton() {
       href={SITE.whatsapp}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() => track("contact_whatsapp")}
+      onClick={() => {
+        track("contact_whatsapp");
+        metaPixelAndRelay("Contact");
+      }}
       aria-label="Chat on WhatsApp"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
