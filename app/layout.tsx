@@ -12,6 +12,8 @@ import { SITE, SOCIAL, CREDENTIALS, PRESS } from "@/lib/constants";
 
 const GA_ID = "G-W88WM4W49F";
 const CLARITY_ID = "x4cstiql2r";
+// Unset until a Meta Business Manager pixel exists — see .env.example.
+const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
 // Display serif — high contrast, full weight range (light → black) for editorial impact.
 const fraunces = Fraunces({
@@ -216,8 +218,8 @@ export default function RootLayout({
         {children}
         <WhatsAppButton />
         <BackToTop />
-        {/* GA + Clarity load only after the visitor accepts cookies (handled inside) */}
-        <CookieConsent gaId={GA_ID} clarityId={CLARITY_ID} />
+        {/* GA + Clarity + Meta Pixel load only after the visitor accepts cookies (handled inside) */}
+        <CookieConsent gaId={GA_ID} clarityId={CLARITY_ID} metaPixelId={META_PIXEL_ID} />
         {/* Vercel Web Analytics — cookieless, privacy-friendly, always on */}
         <Analytics />
       </body>

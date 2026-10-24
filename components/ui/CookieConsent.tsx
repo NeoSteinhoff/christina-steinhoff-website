@@ -10,7 +10,15 @@ const KEY = "cos-cookie-consent";
  * Privacy-first consent. Google Analytics + Microsoft Clarity load ONLY after
  * the visitor accepts. Declining keeps them off entirely.
  */
-export function CookieConsent({ gaId, clarityId }: { gaId: string; clarityId: string }) {
+export function CookieConsent({
+  gaId,
+  clarityId,
+  metaPixelId,
+}: {
+  gaId: string;
+  clarityId: string;
+  metaPixelId?: string;
+}) {
   const [choice, setChoice] = useState<Choice>(null);
   const [decided, setDecided] = useState(true); // assume decided until we read storage
 
@@ -42,6 +50,17 @@ export function CookieConsent({ gaId, clarityId }: { gaId: string; clarityId: st
             gtag('js', new Date());
             gtag('config', '${gaId}', { anonymize_ip: true });
           `}</Script>
+          {metaPixelId && (
+            <Script id="meta-pixel" strategy="afterInteractive">{`
+              !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+              n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+              document,'script','https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '${metaPixelId}');
+              fbq('track', 'PageView');
+            `}</Script>
+          )}
         </>
       )}
 

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import type { BlogLeadMagnet } from "@/lib/blog-content";
 import { SITE } from "@/lib/constants";
 import { track } from "@/lib/track";
+import { metaPixel, newMetaEventId } from "@/lib/meta-pixel";
 import { getEntrySource } from "@/lib/attribution";
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -23,19 +24,29 @@ export function ArticleLeadCapture({
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("loading");
+    const metaEventId = newMetaEventId();
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "newsletter", email, source: slug, autoSource: getEntrySource() }),
+        body: JSON.stringify({
+          type: "newsletter",
+          email,
+          source: slug,
+          autoSource: getEntrySource(),
+          metaEventId,
+          metaEventName: "Lead",
+        }),
       });
       const json = await res.json().catch(() => ({}));
       if (res.ok && json.ok) {
         setStatus("success");
         track("content_upgrade_signup", { slug });
+        metaPixel("Lead", metaEventId, { content_name: slug });
       } else if (json.code === "unconfigured") {
         setStatus("success");
         track("content_upgrade_signup", { slug });
+        metaPixel("Lead", metaEventId, { content_name: slug });
       } else {
         setStatus("error");
       }
