@@ -1,5 +1,8 @@
 import { MetadataRoute } from "next";
 
+// Required for `output: "export"` (static build).
+export const dynamic = "force-static";
+
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Christina Steinhoff — Executive Coach Dubai",

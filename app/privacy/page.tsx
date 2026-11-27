@@ -15,7 +15,7 @@ export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-cream">
       <Navbar />
-      <LegalShell title="Privacy Policy" updated="June 2026">
+      <LegalShell title="Privacy Policy" updated="November 2026">
         <p>
           This policy explains how Christina Steinhoff (&ldquo;we&rdquo;, &ldquo;us&rdquo;) handles
           information collected through {SITE.url}. We keep data collection to the minimum needed to
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
 
         <h2>Service providers</h2>
         <p>
-          We rely on trusted third parties to operate the site: Vercel (hosting), Calendly
+          We rely on trusted third parties to operate the site: Cloudflare (hosting), Calendly
           (scheduling), and an email provider for contact-form delivery. Each processes data under its
           own terms and only as needed to provide the service.
         </p>

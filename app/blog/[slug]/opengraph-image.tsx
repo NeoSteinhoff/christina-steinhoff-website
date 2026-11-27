@@ -1,9 +1,17 @@
 import { ImageResponse } from "next/og";
-import { getArticle } from "@/lib/blog-content";
+import { ARTICLES, getArticle } from "@/lib/blog-content";
 
 export const alt = "Christina Steinhoff — Journal";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+
+// Required for `output: "export"` (static build).
+export const dynamic = "force-static";
+
+// Static export: render one share image per article at build time.
+export function generateStaticParams() {
+  return ARTICLES.map((a) => ({ slug: a.slug }));
+}
 
 export default async function OgImage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

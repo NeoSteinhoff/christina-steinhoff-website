@@ -1,0 +1,82 @@
+# Cloudflare static-assets redirects (replaces the redirects() block that used to be in next.config.ts).
+# Format: <source> <destination> <status>. Each path is listed with and without a trailing slash
+# because the old WordPress URLs ended in '/'. Static rules are matched before splat rules.
+
+# The old WordPress site published blog posts at the root, not under /blog/. Google still has these indexed — redirect (not 404) so link equity carries over.
+/what-is-mindset-coaching-and-how-does-it-transform-personal-growth /blog/what-is-mindset-coaching-and-how-does-it-transform-personal-growth 301
+/what-is-mindset-coaching-and-how-does-it-transform-personal-growth/ /blog/what-is-mindset-coaching-and-how-does-it-transform-personal-growth 301
+/how-to-develop-self-awareness-for-better-decision-making /blog/how-to-develop-self-awareness-for-better-decision-making 301
+/how-to-develop-self-awareness-for-better-decision-making/ /blog/how-to-develop-self-awareness-for-better-decision-making 301
+/how-to-rewire-your-subconscious-mind-for-long-term-success /blog/how-to-rewire-your-subconscious-mind-for-long-term-success 301
+/how-to-rewire-your-subconscious-mind-for-long-term-success/ /blog/how-to-rewire-your-subconscious-mind-for-long-term-success 301
+/what-is-the-role-of-mindset-in-achieving-business-success /blog/what-is-the-role-of-mindset-in-achieving-business-success 301
+/what-is-the-role-of-mindset-in-achieving-business-success/ /blog/what-is-the-role-of-mindset-in-achieving-business-success 301
+/what-are-the-key-principles-of-neuroplasticity-in-personal-development /blog/what-are-the-key-principles-of-neuroplasticity-in-personal-development 301
+/what-are-the-key-principles-of-neuroplasticity-in-personal-development/ /blog/what-are-the-key-principles-of-neuroplasticity-in-personal-development 301
+/how-to-break-free-from-overthinking-and-take-action /blog/how-to-break-free-from-overthinking-and-take-action 301
+/how-to-break-free-from-overthinking-and-take-action/ /blog/how-to-break-free-from-overthinking-and-take-action 301
+
+# Old WordPress service page — content now lives under /executive-coaching-dubai.
+/high-performance-coach-dubai /executive-coaching-dubai 301
+/high-performance-coach-dubai/ /executive-coaching-dubai 301
+
+# Old WordPress legal page slugs.
+/privacy-policy /privacy 301
+/privacy-policy/ /privacy 301
+/legal-terms /terms 301
+/legal-terms/ /terms 301
+
+# Retired page-name variants that still get inbound links / Google indexing. (/conscious-coaching-dubai is deliberately NOT redirected — it is a real page.)
+/bespoke-coach-dubai /executive-coaching-dubai 301
+/bespoke-coach-dubai/ /executive-coaching-dubai 301
+/executive-coach-dubai /executive-coaching-dubai 301
+/executive-coach-dubai/ /executive-coaching-dubai 301
+/decision-fatigue-in-senior-executives-how-executive-coaching-services-help /executive-coaching-dubai 301
+/decision-fatigue-in-senior-executives-how-executive-coaching-services-help/ /executive-coaching-dubai 301
+/conscious-coaching-dubai-transform-your-mindset-leadership-and-life-through-self-awareness /blog 301
+/conscious-coaching-dubai-transform-your-mindset-leadership-and-life-through-self-awareness/ /blog 301
+/self-love-and-confidence-hacks-every-entrepreneur-should-know /blog 301
+/self-love-and-confidence-hacks-every-entrepreneur-should-know/ /blog 301
+/top-traits-of-the-best-online-life-coaches-to-inspire-your-growth /life-coach-dubai 301
+/top-traits-of-the-best-online-life-coaches-to-inspire-your-growth/ /life-coach-dubai 301
+/life-coach-in-dubai /life-coach-dubai 301
+/life-coach-in-dubai/ /life-coach-dubai 301
+/nlp-coach-dubai /life-coach-dubai 301
+/nlp-coach-dubai/ /life-coach-dubai 301
+/about /#about 301
+/about/ /#about 301
+/services /#services 301
+/services/ /#services 301
+/contact-us /contact 301
+/contact-us/ /contact 301
+/feed /blog 301
+/feed/ /blog 301
+
+# Real pages requested with a trailing slash -> canonical URL, permanent (otherwise Cloudflare answers with a temporary 307).
+/apply/ /apply 301
+/blog/ /blog 301
+/conscious-coaching-dubai/ /conscious-coaching-dubai 301
+/contact/ /contact 301
+/emotional-healing-dubai/ /emotional-healing-dubai 301
+/executive-coaching-dubai/ /executive-coaching-dubai 301
+/faq/ /faq 301
+/group-workshop/ /group-workshop 301
+/life-coach-dubai/ /life-coach-dubai 301
+/privacy/ /privacy 301
+/quiz/ /quiz 301
+/science-soul-fusion/ /science-soul-fusion 301
+/terms/ /terms 301
+/blog/why-do-high-achieving-women-still-feel-like-impostors/ /blog/why-do-high-achieving-women-still-feel-like-impostors 301
+/blog/the-hidden-cost-of-always-being-the-strong-one/ /blog/the-hidden-cost-of-always-being-the-strong-one 301
+/blog/what-is-mindset-coaching-and-how-does-it-transform-personal-growth/ /blog/what-is-mindset-coaching-and-how-does-it-transform-personal-growth 301
+/blog/how-to-develop-self-awareness-for-better-decision-making/ /blog/how-to-develop-self-awareness-for-better-decision-making 301
+/blog/how-to-rewire-your-subconscious-mind-for-long-term-success/ /blog/how-to-rewire-your-subconscious-mind-for-long-term-success 301
+/blog/what-is-the-role-of-mindset-in-achieving-business-success/ /blog/what-is-the-role-of-mindset-in-achieving-business-success 301
+/blog/what-are-the-key-principles-of-neuroplasticity-in-personal-development/ /blog/what-are-the-key-principles-of-neuroplasticity-in-personal-development 301
+/blog/how-to-break-free-from-overthinking-and-take-action/ /blog/how-to-break-free-from-overthinking-and-take-action 301
+
+# WordPress category / tag archives -> /blog (matches the bare path and anything beneath it).
+/category /blog 301
+/category/* /blog 301
+/tag /blog 301
+/tag/* /blog 301
