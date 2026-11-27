@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { CookieConsent } from "@/components/ui/CookieConsent";
@@ -218,8 +217,6 @@ export default function RootLayout({
         <BackToTop />
         {/* GA + Clarity load only after the visitor accepts cookies (handled inside) */}
         <CookieConsent gaId={GA_ID} clarityId={CLARITY_ID} />
-        {/* Vercel Web Analytics — cookieless, privacy-friendly, always on */}
-        <Analytics />
       </body>
     </html>
   );

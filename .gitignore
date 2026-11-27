@@ -42,3 +42,10 @@ pictures\ /
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# cloudflare
+.wrangler/
+.dev.vars
+
+# static export output
+/out/

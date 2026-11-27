@@ -2,6 +2,9 @@ import { MetadataRoute } from "next";
 import { SITE } from "@/lib/constants";
 import { ARTICLES } from "@/lib/blog-content";
 
+// Required for `output: "export"` (static build).
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const staticPages = [

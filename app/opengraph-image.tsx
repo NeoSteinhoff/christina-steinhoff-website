@@ -4,6 +4,9 @@ export const alt = "Christina Steinhoff — Executive & Emotional Mastery Coach,
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+// Required for `output: "export"` (static build).
+export const dynamic = "force-static";
+
 export default function OgImage() {
   return new ImageResponse(
     (

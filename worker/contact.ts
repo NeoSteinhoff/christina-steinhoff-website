@@ -1,6 +1,12 @@
-import { SITE } from "@/lib/constants";
+import { SITE } from "../lib/constants";
 
-export const runtime = "nodejs";
+// Runtime config comes from the Worker's bindings (set in the Cloudflare dashboard:
+// Workers & Pages -> this Worker -> Settings -> Variables and Secrets).
+export type ContactEnv = {
+  RESEND_API_KEY?: string;
+  CONTACT_FROM_EMAIL?: string;
+  FORMSPREE_FORM_ID?: string;
+};
 
 type Payload = {
   type?: "enquiry" | "newsletter" | "referral" | "application" | "quiz";
@@ -50,7 +56,7 @@ function valid(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-export async function POST(request: Request) {
+export async function handleContact(request: Request, env: ContactEnv): Promise<Response> {
   let body: Payload;
   try {
     body = await request.json();
@@ -173,9 +179,9 @@ export async function POST(request: Request) {
       </div>`;
   }
 
-  const RESEND_API_KEY = process.env.RESEND_API_KEY;
-  const FROM = process.env.CONTACT_FROM_EMAIL || `Website <noreply@christinasteinhoff.com>`;
-  const FORMSPREE_FORM_ID = process.env.FORMSPREE_FORM_ID;
+  const RESEND_API_KEY = env.RESEND_API_KEY;
+  const FROM = env.CONTACT_FROM_EMAIL || `Website <noreply@christinasteinhoff.com>`;
+  const FORMSPREE_FORM_ID = env.FORMSPREE_FORM_ID;
 
   // Preferred: Resend (transactional email)
   if (RESEND_API_KEY) {

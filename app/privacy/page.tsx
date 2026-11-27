@@ -47,7 +47,7 @@ export default function PrivacyPage() {
 
         <h2>Service providers</h2>
         <p>
-          We rely on trusted third parties to operate the site: Vercel (hosting), Calendly
+          We rely on trusted third parties to operate the site: Cloudflare (hosting), Calendly
           (scheduling), and an email provider for contact-form delivery. Each processes data under its
           own terms and only as needed to provide the service.
         </p>

@@ -18,6 +18,9 @@ const AI_CRAWLERS = [
   "Applebot-Extended", // Apple Intelligence
 ];
 
+// Required for `output: "export"` (static build).
+export const dynamic = "force-static";
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
