@@ -39,5 +39,12 @@ quiz, referral and application emails).
 - `npm run preview` — build, then serve locally with `wrangler dev` (http://localhost:8787)
 - `npm run deploy` — build and deploy with `wrangler deploy` (Cloudflare Workers Builds runs the same two steps)
 - Redirects (old WordPress URLs) live in `public/_redirects`; response headers in `public/_headers`.
-- Secrets/variables for the form are set in the Cloudflare dashboard (Worker > Settings > Variables and Secrets):
-  `RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, `FORMSPREE_FORM_ID`. For local testing put them in `.dev.vars` (git-ignored).
+- Form settings go under the Worker's **Settings > Variables and Secrets** (runtime). Do NOT use *Build variables*
+  (those exist only during the build and the Worker cannot read them).
+  - `RESEND_API_KEY` as type **Secret**; `FORMSPREE_FORM_ID` (optional fallback) as a Secret;
+  - `CONTACT_FROM_EMAIL` as Text, and its address must be on a domain verified in Resend.
+  For local testing put them in `.dev.vars` (git-ignored).
+- After setting them, check the endpoint directly - the site's forms show a "success" screen even when the Worker is
+  misconfigured (`503 {"code":"unconfigured"}`):
+  `curl -s -X POST https://<worker>.workers.dev/api/contact -H 'content-type: application/json' -d '{"type":"enquiry","firstName":"Test","email":"you@example.com","message":"test"}'`
+  must return `{"ok":true,"channel":"resend"}`.
